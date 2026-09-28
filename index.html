@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo Web y Automatización para Negocios Locales | TuNombre</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navegación Minimalista -->
+    <header class="saenz-header" id="navbar">
+        <div class="container nav-content">
+            <div class="logo">TuNombre<span>.dev</span></div>
+            <nav class="nav-links" id="navLinks">
+                <a href="#modelos">Ver Demos</a>
+                <a href="#sistema">Cómo Trabajo</a>
+                <a href="#casos">Casos Reales</a>
+                <a href="#sobre-mi">Sobre Mí</a>
+            </nav>
+            <div class="nav-cta">
+                <a href="https://wa.me/34600000000?text=Hola,%20quiero%20mejorar%20la%20web%20de%20mi%20negocio" target="_blank" class="btn-wa-header">
+                    <i class="fa-brands fa-whatsapp"></i> Hablar por WhatsApp
+                </a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menú"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- Hero de Máxima Conversión (Estilo Adrián Sáenz) -->
+    <section class="hero-saenz">
+        <div class="container hero-content">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span> Plazas limitadas este mes para nuevos proyectos
+            </div>
+            <h1>Páginas web que traen clientes a tu local. <br><span class="highlight-text">Cero excusas. Cero complicaciones.</span></h1>
+            <p>Diseño webs ultrarrápidas, modernas y enfocadas a la conversión para pequeños negocios. Sin gestores pesados, con precio cerrado y contrato por escrito.</p>
+            
+            <div class="hero-buttons">
+                <a href="#modelos" class="btn-main">Quiero ver los modelos de web &rarr;</a>
+                <a href="https://wa.me/34600000000?text=Hola,%20quiero%20consultar%20una%20idea%20para%20mi%20negocio" target="_blank" class="btn-sub">
+                    <i class="fa-brands fa-whatsapp"></i> Escríbeme directo
+                </a>
+            </div>
+
+            <!-- Micro-prueba social / Autoridad -->
+            <div class="hero-proof">
+                <div class="proof-avatars">
+                    <i class="fa-solid fa-store"></i>
+                    <i class="fa-solid fa-utensils"></i>
+                    <i class="fa-solid fa-stethoscope"></i>
+                </div>
+                <div class="proof-text">
+                    <strong>Casos reales comprobados</strong> en locales de eventos, asadores y clínicas.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Modelos (El núcleo de conversión) -->
+    <section id="modelos" class="section-saenz bg-white">
+        <div class="container">
+            <div class="section-title-box">
+                <span class="tag-saenz">Catálogo Interactivo</span>
+                <h2>Elige el modelo que encaja con tu negocio</h2>
+                <p>Pulsa en "Ver demo real" para navegar por páginas 100% funcionales desde tu móvil o PC.</p>
+            </div>
+
+            <div class="saenz-grid-3">
+                <!-- Modelo 1 -->
+                <div class="saenz-card">
+                    <div class="card-tag tag-green">Clínicas / Bienestar / Servicios</div>
+                    <h3>Modelo Escaparate</h3>
+                    <p>Diseño orgánico y limpio enfocado en transmitir confianza y conseguir citas previas con rapidez.</p>
+                    <div class="card-links">
+                        <a href="demos/escaparate.html" target="_blank" class="link-demo">Ver Demo Real &rarr;</a>
+                        <a href="https://wa.me/34600000000?text=Hola,%20me%20interesa%20el%20Modelo%20Escaparate" target="_blank" class="link-buy">Elegir este</a>
+                    </div>
+                </div>
+
+                <!-- Modelo 2 -->
+                <div class="saenz-card">
+                    <div class="card-tag tag-orange">Restaurantes / Asadores</div>
+                    <h3>Modelo Catálogo Visual</h3>
+                    <p>Estética industrial oscura con cartas interactivas por categorías para abrir el apetito al instante.</p>
+                    <div class="card-links">
+                        <a href="demos/restaurante.html" target="_blank" class="link-demo">Ver Demo Real &rarr;</a>
+                        <a href="https://wa.me/34600000000?text=Hola,%20me%20interesa%20el%20Modelo%20Catálogo" target="_blank" class="link-buy">Elegir este</a>
+                    </div>
+                </div>
+
+                <!-- Modelo 3 (Destacado) -->
+                <div class="saenz-card card-featured">
+                    <div class="card-tag tag-blue">Locales de Eventos / Salas</div>
+                    <h3>Modelo Reservas Rápidas</h3>
+                    <p>La estructura tecnológica usada en <strong>Selecto Fiesta</strong> para mostrar equipamiento y cerrar fechas hoy mismo.</p>
+                    <div class="card-links">
+                        <a href="demos/reservas.html" target="_blank" class="link-demo featured-demo">Ver Demo Real &rarr;</a>
+                        <a href="https://wa.me/34600000000?text=Hola,%20me%20interesa%20el%20Modelo%20Reservas" target="_blank" class="link-buy featured-buy">Elegir este</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Sistema / Metodología (Sin fricción) -->
+    <section id="sistema" class="section-saenz bg-dark">
+        <div class="container">
+            <div class="section-title-box">
+                <span class="tag-saenz light">Proceso Transparente</span>
+                <h2 style="color: white;">Cómo lo hacemos, paso a paso</h2>
+                <p style="color: #94a3b8;">Sin tecnicismos informáticos raros. Directo a solucionar tu problema.</p>
+            </div>
+
+            <div class="saenz-grid-3">
+                <div class="step-card">
+                    <span class="step-number">01</span>
+                    <h3>Hablamos 10 minutos</h3>
+                    <p>Me cuentas qué ofrece tu negocio, qué te falla en internet y vemos qué estructura encaja mejor.</p>
+                </div>
+                <div class="step-card step-card-highlight">
+                    <span class="step-number">02</span>
+                    <h3>Contrato y Precio Cerrado</h3>
+                    <p>Firmamos un acuerdo sencillo. Sabrás el importe exacto, la fecha de entrega y lo que incluye. Cero sorpresas.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">03</span>
+                    <h3>Lanzamiento</h3>
+                    <p>Me encargo de todo el montaje técnico. Tu web lista para recibir clientes en poco tiempo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Caso de Éxito: Selecto Fiesta -->
+    <section id="casos" class="section-saenz bg-white">
+        <div class="container">
+            <div class="success-box">
+                <div class="success-text">
+                    <span class="tag-saenz">Caso de Éxito Real</span>
+                    <h2>De la gestión manual a un sistema optimizado</h2>
+                    <p>Opero mi propio negocio local (<strong>Selecto Fiesta</strong> en el Centro Comercial La Nevera). Conozco de primera mano los dolores de cabeza de los autónomos.</p>
+                    <p>Por eso apliqué mis conocimientos de ingeniería y desarrollo para crear una web ultrarrápida que destaca el aforo de 60 sillas, la pantalla de 75" y el sonido de 600W, automatizando además la redacción de contratos.</p>
+                    <div class="success-highlight">
+                        <i class="fa-solid fa-check-circle"></i> Lo que funciona en mi local, funciona en el tuyo.
+                    </div>
+                </div>
+                <div class="success-visual">
+                    <div class="mockup-box">
+                        <i class="fa-solid fa-store"></i>
+                        <span>Selecto Fiesta (Caso Real)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mí -->
+    <section id="sobre-mi" class="section-saenz bg-gray">
+        <div class="container about-saenz">
+            <span class="tag-saenz">Rigor Técnico</span>
+            <h2>¿Quién está detrás de esto?</h2>
+            <p>Soy estudiante de <strong>Ingeniería en Tecnologías Industriales en la Universidad de Alcalá</strong> (Escuela Politécnica Superior).</p>
+            <p>Combino el rigor metodológico y analítico de la ingeniería con la experiencia real gestionando comercios físicos. Como empresario, sé que no tienes tiempo para agencias lentas. Yo te doy soluciones limpias, directas y eficaces.</p>
+        </div>
+    </section>
+
+    <!-- CTA Final Ineludible -->
+    <section class="cta-saenz">
+        <div class="container text-center">
+            <h2>¿Hablamos sobre tu negocio?</h2>
+            <p>Escríbeme un WhatsApp directo y resolvemos cualquier duda sin compromiso.</p>
+            <a href="https://wa.me/34600000000?text=Hola,%20quiero%20mejorar%20la%20web%20de%20mi%20negocio" target="_blank" class="btn-main-large">
+                <i class="fa-brands fa-whatsapp"></i> Abrir Chat de WhatsApp Directo
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="saenz-footer">
+        <p>&copy; 2026 TuNombre.dev — Soluciones digitales y automatización para negocios locales.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
