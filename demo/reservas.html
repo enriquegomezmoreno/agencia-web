@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS Space - Reservas Inteligentes</title>
+    <link rel="stylesheet" href="reservas.css">
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navegación Fija con Efecto Cristal -->
+    <header class="glass-nav" id="navbar">
+        <div class="nav-container">
+            <div class="logo">NEXUS<span>.SPACE</span></div>
+            <nav class="nav-links" id="navLinks">
+                <a href="#inicio" class="active">Inicio</a>
+                <a href="#specs">Tecnología</a>
+                <a href="#simulador">Simulador</a>
+                <a href="#galeria">Espacio</a>
+                <a href="#tarifas">Tarifas</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="#reserva" class="btn-neon">Reservar Online</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Hero -->
+    <section id="inicio" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content reveal-load">
+            <div class="badge-tech"><i class="fa-solid fa-microchip"></i> Sistema Automatizado 2.0</div>
+            <h1>Eventos diseñados <br><span class="gradient-text">en la nueva era.</span></h1>
+            <p>Salas privadas dotadas de control multimedia integrado, sonido de alta fidelidad e iluminación inteligente. Todo bajo control en un entorno exclusivo.</p>
+            <div class="hero-actions">
+                <a href="#specs" class="btn-solid">Explorar Equipamiento <i class="fa-solid fa-arrow-down"></i></a>
+                <a href="#simulador" class="btn-outline">Probar Simulador</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ecosistema Tecnológico (Con efectos Spotlight) -->
+    <section id="specs" class="specs-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Innovación</span>
+                <h2 class="section-title reveal">Ecosistema Tecnológico</h2>
+            </div>
+            
+            <div class="specs-grid" id="spotlightContainer">
+                <div class="glass-card reveal delay-1">
+                    <div class="card-glow"></div>
+                    <i class="fa-solid fa-tv card-icon"></i>
+                    <h3>Smart Display 4K</h3>
+                    <p>Pantalla Toshiba de 75 pulgadas con conectividad inalámbrica ultrarrápida para presentaciones, streaming o contenido multimedia.</p>
+                </div>
+                
+                <div class="glass-card reveal delay-2">
+                    <div class="card-glow"></div>
+                    <i class="fa-solid fa-volume-high card-icon"></i>
+                    <h3>Audio Hifi 600W</h3>
+                    <p>Torre de sonido LG con ecualización dinámica y micrófono de baja latencia para un rendimiento de audio impecable y envolvente.</p>
+                </div>
+                
+                <div class="glass-card reveal delay-3">
+                    <div class="card-glow"></div>
+                    <i class="fa-solid fa-sliders card-icon"></i>
+                    <h3>Control Lumínico</h3>
+                    <p>Iluminación ambiental RGB automatizada que se sincroniza con el entorno o responde dinámicamente al ritmo de la música en directo.</p>
+                </div>
+
+                <div class="glass-card reveal delay-4">
+                    <div class="card-glow"></div>
+                    <i class="fa-solid fa-shield-halved card-icon"></i>
+                    <h3>Aforo Flexible</h3>
+                    <p>Espacio optimizado con 60 plazas configurables, climatización silenciosa independiente y máxima privacidad garantizada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUEVO: Simulador Interactivo de Reservas -->
+    <section id="simulador" class="simulator-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Herramienta Interactiva</span>
+                <h2 class="section-title reveal">Calcula tu Reserva al Instante</h2>
+                <p class="section-subtitle">Selecciona las opciones para ver el presupuesto orientativo de tu evento.</p>
+            </div>
+
+            <div class="simulator-box reveal">
+                <div class="sim-options">
+                    <div class="sim-group">
+                        <label><i class="fa-regular fa-calendar"></i> Tipo de Jornada:</label>
+                        <select id="simDuracion">
+                            <option value="150">Pack Estándar (4 Horas) - 150€</option>
+                            <option value="250" selected>Pack Pro Experience (Jornada Completa) - 250€</option>
+                        </select>
+                    </div>
+                    <div class="sim-group">
+                        <label><i class="fa-solid fa-bolt"></i> Extras Tecnológicos:</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" id="simMicro" value="30" checked> Micrófono Inalámbrico Extra (+30€)</label>
+                            <label><input type="checkbox" id="simLuces" value="40" checked> Iluminación Disco Pro (+40€)</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="sim-result">
+                    <span class="sim-label">Presupuesto Estimado:</span>
+                    <div class="sim-price" id="simTotal">320€</div>
+                    <a href="#reserva" class="btn-solid-small">Bloquear esta fecha</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería Interactiva -->
+    <section id="galeria" class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Instalaciones</span>
+                <h2 class="section-title reveal">Un vistazo al interior</h2>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item item-large reveal">
+                    <div class="gallery-overlay"><span>Zona Principal de Eventos</span></div>
+                </div>
+                <div class="gallery-item reveal delay-1">
+                    <div class="gallery-overlay"><span>Área Audiovisual</span></div>
+                </div>
+                <div class="gallery-item reveal delay-2">
+                    <div class="gallery-overlay"><span>Barra y Office</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tarifas -->
+    <section id="tarifas" class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Inversión Clara</span>
+                <h2 class="section-title reveal">Tarifas Transparentes</h2>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card reveal">
+                    <h3>Pack Estándar</h3>
+                    <div class="price">150<span>€</span></div>
+                    <p>Ideal para pequeñas celebraciones y reuniones privadas.</p>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> 4 horas de alquiler</li>
+                        <li><i class="fa-solid fa-check"></i> Uso de pantalla 75"</li>
+                        <li><i class="fa-solid fa-check"></i> Sistema de sonido básico</li>
+                    </ul>
+                    <a href="#reserva" class="btn-outline-small">Elegir Pack</a>
+                </div>
+
+                <div class="pricing-card pricing-featured reveal delay-1">
+                    <div class="popular-badge">Más Solicitado</div>
+                    <h3>Pack Pro Experience</h3>
+                    <div class="price">250<span>€</span></div>
+                    <p>La experiencia completa sin restricciones horarias.</p>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Jornada completa (hasta 8h)</li>
+                        <li><i class="fa-solid fa-check"></i> Pantalla 4K + Micrófonos</li>
+                        <li><i class="fa-solid fa-check"></i> Iluminación Disco Pro</li>
+                        <li><i class="fa-solid fa-check"></i> Asistencia prioritaria</li>
+                    </ul>
+                    <a href="#reserva" class="btn-solid-small">Elegir Pro</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preguntas Frecuentes (FAQ) -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Dudas Frecuentes</span>
+                <h2 class="section-title reveal">Resolución de Consultas</h2>
+            </div>
+
+            <div class="faq-container reveal">
+                <div class="faq-item">
+                    <button class="faq-question">¿Cómo se realiza la reserva de la fecha? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Mediante un contrato digital seguro y el ingreso de una pequeña fianza de garantía que bloquea el calendario de forma oficial.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">¿Se puede traer comida y bebida del exterior? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Totalmente. El espacio cuenta con una zona de office equipada con nevera y microondas para organizar el catering con total libertad.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">¿Qué incluye exactamente el equipo multimedia? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Acceso completo a la Smart TV de 75", la torre LG de 600W con conexión Bluetooth y los micrófonos inalámbricos sin coste adicional oculto.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner CTA Final -->
+    <section id="reserva" class="cta-section reveal">
+        <div class="glass-banner">
+            <h2>¿Listo para asegurar tu fecha?</h2>
+            <p>Comprueba disponibilidad instantánea y asegura tu espacio antes de que se ocupe.</p>
+            <a href="https://wa.me/34600000000?text=Hola,%20quiero%20consultar%20la%20disponibilidad%20de%20la%20sala" target="_blank" class="btn-solid">Contactar por WhatsApp <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 NEXUS Space. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="reservas.js"></script>
+</body>
+</html>
