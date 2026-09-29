@@ -1142,82 +1142,186 @@
         </div>
       </section>
 
-      <!-- 13. FORMULARIO DE PRESUPUESTO EXPRESS -->
-      <section class="py-space-2xl md:py-space-3xl bg-surface-container-low">
+      <!-- 13. FORMULARIO DE PRESUPUESTO EXPRESS Y CALCULADORA -->
+      <section class="py-space-2xl md:py-space-3xl bg-surface-container-low" id="presupuesto">
         <div class="max-w-[1200px] mx-auto px-margin md:px-gutter lg:px-gutter-desktop">
           <div class="bg-surface-container-lowest rounded-2xl shadow-xl p-space-lg md:p-space-2xl">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
               
               <!-- Left Column -->
-              <div class="lg:col-span-5 flex flex-col justify-between">
+              <div class="lg:col-span-4 flex flex-col justify-between">
                 <div>
                   <span class="font-label-md text-label-sm text-primary uppercase tracking-wider font-semibold">Sin compromiso</span>
                   <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface mt-2">
-                    Pide tu presupuesto express
+                    Calcula y pide tu presupuesto
                   </h2>
                   <p class="font-body-md text-body-md text-on-surface-variant mt-3">
-                    Te respondo en menos de 24 horas con una propuesta clara, alcance definido y precio cerrado.
+                    Selecciona uno de nuestros packs o diseña tu web a medida añadiendo solo lo que realmente necesitas.
                   </p>
                   
                   <div class="mt-space-lg space-y-3">
                     <div class="flex items-center gap-3 font-label-md text-label-sm text-on-surface">
                       <span class="material-symbols-outlined text-whatsapp-green text-[20px]">check_circle</span>
-                      <span>Presupuesto exacto, sin costes ocultos</span>
+                      <span>Precio transparente al instante</span>
                     </div>
                     <div class="flex items-center gap-3 font-label-md text-label-sm text-on-surface">
                       <span class="material-symbols-outlined text-whatsapp-green text-[20px]">check_circle</span>
-                      <span>Contrato formal firmado por escrito</span>
+                      <span>Contrato formal por escrito</span>
                     </div>
                     <div class="flex items-center gap-3 font-label-md text-label-sm text-on-surface">
                       <span class="material-symbols-outlined text-whatsapp-green text-[20px]">check_circle</span>
-                      <span>Respuesta rápida en menos de 24 horas</span>
+                      <span>Respuesta en menos de 24 horas</span>
                     </div>
                   </div>
                 </div>
                 
                 <div class="mt-space-lg pt-space-md bg-surface-container-low p-4 rounded-xl space-y-2">
                   <p class="font-label-md text-label-sm text-on-surface font-semibold">¿Prefieres contactar directamente?</p>
-                  <div class="flex flex-col gap-1 text-body-sm text-on-surface-variant">
-                    <a class="hover:text-primary flex items-center gap-1.5" href="tel:+34684156359">
-                      <span class="material-symbols-outlined text-[16px]">call</span>
-                      <span>684 15 63 59</span>
+                  <div class="flex flex-col gap-2 text-body-sm text-on-surface-variant">
+                    <a class="hover:text-primary flex items-center gap-1.5 transition-colors" href="tel:+34684156359">
+                      <span class="material-symbols-outlined text-[18px]">call</span>
+                      <span class="font-medium">684 15 63 59</span>
                     </a>
-                    <a class="hover:text-primary flex items-center gap-1.5" href="mailto:enrique.gomez.moreno.egm@gmail.com">
-                      <span class="material-symbols-outlined text-[16px]">mail</span>
+                    <a class="hover:text-primary flex items-center gap-1.5 transition-colors" href="mailto:enrique.gomez.moreno.egm@gmail.com">
+                      <span class="material-symbols-outlined text-[18px]">mail</span>
                       <span>enrique.gomez.moreno.egm@gmail.com</span>
                     </a>
                   </div>
                 </div>
               </div>
               
-              <!-- Right Column: Interactive Form -->
-              <div class="lg:col-span-7 bg-surface p-space-lg rounded-xl">
-                <form class="space-y-4" onsubmit="handleExpressSubmit(event)">
-                  <div>
-                    <label class="block font-label-md text-label-sm text-on-surface mb-1">Nombre de tu negocio o local *</label>
-                    <input class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary text-body-md shadow-sm" id="form-business" placeholder="Ej. Clínica Dental Alameda / Asador Los Robles" required="" type="text" />
+              <!-- Right Column: Interactive Form & Calculator -->
+              <div class="lg:col-span-8 bg-surface p-space-lg rounded-xl border border-surface-variant/30">
+                <form class="space-y-5" onsubmit="enviarPresupuesto(event)">
+                  
+                  <!-- Datos Básicos -->
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label class="block font-label-md text-label-sm text-on-surface mb-1">Nombre de tu negocio *</label>
+                      <input class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest border border-surface-variant/50 text-on-surface focus:outline-none focus:ring-2 focus:ring-primary text-body-md shadow-sm transition-all" id="form-business" placeholder="Ej. Restaurante Alameda" required type="text" />
+                    </div>
+                    <div>
+                      <label class="block font-label-md text-label-sm text-on-surface mb-1">Teléfono o WhatsApp *</label>
+                      <input class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest border border-surface-variant/50 text-on-surface focus:outline-none focus:ring-2 focus:ring-primary text-body-md shadow-sm transition-all" id="form-phone" placeholder="Ej. 612 34 56 78" required type="tel" />
+                    </div>
                   </div>
+      
+                  <!-- Selector de Tipo / Pack -->
                   <div>
-                    <label class="block font-label-md text-label-sm text-on-surface mb-1">Tipo de web que necesitas *</label>
-                    <select class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary text-body-md shadow-sm" id="form-type">
-                      <option value="Modelo Escaparate (Clínicas y Salud)">Modelo Escaparate (Clínicas y Salud)</option>
-                      <option value="Modelo Catálogo Visual (Restaurantes y Bares)">Modelo Catálogo Visual (Restaurantes y Bares)</option>
-                      <option value="Modelo Reservas Rápidas (Locales de Eventos)">Modelo Reservas Rápidas (Locales de Eventos)</option>
-                      <option value="Automatización de Contratos y Software">Automatización de Contratos y Software</option>
-                      <option value="Otra necesidad / No estoy seguro">Otra necesidad / No estoy seguro</option>
+                    <label class="block font-label-md text-label-sm text-on-surface mb-1">¿Qué opción te interesa? *</label>
+                    <select class="w-full px-4 py-3 rounded-lg bg-primary/5 border border-primary/20 text-on-surface font-medium focus:outline-none focus:ring-2 focus:ring-primary text-body-md shadow-sm transition-all cursor-pointer" id="form-type" onchange="actualizarCalculadora()">
+                      <option value="Pack Hostelería">Pack Hostelería (550€ inicial + 31€/mes)</option>
+                      <option value="Pack Eventos y Ocio">Pack Eventos y Ocio (600€ inicial + 31€/mes)</option>
+                      <option value="Pack Negocios 24/7">Pack Negocios 24/7 (680€ inicial + 33€/mes)</option>
+                      <option value="A Medida" selected>Presupuesto a Medida (Construye tu web desde 350€)</option>
                     </select>
                   </div>
-                  <div>
-                    <label class="block font-label-md text-label-sm text-on-surface mb-1">Teléfono o WhatsApp de contacto *</label>
-                    <input class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary text-body-md shadow-sm" id="form-phone" placeholder="Ej. 612 34 56 78" required="" type="tel" />
+      
+                  <!-- MÓDULOS A MEDIDA (Aparece solo si elige "A Medida") -->
+                  <div id="seccion-a-medida" class="space-y-4 pt-2 pb-2 transition-all">
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="material-symbols-outlined text-primary text-[18px]">tune</span>
+                      <p class="font-label-md text-label-sm text-primary uppercase font-bold">Personaliza tu Web (Opcional)</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-[350px] overflow-y-auto pr-2 custom-scrollbar">
+                      
+                      <!-- Reservas -->
+                      <label class="flex items-start gap-3 p-3 border border-surface-variant/40 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors group">
+                        <input type="checkbox" class="extra-checkbox mt-1 w-4 h-4 text-primary rounded focus:ring-primary" data-setup="120" data-monthly="3" data-name="Sistema de Reservas" onchange="actualizarCalculadora()">
+                        <div class="flex-1">
+                          <span class="font-label-md text-body-sm font-bold text-on-surface block group-hover:text-primary transition-colors">Sistema de Reservas / Citas</span>
+                          <span class="text-xs text-on-surface-variant leading-tight block mt-0.5">Para que reserven mesa u hora directamente.</span>
+                          <div class="mt-1.5 flex gap-2 text-[11px] font-bold">
+                            <span class="bg-surface-container-high px-1.5 py-0.5 rounded text-on-surface">+120€</span>
+                            <span class="bg-primary/10 text-primary px-1.5 py-0.5 rounded">+3€/mes</span>
+                          </div>
+                        </div>
+                      </label>
+      
+                      <!-- Chatbot IA -->
+                      <label class="flex items-start gap-3 p-3 border border-surface-variant/40 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors group">
+                        <input type="checkbox" class="extra-checkbox mt-1 w-4 h-4 text-primary rounded focus:ring-primary" data-setup="200" data-monthly="5" data-name="Asistente IA" onchange="actualizarCalculadora()">
+                        <div class="flex-1">
+                          <span class="font-label-md text-body-sm font-bold text-on-surface block group-hover:text-primary transition-colors">Asistente Virtual IA 24/7</span>
+                          <span class="text-xs text-on-surface-variant leading-tight block mt-0.5">Chatbot que responde dudas frecuentes a cualquier hora.</span>
+                          <div class="mt-1.5 flex gap-2 text-[11px] font-bold">
+                            <span class="bg-surface-container-high px-1.5 py-0.5 rounded text-on-surface">+200€</span>
+                            <span class="bg-primary/10 text-primary px-1.5 py-0.5 rounded">+5€/mes</span>
+                          </div>
+                        </div>
+                      </label>
+      
+                      <!-- Reseñas Google -->
+                      <label class="flex items-start gap-3 p-3 border border-surface-variant/40 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors group">
+                        <input type="checkbox" class="extra-checkbox mt-1 w-4 h-4 text-primary rounded focus:ring-primary" data-setup="70" data-monthly="3" data-name="Reseñas Google" onchange="actualizarCalculadora()">
+                        <div class="flex-1">
+                          <span class="font-label-md text-body-sm font-bold text-on-surface block group-hover:text-primary transition-colors">Reseñas de Google en Vivo</span>
+                          <span class="text-xs text-on-surface-variant leading-tight block mt-0.5">Muestra tus 5 estrellas reales en la web para dar confianza.</span>
+                          <div class="mt-1.5 flex gap-2 text-[11px] font-bold">
+                            <span class="bg-surface-container-high px-1.5 py-0.5 rounded text-on-surface">+70€</span>
+                            <span class="bg-primary/10 text-primary px-1.5 py-0.5 rounded">+3€/mes</span>
+                          </div>
+                        </div>
+                      </label>
+      
+                      <!-- SEO Local -->
+                      <label class="flex items-start gap-3 p-3 border border-surface-variant/40 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors group">
+                        <input type="checkbox" class="extra-checkbox mt-1 w-4 h-4 text-primary rounded focus:ring-primary" data-setup="100" data-monthly="0" data-name="SEO Local" onchange="actualizarCalculadora()">
+                        <div class="flex-1">
+                          <span class="font-label-md text-body-sm font-bold text-on-surface block group-hover:text-primary transition-colors">SEO Local Avanzado</span>
+                          <span class="text-xs text-on-surface-variant leading-tight block mt-0.5">Optimización a fondo en Google Maps para tu zona.</span>
+                          <div class="mt-1.5 flex gap-2 text-[11px] font-bold">
+                            <span class="bg-surface-container-high px-1.5 py-0.5 rounded text-on-surface">+100€ (Pago único)</span>
+                          </div>
+                        </div>
+                      </label>
+      
+                      <!-- Catálogo Dinámico -->
+                      <label class="flex items-start gap-3 p-3 border border-surface-variant/40 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors group">
+                        <input type="checkbox" class="extra-checkbox mt-1 w-4 h-4 text-primary rounded focus:ring-primary" data-setup="80" data-monthly="0" data-name="Catálogo / Menú" onchange="actualizarCalculadora()">
+                        <div class="flex-1">
+                          <span class="font-label-md text-body-sm font-bold text-on-surface block group-hover:text-primary transition-colors">Catálogo Digital / Menú</span>
+                          <span class="text-xs text-on-surface-variant leading-tight block mt-0.5">Exposición visual de productos sin pasarela de pago.</span>
+                          <div class="mt-1.5 flex gap-2 text-[11px] font-bold">
+                            <span class="bg-surface-container-high px-1.5 py-0.5 rounded text-on-surface">+80€ (Pago único)</span>
+                          </div>
+                        </div>
+                      </label>
+      
+                      <!-- Instagram -->
+                      <label class="flex items-start gap-3 p-3 border border-surface-variant/40 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors group">
+                        <input type="checkbox" class="extra-checkbox mt-1 w-4 h-4 text-primary rounded focus:ring-primary" data-setup="40" data-monthly="0" data-name="Feed Instagram" onchange="actualizarCalculadora()">
+                        <div class="flex-1">
+                          <span class="font-label-md text-body-sm font-bold text-on-surface block group-hover:text-primary transition-colors">Feed de Instagram en Vivo</span>
+                          <span class="text-xs text-on-surface-variant leading-tight block mt-0.5">Tus últimas fotos aparecen solas en la web.</span>
+                          <div class="mt-1.5 flex gap-2 text-[11px] font-bold">
+                            <span class="bg-surface-container-high px-1.5 py-0.5 rounded text-on-surface">+40€ (Pago único)</span>
+                          </div>
+                        </div>
+                      </label>
+      
+                    </div>
                   </div>
-                  <div>
-                    <label class="block font-label-md text-label-sm text-on-surface mb-1">Cuéntame brevemente qué necesitas (opcional)</label>
-                    <textarea class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary text-body-md shadow-sm" id="form-message" placeholder="Ej. Queremos renovar la carta web y añadir botón de reservas directas..." rows="3"></textarea>
+      
+                  <!-- Caja de Estimación en Vivo -->
+                  <div class="bg-primary/10 border border-primary/30 rounded-xl p-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+                    <div>
+                      <p class="text-label-sm font-label-md text-primary uppercase font-bold">Estimación de tu proyecto</p>
+                      <div class="flex items-baseline gap-2 mt-1">
+                        <span class="text-xs text-on-surface-variant">Inversión Inicial:</span>
+                        <span id="calc-setup" class="text-headline-sm font-display-hero font-extrabold text-on-surface">350€</span>
+                      </div>
+                    </div>
+                    <div class="text-left sm:text-right">
+                      <p class="text-xs text-on-surface-variant">Mantenimiento y Soporte:</p>
+                      <p id="calc-monthly" class="text-title-lg font-headline-md font-bold text-primary">25€ / mes</p>
+                    </div>
                   </div>
-                  <button class="w-full inline-flex items-center justify-center gap-space-sm bg-whatsapp-green hover:bg-whatsapp-green-hover text-on-primary font-label-md text-label-md py-3.5 px-6 rounded-lg shadow-md transition-all hover:-translate-y-0.5" type="submit">
-                    <span class="material-symbols-outlined text-[20px]">chat</span>
-                    <span>Generar presupuesto por WhatsApp</span>
+      
+                  <button class="w-full inline-flex items-center justify-center gap-space-sm bg-whatsapp-green hover:bg-whatsapp-green-hover text-on-primary font-label-md text-label-md py-4 px-6 rounded-lg shadow-md transition-all hover:-translate-y-0.5" type="submit">
+                    <span class="material-symbols-outlined text-[24px]">chat</span>
+                    <span>Enviar solicitud por WhatsApp</span>
                   </button>
                 </form>
               </div>
@@ -1226,6 +1330,84 @@
           </div>
         </div>
       </section>
+      
+      <!-- Script Funcionalidad Calculadora -->
+      <style>
+        /* Para estilizar el scroll de los extras */
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 10px; }
+      </style>
+      
+      <script>
+        function actualizarCalculadora() {
+          const tipo = document.getElementById('form-type').value;
+          const seccionMedida = document.getElementById('seccion-a-medida');
+          const checkboxes = document.querySelectorAll('.extra-checkbox');
+          
+          let setup = 0;
+          let monthly = 0;
+      
+          if (tipo === 'Pack Hostelería') {
+            setup = 550; monthly = 31;
+            seccionMedida.style.display = 'none';
+            checkboxes.forEach(cb => cb.checked = false); // Limpiar checkboxes
+          } else if (tipo === 'Pack Eventos y Ocio') {
+            setup = 600; monthly = 31;
+            seccionMedida.style.display = 'none';
+            checkboxes.forEach(cb => cb.checked = false);
+          } else if (tipo === 'Pack Negocios 24/7') {
+            setup = 680; monthly = 33;
+            seccionMedida.style.display = 'none';
+            checkboxes.forEach(cb => cb.checked = false);
+          } else {
+            // Es a medida
+            setup = 350; monthly = 25; // Precios Base
+            seccionMedida.style.display = 'block';
+            
+            // Sumar extras seleccionados
+            checkboxes.forEach(cb => {
+              if (cb.checked) {
+                setup += parseInt(cb.getAttribute('data-setup'));
+                monthly += parseInt(cb.getAttribute('data-monthly'));
+              }
+            });
+          }
+      
+          // Animar los números
+          document.getElementById('calc-setup').innerText = setup + '€';
+          document.getElementById('calc-monthly').innerText = monthly + '€ / mes';
+        }
+      
+        function enviarPresupuesto(e) {
+          e.preventDefault();
+          const negocio = document.getElementById('form-business').value;
+          const telefono = document.getElementById('form-phone').value;
+          const tipo = document.getElementById('form-type').value;
+          const setup = document.getElementById('calc-setup').innerText;
+          const monthly = document.getElementById('calc-monthly').innerText;
+          
+          let extrasMensaje = "";
+          if (tipo === 'A Medida') {
+            const seleccionados = [];
+            document.querySelectorAll('.extra-checkbox:checked').forEach(cb => {
+              seleccionados.push(cb.getAttribute('data-name'));
+            });
+            if (seleccionados.length > 0) {
+              extrasMensaje = "%0A*Extras añadidos:* " + seleccionados.join(', ');
+            } else {
+              extrasMensaje = "%0A*Extras:* Ninguno, solo web base.";
+            }
+          }
+      
+          const mensaje = `Hola Enrique, solicito presupuesto web.%0A%0A*Negocio:* ${negocio}%0A*Teléfono:* ${telefono}%0A*Modalidad:* ${tipo}${extrasMensaje}%0A%0A*Estimación vista en web:* Inversión inicial de ${setup} y mantenimiento de ${monthly}.`;
+          
+          window.open(`https://wa.me/34684156359?text=${mensaje}`, '_blank');
+        }
+      
+        // Inicializar al cargar
+        document.addEventListener('DOMContentLoaded', actualizarCalculadora);
+      </script>
 
       <!-- 14. LLAMADA A LA ACCIÓN FINAL -->
       <section class="py-space-2xl md:py-space-3xl bg-surface-dark text-surface-bright relative overflow-hidden">
