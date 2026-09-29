@@ -1304,6 +1304,11 @@
                     </div>
                   </div>
       
+                  <!-- PANEL DE INFORMACIÓN DEL PACK (Oculto por defecto) -->
+                  <div id="seccion-pack-info" class="hidden space-y-4 pt-2 pb-2 transition-all">
+                    <!-- El contenido se inyecta por JS -->
+                  </div>
+      
                   <!-- Caja de Estimación en Vivo -->
                   <div class="bg-primary/10 border border-primary/30 rounded-xl p-4 flex flex-col sm:flex-row justify-between items-center gap-4">
                     <div>
@@ -1343,27 +1348,145 @@
         function actualizarCalculadora() {
           const tipo = document.getElementById('form-type').value;
           const seccionMedida = document.getElementById('seccion-a-medida');
+          const seccionPack = document.getElementById('seccion-pack-info');
           const checkboxes = document.querySelectorAll('.extra-checkbox');
           
           let setup = 0;
           let monthly = 0;
+          let packHtml = '';
       
           if (tipo === 'Pack Hostelería') {
             setup = 550; monthly = 31;
             seccionMedida.style.display = 'none';
-            checkboxes.forEach(cb => cb.checked = false); // Limpiar checkboxes
+            seccionPack.style.display = 'block';
+            checkboxes.forEach(cb => cb.checked = false);
+            
+            packHtml = `
+              <div class="p-5 border-2 border-primary/20 bg-primary/5 rounded-xl">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[22px]">restaurant</span>
+                    <span class="font-headline-sm text-body-lg text-primary font-bold">Pack Hostelería</span>
+                  </div>
+                  <span class="text-label-sm bg-green-100 text-green-800 px-3 py-1 rounded-full font-bold uppercase animate-pulse border border-green-200 shadow-sm">¡Ahorras 70€!</span>
+                </div>
+                <p class="text-sm text-on-surface-variant mb-4">Llevas todo esto incluido en tu tarifa, optimizado para llenar tus mesas:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <div class="flex items-start gap-2 text-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px]">check_circle</span>
+                    <span class="font-medium">Desarrollo Web Base 100% Móvil</span>
+                  </div>
+                  <div class="flex items-start gap-2 text-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px]">check_circle</span>
+                    <span class="font-medium">Catálogo / Menú Dinámico</span>
+                  </div>
+                  <div class="flex items-start gap-2 text-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px]">check_circle</span>
+                    <span class="font-bold">Sistema Reservas Automatizado</span>
+                  </div>
+                  <div class="flex items-start gap-2 text-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px]">check_circle</span>
+                    <span class="font-medium">Reseñas Google Maps en Vivo</span>
+                  </div>
+                </div>
+                <div class="mt-4 pt-3 border-t border-primary/10 text-center">
+                  <p class="text-label-sm font-label-md text-primary font-semibold flex items-center justify-center gap-1">
+                    <span class="material-symbols-outlined text-[16px]">verified</span>
+                    Excelente elección. Bloquea tu oferta y pide presupuesto ahora.
+                  </p>
+                </div>
+              </div>
+            `;
           } else if (tipo === 'Pack Eventos y Ocio') {
             setup = 600; monthly = 31;
             seccionMedida.style.display = 'none';
+            seccionPack.style.display = 'block';
             checkboxes.forEach(cb => cb.checked = false);
+            
+            packHtml = `
+              <div class="p-5 border-2 border-primary/40 bg-surface-container-lowest rounded-xl shadow-md relative overflow-hidden">
+                <div class="absolute -right-6 top-4 bg-red-100 text-red-700 font-bold text-[10px] uppercase py-1 px-8 rotate-45">Más Vendido</div>
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[22px]">celebration</span>
+                    <span class="font-headline-sm text-body-lg text-primary font-bold">Pack Eventos y Ocio</span>
+                  </div>
+                  <span class="text-label-sm bg-red-100 text-red-700 px-3 py-1 rounded-full font-bold uppercase animate-pulse border border-red-200 shadow-sm mr-8">¡Ahorras 80€!</span>
+                </div>
+                <p class="text-sm text-on-surface-variant mb-4">El pack estrella para asegurar el calendario de reservas de tu local:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <div class="flex items-start gap-2 text-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px]">check_circle</span>
+                    <span class="font-medium">Desarrollo Web Base</span>
+                  </div>
+                  <div class="flex items-start gap-2 text-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px]">check_circle</span>
+                    <span class="font-bold">Calendario de Disponibilidad</span>
+                  </div>
+                  <div class="flex items-start gap-2 text-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px]">check_circle</span>
+                    <span class="font-medium">SEO Local Avanzado</span>
+                  </div>
+                  <div class="flex items-start gap-2 text-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px]">check_circle</span>
+                    <span class="font-medium">Feed Instagram y Reseñas Google</span>
+                  </div>
+                </div>
+                <div class="mt-4 pt-3 border-t border-surface-variant/20 text-center">
+                  <p class="text-label-sm font-label-md text-primary font-semibold flex items-center justify-center gap-1">
+                    <span class="material-symbols-outlined text-[16px]">local_fire_department</span>
+                    Nuestra oferta con mejor relación calidad/precio.
+                  </p>
+                </div>
+              </div>
+            `;
           } else if (tipo === 'Pack Negocios 24/7') {
             setup = 680; monthly = 33;
             seccionMedida.style.display = 'none';
+            seccionPack.style.display = 'block';
             checkboxes.forEach(cb => cb.checked = false);
+            
+            packHtml = `
+              <div class="p-5 border-2 border-primary/20 bg-primary/5 rounded-xl">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[22px]">smart_toy</span>
+                    <span class="font-headline-sm text-body-lg text-primary font-bold">Pack Negocios 24/7</span>
+                  </div>
+                  <span class="text-label-sm bg-green-100 text-green-800 px-3 py-1 rounded-full font-bold uppercase animate-pulse border border-green-200 shadow-sm">¡Ahorras 90€!</span>
+                </div>
+                <p class="text-sm text-on-surface-variant mb-4">Automatización total para que la web atienda a tus clientes por ti:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <div class="flex items-start gap-2 text-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px]">check_circle</span>
+                    <span class="font-medium">Desarrollo Web Base</span>
+                  </div>
+                  <div class="flex items-start gap-2 text-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px]">check_circle</span>
+                    <span class="font-bold">Asistente IA (Chatbot 24 horas)</span>
+                  </div>
+                  <div class="flex items-start gap-2 text-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px]">check_circle</span>
+                    <span class="font-medium">Sistema de Citas Online</span>
+                  </div>
+                  <div class="flex items-start gap-2 text-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px]">check_circle</span>
+                    <span class="font-medium">SEO Local Avanzado</span>
+                  </div>
+                </div>
+                <div class="mt-4 pt-3 border-t border-primary/10 text-center">
+                  <p class="text-label-sm font-label-md text-primary font-semibold flex items-center justify-center gap-1">
+                    <span class="material-symbols-outlined text-[16px]">bolt</span>
+                    Solución premium. Cierra este pack y moderniza tu negocio.
+                  </p>
+                </div>
+              </div>
+            `;
           } else {
             // Es a medida
             setup = 350; monthly = 25; // Precios Base
             seccionMedida.style.display = 'block';
+            seccionPack.style.display = 'none';
             
             // Sumar extras seleccionados
             checkboxes.forEach(cb => {
@@ -1374,7 +1497,8 @@
             });
           }
       
-          // Animar los números
+          // Actualizar el HTML del pack y animar los números
+          seccionPack.innerHTML = packHtml;
           document.getElementById('calc-setup').innerText = setup + '€';
           document.getElementById('calc-monthly').innerText = monthly + '€ / mes';
         }
