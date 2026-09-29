@@ -1,249 +1,1321 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desarrollo Web Profesional para Negocios Locales | Soluciones a Medida</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Google Fonts & FontAwesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="web_standard" name="shell-type" />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="script.js"></script>
 </head>
-<body>
-
-    <!-- Navegación Minimalista -->
-    <header class="saenz-header" id="navbar">
-        <div class="container nav-content">
-            <div class="logo">enriquegomez<span>.dev</span></div>
-            <nav class="nav-links" id="navLinks">
-                <a href="#modelos">Ver Demos</a>
-                <a href="#sistema">Cómo Trabajo</a>
-                <a href="#casos">Casos Reales</a>
-                <a href="#presupuesto">Presupuesto</a>
-                <a href="#sobre-mi">Sobre Mí</a>
-            </nav>
-            <div class="nav-cta">
-                <a href="https://wa.me/34684156359?text=Hola,%20quiero%20mejorar%20la%20web%20de%20mi%20negocio" target="_blank" class="btn-wa-header">
-                    <i class="fa-brands fa-whatsapp"></i> Hablar por WhatsApp
-                </a>
-            </div>
-            <button class="menu-toggle" id="menuToggle" aria-label="Menú"><i class="fa-solid fa-bars"></i></button>
+<body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed relative">
+  
+  <header class="fixed top-0 left-0 right-0 z-50">
+    <div class="w-full bg-surface-dark text-surface-bright py-2 px-margin text-center text-label-sm font-label-sm shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+      ⚡ Plazas limitadas este mes para nuevos proyectos en Madrid y toda España
+    </div>
+    <div class="w-full bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+      <div class="h-20 max-w-[1200px] mx-auto px-margin md:px-gutter lg:px-gutter-desktop flex items-center justify-between">
+        
+        <div class="flex items-center gap-space-md">
+          <img alt="Logo enriquegomez.dev" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XU041zvcQkMoXcyFe24y2Lq4GEsYCypn4QHMBZ0ASqUzOQrf9rg2btdKG60oyB9LFPlG64N2eW2A2feULqUTncmbjvwxZ4FPc7vN5cmOyfCROjDOX2paK5hzeHPdP0hVN39EXoYoMc3KcZ-ZP4oVIR-xsl9pfI2Tyq6yYYBuLZRe5zT_5jt1WQFfDQPgYZf9NRHHX2sFkvenCdT54RExTaGJV42RSBjdKE2uolVKWw-_LJ-djaeJd2VOI" />
         </div>
-    </header>
+        
+        <nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="bg-surface-container text-primary font-label-md rounded-lg">
+          <a aria-current="page" class="transition-colors py-2 px-3 bg-surface-container text-primary font-label-md rounded-lg" data-path="inicio" href="#">Modelos</a>
+          <a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-2 px-3" data-path="como-trabajo" href="#">Cómo trabajo</a>
+          <a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-2 px-3" data-path="precios" href="#">Precios</a>
+          <a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-2 px-3" data-path="casos" href="#">Casos</a>
+          <a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-2 px-3" data-path="sobre-mi" href="#">Sobre mí</a>
+          <a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-2 px-3" data-path="garantia" href="#">Garantía</a>
+        </nav>
+        
+        <div class="flex items-center gap-space-md">
+          <a class="inline-flex items-center gap-space-xs bg-whatsapp-green hover:bg-whatsapp-green-hover text-on-primary font-label-md text-label-md px-5 py-2.5 rounded-lg shadow-[0_4px_16px_rgba(37,211,102,0.25)] transition-all hover:shadow-[0_6px_20px_rgba(37,211,102,0.35)] hover:-translate-y-0.5 active:translate-y-0" href="https://wa.me/34684156359" rel="noopener noreferrer" target="_blank">
+            <span class="material-symbols-outlined text-[18px]">chat</span>
+            <span>Hablar por WhatsApp</span>
+          </a>
+          <img alt="Profile" class="w-8 h-8 rounded-full object-cover hidden sm:block ring-2 ring-surface-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwiU06pF8jUGs201mQPZNiVaaLdp0m8agPQFQFuTor2t16ILYCRte2NpMSPz2858ZlAMRi37XA8sZNdItPtGfesAw4Eqrng5aQald0CuiyjZBdh4CSEXx1-XhqXaXerxktEObaPdhDxzWEm-A-Ii32NdGbqWNIbu21Pa8V9I2BNj9GNAR3N7bLV3mxvFokiBEkJly8uL4-V13OAd4p8rGO1svwEx-t4SAe7OEBQXahVB1hsY6OWaZG" />
+        </div>
+        
+      </div>
+    </div>
+  </header>
 
-    <!-- Hero de Máxima Conversión -->
-    <section class="hero-saenz">
-        <div class="container hero-content">
-            <div class="hero-badge">
-                <span class="pulse-dot"></span> Plazas limitadas este mes para nuevos proyectos
+  <main class="w-full pt-[112px] bg-surface min-h-screen">
+    <div class="flex flex-col w-full">
+
+      <!-- 1. HERO SECTION -->
+      <section class="relative overflow-hidden bg-gradient-to-b from-surface-container-lowest via-surface to-surface-container-low py-space-2xl md:py-space-3xl">
+        <div class="absolute -top-32 -left-32 w-96 h-96 bg-secondary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 -right-32 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-[1200px] mx-auto px-margin md:px-gutter lg:px-gutter-desktop relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+
+            <!-- Hero Text -->
+            <div class="lg:col-span-7 flex flex-col items-start gap-space-md">
+              <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-fixed text-primary font-label-md text-label-sm shadow-sm">
+                <span class="material-symbols-outlined text-[16px] text-primary">bolt</span>
+                <span>Especializado en Clínicas, Restaurantes y Locales de Eventos</span>
+              </div>
+              
+              <h1 class="font-display-hero text-headline-lg lg:text-display-hero text-on-surface tracking-tight">
+                Páginas web que traen clientes a tu local. <span class="text-primary-container">Cero excusas.</span> Cero complicaciones.
+              </h1>
+              
+              <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                Webs rápidas, modernas y pensadas para que te llamen o te escriban. Precio cerrado, contrato por escrito y entrega garantizada en 7 días.
+              </p>
+
+              <!-- CTAs -->
+              <div class="flex flex-wrap items-center gap-space-md pt-space-xs w-full sm:w-auto">
+                <a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-sm bg-whatsapp-green hover:bg-whatsapp-green-hover text-on-primary font-label-md text-label-md px-7 py-3.5 rounded-lg shadow-[0_8px_24px_-4px_rgba(37,211,102,0.4)] transition-all transform hover:-translate-y-0.5 active:translate-y-0" href="https://wa.me/34684156359" rel="noopener noreferrer" target="_blank">
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9。892.002-5.462-4.427-9.888-9.89-9.89-5.452 0-9.885 4.434-9.887 9.891-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149s-.768.967-.941 1.164c-.173.198-.347.223-.644.074s-1.292-.475-2.462-1.515c-.911-.811-1.527-1.812-1.7-2.109s-.018-.458.13-.606c.134-.133.298-.347.446-.52s.198-.223.298-.372c.099-.124.05-.223-.025-.372s-.669-1.611-.916-2.207c-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c0 .124-2.072 4.034-5.018 5.655-.702.303-1.25.484-1.68.619-.705.219-1.35.188-1.86.114-.567-.085-1.758-.719-2.006-1.413-.248-.695-.248-1.29-.173-1.413s.272-.223.57-.372c.297-.149 1.758-.868 2.031-.967s.47-.149.669.149c.198.297.768 1.164.941 1.362s.347.223.644.074c.297-.149 1.292-.475 2.462-1.515s2.262-3.098 2.531-3.396c.248-.297 .198-.458 .13-.606z"></path>
+                  </svg>
+                  <span>Hablar por WhatsApp</span>
+                </a>
+                <a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs bg-surface-container-lowest hover:bg-surface-container text-primary font-label-md text-label-md px-6 py-3.5 rounded-lg shadow-sm transition-all hover:-translate-y-0.5" href="#modelos">
+                  <span>Ver modelos de web</span>
+                  <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+                </a>
+              </div>
+
+              <!-- Micro-checks -->
+              <div class="flex flex-wrap items-center gap-x-6 gap-y-2 pt-space-xs font-label-md text-label-sm text-on-surface">
+                <span class="inline-flex items-center gap-1.5 text-on-surface">
+                  <span class="material-symbols-outlined text-whatsapp-green text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                  Precio cerrado
+                </span>
+                <span class="inline-flex items-center gap-1.5 text-on-surface">
+                  <span class="material-symbols-outlined text-whatsapp-green text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                  Contrato por escrito
+                </span>
+                <span class="inline-flex items-center gap-1.5 text-on-surface">
+                  <span class="material-symbols-outlined text-whatsapp-green text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                  Asesoramiento gratis
+                </span>
+              </div>
             </div>
-            <h1>Páginas web que traen clientes a tu local. <br><span class="highlight-text">Cero excusas. Cero complicaciones.</span></h1>
-            <p>Diseño webs ultrarrápidas, modernas y enfocadas a la conversión para pequeños negocios. Sin gestores pesados, con precio cerrado y contrato por escrito.</p>
+
+            <!-- Hero Visual Mockup Mosaic -->
+            <div class="lg:col-span-5 relative mt-6 lg:mt-0">
+              <div class="relative mx-auto max-w-lg lg:max-w-none">
+
+                <!-- Main Mockup Container -->
+                <div class="bg-surface-container-lowest rounded-xl shadow-xl p-4 transition-transform hover:-translate-y-1 duration-300">
+                  <div class="flex items-center justify-between pb-3 mb-3 bg-surface-container-low rounded-lg px-3 py-2">
+                    <div class="flex items-center gap-1.5">
+                      <span class="w-2.5 h-2.5 rounded-full bg-error/70"></span>
+                      <span class="w-2.5 h-2.5 rounded-full bg-secondary-container/70"></span>
+                      <span class="w-2.5 h-2.5 rounded-full bg-whatsapp-green/70"></span>
+                    </div>
+                    <div class="text-[11px] font-label-sm text-on-surface-variant flex items-center gap-1 bg-surface-container-lowest px-2.5 py-0.5 rounded-md shadow-sm">
+                      <span class="material-symbols-outlined text-[12px] text-whatsapp-green">lock</span>
+                      clinicadental-alameda.es
+                    </div>
+                    <span class="material-symbols-outlined text-[16px] text-outline">more_horiz</span>
+                  </div>
+                  
+                  <!-- Inside preview -->
+                  <div class="space-y-3">
+                    <div class="h-44 w-full rounded-lg bg-surface-container overflow-hidden relative">
+                      <img class="w-full h-full object-cover" data-alt="Modern bright dental clinic interior with clean white aesthetic, welcoming reception desk, state of the art dental chairs, professional medical equipment, soft natural daylight, high-end photography for medical website mockup." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN0EaUECm0P7C0-vZkFP-xWUvrrPPJd5DT33qOTb31JHKlDTk1smtdMPurpRxNXIDk-X6Zahzd5IAeb-jsWN-1Rbk8RJBqdA_lfNPOWXE-gcKSlpoV79oN2W9uHUfvtrhcxZMG2z5oBwqyFmt4T5TGmIZAg1zJTY-7-9-UUAyYVTomrbbgxQIG93Nue7_86pcACZ8q-hBRnyUCp6T9GH4QAMDaQF455mRTg3oGmXeT8KAGLR6Yf9c-" />
+                      <div class="absolute inset-0 bg-gradient-to-t from-surface-dark/70 via-transparent to-transparent flex items-end p-3">
+                        <span class="text-surface-bright font-label-md text-label-sm bg-primary-container/90 px-2.5 py-1 rounded">Cita Directa WhatsApp</span>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2">
+                      <div class="bg-surface-container-low p-2 rounded-lg text-center">
+                        <div class="font-headline-sm text-headline-sm text-primary">0.6s</div>
+                        <div class="text-[10px] font-label-sm text-on-surface-variant">Carga veloz</div>
+                      </div>
+                      <div class="bg-surface-container-low p-2 rounded-lg text-center">
+                        <div class="font-headline-sm text-headline-sm text-whatsapp-green">100%</div>
+                        <div class="text-[10px] font-label-sm text-on-surface-variant">Móvil pulido</div>
+                      </div>
+                      <div class="bg-surface-container-low p-2 rounded-lg text-center">
+                        <div class="font-headline-sm text-headline-sm text-secondary">+40%</div>
+                        <div class="text-[10px] font-label-sm text-on-surface-variant">Conversión</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Floating Mini Mockup (Phone / Restaurant) -->
+                <div class="absolute -bottom-6 -left-6 sm:-left-10 bg-surface-container-lowest rounded-xl shadow-2xl p-3 w-56 sm:w-64 hidden sm:block transform -rotate-2 hover:rotate-0 transition-transform">
+                  <div class="flex items-center gap-2 mb-2 pb-1.5">
+                    <span class="w-2 h-2 rounded-full bg-whatsapp-green"></span>
+                    <span class="text-[11px] font-label-sm text-on-surface truncate">Carta QR Restaurante</span>
+                  </div>
+                  <div class="h-24 w-full rounded-lg overflow-hidden bg-surface-container">
+                    <img class="w-full h-full object-cover" data-alt="Artisanal Spanish restaurant grilled steak specialty dish served on slate plate with rosemary garnish, warm ambient gastropub lighting, appetizing gourmet food presentation for restaurant website catalog." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChk2u5Kq51grHRU3Gj9PKarYs4BmpJv2w8rxLDpqBEHi9LlSu8iEuZp3vZpVc8BsQxTYKlqXoTJ7cB5kaoe44Xnhcp7KlCvNfb00ylOgE7v-JpjeAXysjU_fwnWxXMIwnk4ivmhaYaE4FiVNe93X6sYw_hDKNs47ghgcY_0vSJjTpDGAopLuevP1KYbI42NBGgsc5cnaPScU1nddkZAnQ-2I7GbMuwssA5ehsWSEd1k6OEc_zkRJ6B" />
+                  </div>
+                  <div class="mt-2 flex items-center justify-between text-[11px] font-label-sm">
+                    <span class="text-on-surface-variant">Menú del día</span>
+                    <span class="text-whatsapp-green font-bold">1 Clic WhatsApp</span>
+                  </div>
+                </div>
+
+                <!-- Floating Mini Badge (Event Venue) -->
+                <div class="absolute -top-4 -right-4 sm:-right-8 bg-surface-dark text-surface-bright rounded-xl shadow-xl p-3 w-48 hidden sm:flex items-center gap-3 transform rotate-3 hover:rotate-0 transition-transform">
+                  <div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-[20px] text-surface-bright">celebration</span>
+                  </div>
+                  <div class="min-w-0">
+                    <p class="font-label-md text-label-sm truncate">Sala de Eventos</p>
+                    <p class="text-[11px] text-whatsapp-green font-medium">Contrato en 1 min</p>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
             
-            <div class="hero-buttons">
-                <a href="#modelos" class="btn-main">Quiero ver los modelos de web &rarr;</a>
-                <a href="#presupuesto" class="btn-sub">
-                    <i class="fa-solid fa-calculator"></i> Calcular presupuesto
-                </a>
-            </div>
-
-            <!-- Micro-prueba social / Autoridad -->
-            <div class="hero-proof">
-                <div class="proof-avatars">
-                    <i class="fa-solid fa-store"></i>
-                    <i class="fa-solid fa-utensils"></i>
-                    <i class="fa-solid fa-stethoscope"></i>
-                </div>
-                <div class="proof-text">
-                    <strong>Casos reales comprobados</strong> en locales de eventos, asadores y clínicas.
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Sección de Modelos (El núcleo de conversión) -->
-    <section id="modelos" class="section-saenz bg-white">
-        <div class="container">
-            <div class="section-title-box">
-                <span class="tag-saenz">Catálogo Interactivo</span>
-                <h2>Elige el modelo que encaja con tu negocio</h2>
-                <p>Pulsa en "Ver demo real" para navegar por páginas 100% funcionales desde tu móvil o PC.</p>
+      <!-- 2. BARRA DE CONFIANZA -->
+      <section class="bg-surface-container-lowest py-space-lg shadow-sm relative z-20">
+        <div class="max-w-[1200px] mx-auto px-margin md:px-gutter lg:px-gutter-desktop">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-space-md items-center">
+            
+            <div class="flex items-center gap-space-sm p-3 rounded-lg bg-surface-container-low/70">
+              <span class="material-symbols-outlined text-[28px] text-primary shrink-0">bolt</span>
+              <div>
+                <p class="font-label-md text-label-md text-on-surface">Web en 7 días</p>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Plazos garantizados</p>
+              </div>
             </div>
-
-            <div class="saenz-grid-3">
-                <!-- Modelo 1 -->
-                <div class="saenz-card">
-                    <div class="card-tag tag-green">Clínicas / Bienestar / Servicios</div>
-                    <h3>Modelo Escaparate</h3>
-                    <p>Diseño orgánico y limpio enfocado en transmitir confianza y conseguir citas previas con rapidez.</p>
-                    <div class="card-links">
-                        <a href="demos/escaparate.html" target="_blank" class="link-demo">Ver Demo Real &rarr;</a>
-                        <a href="#presupuesto" class="link-buy">Elegir este</a>
-                    </div>
-                </div>
-
-                <!-- Modelo 2 -->
-                <div class="saenz-card">
-                    <div class="card-tag tag-orange">Restaurantes / Asadores</div>
-                    <h3>Modelo Catálogo Visual</h3>
-                    <p>Estética industrial oscura con cartas interactivas por categorías para abrir el apetito al instante.</p>
-                    <div class="card-links">
-                        <a href="demos/restaurante.html" target="_blank" class="link-demo">Ver Demo Real &rarr;</a>
-                        <a href="#presupuesto" class="link-buy">Elegir este</a>
-                    </div>
-                </div>
-
-                <!-- Modelo 3 (Destacado) -->
-                <div class="saenz-card card-featured">
-                    <div class="card-tag tag-blue">Locales de Eventos / Salas</div>
-                    <h3>Modelo Reservas Rápidas</h3>
-                    <p>La estructura tecnológica usada en el local <strong>Selecto Fiesta</strong> para mostrar equipamiento y cerrar fechas.</p>
-                    <div class="card-links">
-                        <a href="demos/reservas.html" target="_blank" class="link-demo featured-demo">Ver Demo Real &rarr;</a>
-                        <a href="#presupuesto" class="link-buy featured-buy">Elegir este</a>
-                    </div>
-                </div>
+            
+            <div class="flex items-center gap-space-sm p-3 rounded-lg bg-surface-container-low/70">
+              <span class="material-symbols-outlined text-[28px] text-primary shrink-0">smartphone</span>
+              <div>
+                <p class="font-label-md text-label-md text-on-surface">100% Móvil</p>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Adaptada al pulgar</p>
+              </div>
             </div>
+            
+            <div class="flex items-center gap-space-sm p-3 rounded-lg bg-surface-container-low/70">
+              <span class="material-symbols-outlined text-[28px] text-primary shrink-0">public</span>
+              <div>
+                <p class="font-label-md text-label-md text-on-surface">Dominio y hosting</p>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Incluido 1er año</p>
+              </div>
+            </div>
+            
+            <div class="flex items-center gap-space-sm p-3 rounded-lg bg-surface-container-low/70">
+              <span class="material-symbols-outlined text-[28px] text-primary shrink-0">vpn_key</span>
+              <div>
+                <p class="font-label-md text-label-md text-on-surface">Web 100% tuya</p>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Sin ataduras ni alquileres</p>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="mt-space-md text-center">
+            <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-sm">
+              <span class="text-amber-500">★★★★★</span>
+              <span class="font-bold">+15 negocios locales</span> ya confían en mi trabajo en Madrid y resto de España
+            </span>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Sección de Sistema / Metodología (Sin fricción) -->
-    <section id="sistema" class="section-saenz bg-dark">
-        <div class="container">
-            <div class="section-title-box">
-                <span class="tag-saenz light">Proceso Transparente</span>
-                <h2 style="color: white;">Cómo lo hacemos, paso a paso</h2>
-                <p style="color: #94a3b8;">Sin tecnicismos informáticos raros. Directo a solucionar tu problema.</p>
+      <!-- 3. EL PROBLEMA -->
+      <section class="py-space-2xl md:py-space-3xl bg-surface-alt">
+        <div class="max-w-[1200px] mx-auto px-margin md:px-gutter lg:px-gutter-desktop">
+          <div class="text-center max-w-2xl mx-auto mb-space-xl">
+            <span class="font-label-md text-label-sm text-primary uppercase tracking-wider font-semibold">Diagnóstico real</span>
+            <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface mt-2">
+              ¿Te suena alguna de estas situaciones?
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-3">
+              Tener un buen local o una buena clínica ya no basta si tu presencia en internet trabaja en tu contra.
+            </p>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+            
+            <!-- Card 1 -->
+            <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-lg bg-error-container/40 flex items-center justify-center text-error mb-space-md">
+                  <span class="material-symbols-outlined text-[28px]">search_off</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">
+                  Tus clientes te buscan en Google y no te encuentran
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Pierdes ventas y llamadas frente a competidores cercanos que tienen peor servicio o instalaciones que las tuyas, pero están mejor posicionados.
+                </p>
+              </div>
+              <div class="mt-space-md pt-space-sm bg-surface-container-low p-3 rounded-lg text-label-sm text-on-surface-variant flex items-center gap-2">
+                <span class="material-symbols-outlined text-[16px] text-error">trending_down</span>
+                <span>Clientes que acaban en la acera de enfrente</span>
+              </div>
             </div>
-
-            <div class="saenz-grid-3">
-                <div class="step-card">
-                    <span class="step-number">01</span>
-                    <h3>Hablamos 10 minutos</h3>
-                    <p>Me cuentas qué ofrece tu negocio, qué te falla en internet y vemos qué estructura encaja mejor.</p>
+            
+            <!-- Card 2 -->
+            <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-lg bg-error-container/40 flex items-center justify-center text-error mb-space-md">
+                  <span class="material-symbols-outlined text-[28px]">speed</span>
                 </div>
-                <div class="step-card step-card-highlight">
-                    <span class="step-number">02</span>
-                    <h3>Contrato y Precio Cerrado</h3>
-                    <p>Firmamos un acuerdo sencillo. Sabrás el importe exacto, la fecha de entrega y lo que incluye. Cero sorpresas.</p>
-                </div>
-                <div class="step-card">
-                    <span class="step-number">03</span>
-                    <h3>Lanzamiento</h3>
-                    <p>Me encargo de todo el montaje técnico. Tu web lista para recibir clientes en poco tiempo.</p>
-                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">
+                  Tu web actual es lenta o se ve fatal en el móvil
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  El 85% de tus clientes entra desde el smartphone. Si la página tarda más de 3 segundos o hay que hacer zoom para leer la carta o los precios, se van al instante.
+                </p>
+              </div>
+              <div class="mt-space-md pt-space-sm bg-surface-container-low p-3 rounded-lg text-label-sm text-on-surface-variant flex items-center gap-2">
+                <span class="material-symbols-outlined text-[16px] text-error">timer_off</span>
+                <span>Tasa de rebote superior al 70%</span>
+              </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Caso de Éxito: Selecto Fiesta -->
-    <section id="casos" class="section-saenz bg-white">
-        <div class="container">
-            <div class="success-box">
-                <div class="success-text">
-                    <span class="tag-saenz">Caso de Éxito Real</span>
-                    <h2>De la gestión manual a un sistema optimizado</h2>
-                    <p>Opero mi propio negocio local (<strong>Selecto Fiesta</strong> en el Centro Comercial La Nevera). Conozco de primera mano los dolores de cabeza de los autónomos.</p>
-                    <p>Por eso apliqué mis conocimientos de ingeniería y desarrollo para crear una web ultrarrápida que destaca el aforo de 60 sillas, la pantalla de 75" y el sonido de 600W, automatizando además la redacción de contratos.</p>
-                    <div class="success-highlight">
-                        <i class="fa-solid fa-check-circle"></i> Lo que funciona en mi local, funciona en el tuyo.
-                    </div>
-                    <div style="margin-top: 25px;">
-                        <a href="https://selectofiestasyeventos.vercel.app/" target="_blank" class="btn-main" style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; font-size: 0.95rem; background: #0f172a;">
-                            Comprobar web real <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-                    </div>
+            
+            <!-- Card 3 -->
+            <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-lg bg-error-container/40 flex items-center justify-center text-error mb-space-md">
+                  <span class="material-symbols-outlined text-[28px]">phone_disabled</span>
                 </div>
-                <div class="success-visual">
-                    <a href="https://selectofiestasyeventos.vercel.app/" target="_blank" style="text-decoration: none; width: 100%; height: 100%; display: block;">
-                        <div class="mockup-box" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
-                            <i class="fa-solid fa-store" style="font-size: 3.5rem; margin-bottom: 20px; color: #60a5fa;"></i>
-                            <span style="font-size: 1.2rem; font-weight: 800; color: white;">Selecto Fiesta</span>
-                            <span style="display: inline-block; margin-top: 15px; font-size: 0.9rem; color: #60a5fa; font-weight: 600; padding: 8px 16px; border: 1px solid rgba(96, 165, 250, 0.4); border-radius: 20px; background: rgba(96, 165, 250, 0.1);">Click para verificar &rarr;</span>
-                        </div>
-                    </a>
-                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">
+                  Pierdes reservas porque nadie sabe cómo contactar
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Formularios eternos de 10 campos que nadie rellena o un número fijo al que no respondes fuera de horario. La gente quiere inmediatez y WhatsApp directo.
+                </p>
+              </div>
+              <div class="mt-space-md pt-space-sm bg-surface-container-low p-3 rounded-lg text-label-sm text-on-surface-variant flex items-center gap-2">
+                <span class="material-symbols-outlined text-[16px] text-error">event_busy</span>
+                <span>Mesas o citas vacías sin necesidad</span>
+              </div>
             </div>
-        </div>
-    </section>
-
-    <!-- NUEVO: Sección Pedir Presupuesto Profesional -->
-    <section id="presupuesto" class="section-saenz bg-dark" style="background-color: #020617;">
-        <div class="container">
-            <div class="quote-box">
-                <div class="quote-text">
-                    <span class="tag-saenz light">Sin Compromiso</span>
-                    <h2 style="color: white; font-size: 2.4rem; font-weight: 800; margin-bottom: 20px; letter-spacing: -0.5px;">Solicita tu presupuesto a medida</h2>
-                    <p style="color: #94a3b8; font-size: 1.1rem; line-height: 1.7; margin-bottom: 30px;">
-                        Olvídate de formularios interminables que nadie responde. Selecciona lo que necesitas y generaremos un mensaje directo para WhatsApp. En menos de 24 horas tendrás una propuesta clara con precio cerrado.
-                    </p>
-                    <ul class="quote-benefits" style="list-style: none; color: white; font-weight: 500;">
-                        <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
-                            <i class="fa-solid fa-bolt" style="color: #60a5fa; font-size: 1.2rem;"></i> Presupuesto exacto, sin costes ocultos.
-                        </li>
-                        <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
-                            <i class="fa-solid fa-file-contract" style="color: #60a5fa; font-size: 1.2rem;"></i> Contrato formal por escrito.
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 12px;">
-                            <i class="fa-solid fa-comments" style="color: #60a5fa; font-size: 1.2rem;"></i> Asesoramiento inicial 100% gratuito.
-                        </li>
-                    </ul>
-                </div>
-                <div class="quote-form-container">
-                    <form id="quoteForm" class="quote-form">
-                        <div class="form-group">
-                            <label for="negocio">Tu Nombre o el de tu Negocio</label>
-                            <input type="text" id="negocio" placeholder="Ej. Clínica Dental López" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="servicio">¿Qué necesitas implementar?</label>
-                            <select id="servicio">
-                                <option value="Web Modelo Escaparate (Clínicas/Servicios)">Web Modelo Escaparate (Clínicas/Servicios)</option>
-                                <option value="Web Modelo Catálogo (Restaurantes)">Web Modelo Catálogo (Restaurantes)</option>
-                                <option value="Web Modelo Reservas (Eventos/Salas)">Web Modelo Reservas (Eventos/Salas)</option>
-                                <option value="Automatización de Contratos/Papeleo">Automatización de Contratos/Papeleo</option>
-                                <option value="Otra Solución Digital">Otra Solución Digital a Medida</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="detalles">Detalles adicionales (Opcional)</label>
-                            <textarea id="detalles" rows="3" placeholder="Me gustaría modernizar mi web actual porque está anticuada y no me entran reservas..."></textarea>
-                        </div>
-                        <button type="button" onclick="enviarPresupuestoWA()" class="btn-quote">
-                            <i class="fa-brands fa-whatsapp"></i> Generar Presupuesto por WhatsApp
-                        </button>
-                    </form>
-                </div>
+            
+          </div>
+          
+          <!-- Banner de Cierre -->
+          <div class="mt-space-xl bg-primary text-on-primary rounded-xl p-space-lg md:p-space-xl shadow-lg flex flex-col md:flex-row items-center justify-between gap-space-md">
+            <div class="flex items-center gap-space-md">
+              <div class="w-12 h-12 rounded-full bg-primary-fixed-dim/20 flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-whatsapp-green text-[32px]">check_circle</span>
+              </div>
+              <div>
+                <h4 class="font-headline-sm text-headline-sm text-on-primary">Yo lo soluciono con una web directa y rápida</h4>
+                <p class="font-body-md text-body-md text-on-primary-container">Pensada exclusivamente para convertir visitas en clientes reales y reservas en tu bandeja de entrada.</p>
+              </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Sobre Mí -->
-    <section id="sobre-mi" class="section-saenz bg-gray">
-        <div class="container about-saenz">
-            <span class="tag-saenz">Rigor Técnico</span>
-            <h2>¿Quién está detrás de esto?</h2>
-            <p>Soy estudiante de <strong>Ingeniería en Tecnologías Industriales en la Universidad de Alcalá</strong> (Escuela Politécnica Superior).</p>
-            <p>Combino el rigor metodológico y analítico de la ingeniería con la experiencia real gestionando comercios físicos. Como empresario, sé que no tienes tiempo para agencias lentas. Yo te doy soluciones limpias, directas y eficaces.</p>
-        </div>
-    </section>
-
-    <!-- CTA Final Ineludible -->
-    <section class="cta-saenz">
-        <div class="container text-center">
-            <h2>¿Listo para dar el paso?</h2>
-            <p>Escríbeme un WhatsApp directo y resolvemos cualquier duda sin compromiso.</p>
-            <a href="https://wa.me/34684156359?text=Hola%20Enrique,%20tengo%20una%20duda%20sobre%20tus%20servicios" target="_blank" class="btn-main-large">
-                <i class="fa-brands fa-whatsapp"></i> Hablar con Enrique
+            <a class="shrink-0 bg-whatsapp-green hover:bg-whatsapp-green-hover text-on-primary font-label-md text-label-md px-6 py-3 rounded-lg shadow-md transition-transform hover:-translate-y-0.5" href="https://wa.me/34684156359" rel="noopener noreferrer" target="_blank">
+              Hablar por WhatsApp
             </a>
+          </div>
+          
         </div>
-    </section>
+      </section>
 
-    <!-- Footer -->
-    <footer class="saenz-footer">
-        <p>&copy; 2026 enriquegomez.dev — Soluciones digitales y automatización para negocios locales.</p>
-    </footer>
+      <!-- 4. QUÉ INCLUYE -->
+      <section class="py-space-2xl md:py-space-3xl bg-surface">
+        <div class="max-w-[1200px] mx-auto px-margin md:px-gutter lg:px-gutter-desktop">
+          <div class="text-center max-w-2xl mx-auto mb-space-xl">
+            <span class="font-label-md text-label-sm text-primary uppercase tracking-wider font-semibold">Solución integral</span>
+            <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface mt-2">
+              Todo lo que incluye tu web
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-3">
+              Sin sorpresas técnicas ni gastos extra ocultos. Una solución llave en mano lista para facturar desde el primer día.
+            </p>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+            
+            <!-- 1 -->
+            <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-md">
+                <span class="material-symbols-outlined text-[28px]">code</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">1. Diseño 100% a medida</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Nada de plantillas prefabricadas, pesadas o lentas. Código limpio, tipografía pulida y arquitectura hecha a la medida de tu identidad local.
+              </p>
+            </div>
+            
+            <!-- 2 -->
+            <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-md">
+                <span class="material-symbols-outlined text-[28px]">devices</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">2. Adaptada a móvil perfecta</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Experiencia fluida pensada para el uso con una sola mano. Botones accesibles al pulgar, tipografía legible bajo la luz del sol y navegación instantánea.
+              </p>
+            </div>
+            
+            <!-- 3 -->
+            <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-md">
+                <span class="material-symbols-outlined text-[28px]">dns</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">3. Dominio y hosting incluidos</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Todo configurado y pagado durante el primer año: certificado SSL de seguridad (https://), servidores de alta velocidad y correo corporativo profesional.
+              </p>
+            </div>
+            
+            <!-- 4 -->
+            <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-md">
+                <span class="material-symbols-outlined text-[28px]">location_searching</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">4. SEO local básico en Google</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Estructuración técnica con microdatos Schema para que Google entienda exactamente tu barrio, ciudad, horario de apertura y especialidad.
+              </p>
+            </div>
+            
+            <!-- 5 -->
+            <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <div class="w-12 h-12 rounded-lg bg-whatsapp-green/10 flex items-center justify-center text-whatsapp-green mb-space-md">
+                <span class="material-symbols-outlined text-[28px]">chat</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">5. WhatsApp y formulario directo</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Botón flotante en cada pantalla con mensaje preconfigurado para que el cliente te hable con un solo clic. Cero fricción de contacto.
+              </p>
+            </div>
+            
+            <!-- 6 -->
+            <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-md">
+                <span class="material-symbols-outlined text-[28px]">pin_drop</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">6. Google Business optimizado</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Sincronización completa entre tu ficha de Google Maps y la nueva web para multiplicar tus reseñas y visitas directas en tienda o clínica.
+              </p>
+            </div>
+            
+          </div>
+          
+          <div class="mt-space-xl text-center">
+            <a class="inline-flex items-center gap-space-sm bg-whatsapp-green hover:bg-whatsapp-green-hover text-on-primary font-label-md text-label-md px-8 py-3.5 rounded-lg shadow-md transition-all hover:-translate-y-0.5" href="https://wa.me/34684156359" rel="noopener noreferrer" target="_blank">
+              <span class="material-symbols-outlined text-[20px]">chat</span>
+              <span>Consultar mi caso por WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </section>
 
-    <script src="script.js"></script>
+      <!-- 5. MODELOS DE WEB -->
+      <section class="py-space-2xl md:py-space-3xl bg-surface-container-low" id="modelos">
+        <div class="max-w-[1200px] mx-auto px-margin md:px-gutter lg:px-gutter-desktop">
+          <div class="text-center max-w-3xl mx-auto mb-space-xl">
+            <span class="font-label-md text-label-sm text-primary uppercase tracking-wider font-semibold">Especialización de sector</span>
+            <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface mt-2">
+              Elige el modelo que encaja con tu negocio
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-3">
+              Estructuras probadas y optimizadas para cada tipo de actividad local. Nada de inventar la rueda: aplicamos lo que genera resultados.
+            </p>
+          </div>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg">
+            
+            <!-- MODELO 1: Clínicas -->
+            <div class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden flex flex-col justify-between hover:shadow-xl transition-shadow duration-300">
+              <div>
+                <div class="h-52 w-full bg-surface-container overflow-hidden relative">
+                  <img class="w-full h-full object-cover" data-alt="Modern aesthetic dental clinic treatment room with dental equipment, bright clean medical clinic ambiance, patient chair, warm lighting, blue accents on web design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrQkSUcvDEB6SHxnA-_sKlr2WH940hdvCUGUcSMeosbbuz5W9uGAOkqM_8uEFfMQD31AcgtpEMZs56mfwt4IOm8gaH0NIT8LX9WpDnGiL2rj5MxI0f0C2fsdn70AyirY9IHuR-BtQjnMqXCABH_io0Qi8R3t7HfIrM48E0p_-a0YHP1x7cSY6cfB9NasKMHtEO9mXsIVAVKzLLcdU47bYDPMlaESO9fKAg65yD6qYekra3jjYz9Ca4" />
+                  <div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded-full text-[12px] font-label-md text-primary shadow-sm">
+                    Clínicas, Bienestar y Salud
+                  </div>
+                </div>
+                <div class="p-space-lg">
+                  <h3 class="font-headline-md text-headline-md text-on-surface">Modelo Escaparate</h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant mt-2">
+                    Transmite máxima higiene, rigor y confianza médica. Diseñado para conseguir citas previas y consultas directas sin fricción.
+                  </p>
+                  <div class="mt-space-md space-y-2 pt-space-xs">
+                    <div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+                      <span class="material-symbols-outlined text-whatsapp-green text-[18px] shrink-0">check_circle</span>
+                      <span>Tabla clara de tratamientos y especialidades</span>
+                    </div>
+                    <div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+                      <span class="material-symbols-outlined text-whatsapp-green text-[18px] shrink-0">check_circle</span>
+                      <span>Perfiles con foto y titulación del equipo</span>
+                    </div>
+                    <div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+                      <span class="material-symbols-outlined text-whatsapp-green text-[18px] shrink-0">check_circle</span>
+                      <span>Botón prioritario de Cita Previa por WhatsApp</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="p-space-lg pt-0 flex items-center gap-2">
+                <a class="flex-1 text-center bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-sm py-2.5 rounded-lg transition-colors" href="https://wa.me/34684156359?text=Hola%20Enrique,%20quiero%20ver%20la%20demo%20del%20Modelo%20Escaparate%20para%20Clínicas" rel="noopener noreferrer" target="_blank">
+                  Ver demo real
+                </a>
+                <a class="flex-1 text-center bg-primary-container hover:bg-secondary text-surface-bright font-label-md text-label-sm py-2.5 rounded-lg shadow-sm transition-colors" href="https://wa.me/34684156359?text=Hola%20Enrique,%20quiero%20el%20Modelo%20Escaparate" rel="noopener noreferrer" target="_blank">
+                  Elegir este
+                </a>
+              </div>
+            </div>
+            
+            <!-- MODELO 2: Restaurantes -->
+            <div class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden flex flex-col justify-between hover:shadow-xl transition-shadow duration-300">
+              <div>
+                <div class="h-52 w-full bg-surface-container overflow-hidden relative">
+                  <img class="w-full h-full object-cover" data-alt="Close up gourmet food photography of Mediterranean dishes, rustic wooden dining table in cozy Spanish restaurant with wine glasses, warm hospitality atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKYx0A7Fr3c7LTM042yBlgl9DAlO_S2Le2_xQB5i29dvhOu6GMPKJvdScIAvmfC4lLOxQxSB7GooPiN8EPVvOC4fL-WY6zSfuzAW-6eazo1defRznefz0Rf-cumH3811d5NWysOgMi5gzAGNBNXSEZ9EfMzULKAv1IYNXwJ-w-PM3-bDdk8Xlq6EHPbBitgmVo4fIfR7b9u_SAhfyTXIdBoqOtuIPpI6GUP8Y3ZK_R6vJWq0bK4Dch" />
+                  <div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded-full text-[12px] font-label-md text-primary shadow-sm">
+                    Restaurantes, Bares y Asadores
+                  </div>
+                </div>
+                <div class="p-space-lg">
+                  <h3 class="font-headline-md text-headline-md text-on-surface">Modelo Catálogo Visual</h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant mt-2">
+                    Cartas digitales interactivas organizadas por categorías que abren el apetito y aumentan el ticket medio de tus comensales.
+                  </p>
+                  <div class="mt-space-md space-y-2 pt-space-xs">
+                    <div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+                      <span class="material-symbols-outlined text-whatsapp-green text-[18px] shrink-0">check_circle</span>
+                      <span>Menú del día actualizado y accesible en móvil</span>
+                    </div>
+                    <div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+                      <span class="material-symbols-outlined text-whatsapp-green text-[18px] shrink-0">check_circle</span>
+                      <span>Iconos visuales de alérgenos normativos</span>
+                    </div>
+                    <div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+                      <span class="material-symbols-outlined text-whatsapp-green text-[18px] shrink-0">check_circle</span>
+                      <span>Reserva de mesa directa con mapa de llegada</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="p-space-lg pt-0 flex items-center gap-2">
+                <a class="flex-1 text-center bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-sm py-2.5 rounded-lg transition-colors" href="https://wa.me/34684156359?text=Hola%20Enrique,%20quiero%20ver%20la%20demo%20del%20Modelo%20Catálogo%20para%20Restaurantes" rel="noopener noreferrer" target="_blank">
+                  Ver demo real
+                </a>
+                <a class="flex-1 text-center bg-primary-container hover:bg-secondary text-surface-bright font-label-md text-label-sm py-2.5 rounded-lg shadow-sm transition-colors" href="https://wa.me/34684156359?text=Hola%20Enrique,%20quiero%20el%20Modelo%20Catálogo" rel="noopener noreferrer" target="_blank">
+                  Elegir este
+                </a>
+              </div>
+            </div>
+            
+            <!-- MODELO 3: Salas de Eventos -->
+            <div class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden flex flex-col justify-between hover:shadow-xl transition-shadow duration-300">
+              <div>
+                <div class="h-52 w-full bg-surface-container overflow-hidden relative">
+                  <img class="w-full h-full object-cover" data-alt="Modern indoor private event venue with party lighting, birthday celebration setup, 75 inch screen, high-tech audiovisual equipment and 60 comfortable chairs in stylish room." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQnBxFwxAsf4GVgDDiZ9khHVCK2rl5B7bLfsfYzLCCFsIQevRgykm9glihEpbu1MBKOKB09icqjsRHOOoLkUfGy161HghtrkjfzCeALXFY0uZ8jHY0Uijf2UsEtuKHFENoo-boEJ_YWwSbOCV2vZN8i7QSKoK7gU35hp1tS05qJ_oLJoBozcPL8OJtDtwlT8A0FHFOGwCl1gSN4_05dJaHjG1WlqKuzbpe1_65zE1RvJL8AEiU0mJF" />
+                  <div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded-full text-[12px] font-label-md text-primary shadow-sm">
+                    Locales de Eventos, Salas y Ocio
+                  </div>
+                </div>
+                <div class="p-space-lg">
+                  <h3 class="font-headline-md text-headline-md text-on-surface">Modelo Reservas Rápidas</h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant mt-2">
+                    Muestra el equipamiento completo, aforo y características técnicas, cerrando fechas de alquiler de forma ágil y automatizada.
+                  </p>
+                  <div class="mt-space-md space-y-2 pt-space-xs">
+                    <div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+                      <span class="material-symbols-outlined text-whatsapp-green text-[18px] shrink-0">check_circle</span>
+                      <span>Galería fotográfica inmersiva del local</span>
+                    </div>
+                    <div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+                      <span class="material-symbols-outlined text-whatsapp-green text-[18px] shrink-0">check_circle</span>
+                      <span>Calendario de turnos y disponibilidad</span>
+                    </div>
+                    <div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+                      <span class="material-symbols-outlined text-whatsapp-green text-[18px] shrink-0">check_circle</span>
+                      <span>Automatización de generación de contratos</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="p-space-lg pt-0 flex items-center gap-2">
+                <a class="flex-1 text-center bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-sm py-2.5 rounded-lg transition-colors" href="https://wa.me/34684156359?text=Hola%20Enrique,%20quiero%20ver%20la%20demo%20del%20Modelo%20Reservas%20Rápidas" rel="noopener noreferrer" target="_blank">
+                  Ver demo real
+                </a>
+                <a class="flex-1 text-center bg-primary-container hover:bg-secondary text-surface-bright font-label-md text-label-sm py-2.5 rounded-lg shadow-sm transition-colors" href="https://wa.me/34684156359?text=Hola%20Enrique,%20quiero%20el%20Modelo%20Reservas%20Rápidas" rel="noopener noreferrer" target="_blank">
+                  Elegir este
+                </a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. CASO DE ÉXITO REAL -->
+      <section class="py-space-2xl md:py-space-3xl bg-surface-container-lowest">
+        <div class="max-w-[1200px] mx-auto px-margin md:px-gutter lg:px-gutter-desktop">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-fixed text-primary font-label-md text-label-sm mb-space-sm">
+            <span class="material-symbols-outlined text-[16px]">verified</span>
+            <span>Caso de Estudio Real — Local de Eventos en Madrid</span>
+          </div>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+            
+            <!-- Visual Column -->
+            <div class="lg:col-span-6 relative">
+              <div class="bg-surface-container-low rounded-2xl p-4 shadow-xl">
+                <div class="h-72 w-full rounded-xl overflow-hidden relative shadow-md">
+                  <img class="w-full h-full object-cover" data-alt="Real local event hall Selecto Fiesta in El Casar, Guadalajara, cozy private celebration room with 75 inch 4K TV, modern disco party lighting, audio speakers, stylish clean seating." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuwVlyOUgOCYFgp7Hhs3FSn2rg17NjXZAoTGpQV4enleYc4soVM4ymDnWcABgnyAWXIAAA3zvAE5-jyOSHwNCGrgAu9zSWA75i2n1GEysFGKRZWmQwqJvI01Izc98T30S5jaQ1bhkxQyeodubQfKEgjQdeR9nkWHmuq3CkuXnBMb41c2CB_ZePSc3RnaLU0bYHmiJrp7mb6NVDBv_WJfw6rf50EiIWhFcBynAdVO4M90gr2bxz0X31" />
+                  <div class="absolute bottom-3 left-3 bg-surface-dark/90 backdrop-blur-md text-surface-bright px-3 py-1 rounded text-label-sm">
+                    Selecto Fiesta • C.C. La Nevera, El Casar, Guadalajara
+                  </div>
+                </div>
+                <div class="mt-4 p-3 bg-surface-container-lowest rounded-xl flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-whatsapp-green animate-pulse"></span>
+                    <span class="font-label-md text-label-sm text-on-surface">Web operativa &amp; Sistema de contratos activo</span>
+                  </div>
+                  <span class="text-label-sm text-primary font-bold">100% Automatizado</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Text Column -->
+            <div class="lg:col-span-6 flex flex-col gap-space-md">
+              <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface">
+                "Lo que funciona en mi local, funciona en el tuyo"
+              </h2>
+              <div class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+                <p>
+                  Soy dueño de un local de eventos físico y conozco de primera mano los dolores de cabeza de los autónomos: responder las mismas preguntas 30 veces al día por WhatsApp, cuadrar fechas y redactar contratos a mano por las noches.
+                </p>
+                <p>
+                  Creé una web ultra rápida que destaca con transparencia el equipamiento (aforo de 60 sillas, pantalla 4K de 75", sonido profesional de 600W) y automaticé la redacción de contratos de alquiler legales en 1 clic.
+                </p>
+              </div>
+              
+              <!-- 3 Métricas -->
+              <div class="grid grid-cols-3 gap-space-sm pt-space-xs">
+                <div class="bg-surface-container-low p-space-md rounded-xl text-center">
+                  <span class="font-display-hero text-headline-lg text-primary font-bold block">+45</span>
+                  <span class="font-label-md text-label-sm text-on-surface-variant mt-1 block">Consultas al mes</span>
+                </div>
+                <div class="bg-surface-container-low p-space-md rounded-xl text-center">
+                  <span class="font-display-hero text-headline-lg text-whatsapp-green font-bold block">85%</span>
+                  <span class="font-label-md text-label-sm text-on-surface-variant mt-1 block">Cierres WhatsApp</span>
+                </div>
+                <div class="bg-surface-container-low p-space-md rounded-xl text-center">
+                  <span class="font-display-hero text-headline-lg text-secondary font-bold block">0.6s</span>
+                  <span class="font-label-md text-label-sm text-on-surface-variant mt-1 block">Tiempo de carga</span>
+                </div>
+              </div>
+              
+              <div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
+                <a class="inline-flex items-center gap-1.5 bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md px-5 py-2.5 rounded-lg transition-colors" href="https://selectofiestasyeventos.vercel.app/" rel="noopener noreferrer" target="_blank">
+                  <span>Ver web de Selecto Fiesta</span>
+                  <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+                </a>
+                <a class="inline-flex items-center gap-1.5 bg-whatsapp-green hover:bg-whatsapp-green-hover text-on-primary font-label-md text-label-md px-5 py-2.5 rounded-lg shadow-sm transition-transform hover:-translate-y-0.5" href="https://wa.me/34684156359?text=Hola%20Enrique,%20quiero%20algo%20similar%20para%20mi%20negocio" rel="noopener noreferrer" target="_blank">
+                  <span>Quiero algo similar para mi negocio</span>
+                </a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. CÓMO TRABAJO -->
+      <section class="py-space-2xl md:py-space-3xl bg-surface-alt">
+        <div class="max-w-[1200px] mx-auto px-margin md:px-gutter lg:px-gutter-desktop">
+          <div class="text-center max-w-2xl mx-auto mb-space-xl">
+            <span class="font-label-md text-label-sm text-primary uppercase tracking-wider font-semibold">Metodología ágil</span>
+            <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface mt-2">
+              Cómo trabajo: de la idea a tu web funcionando en 7 días
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-3">
+              Sin reuniones eternas ni pérdidas de tiempo. Un proceso directo, claro y pensado para autónomos ocupados.
+            </p>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg relative">
+            
+            <!-- Step 1 -->
+            <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm relative z-10 flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-primary text-on-primary font-headline-md text-headline-md flex items-center justify-center mb-space-md">
+                  1
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Hablamos 10 minutos</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Me cuentas cómo funciona tu negocio físico, qué tipo de clientes buscas captar y qué te está fallando hoy en internet o en tus canales actuales.
+                </p>
+              </div>
+              <div class="mt-space-md pt-space-xs text-label-sm text-primary font-semibold flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">call</span>
+                <span>Llamada corta o chat WhatsApp</span>
+              </div>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm relative z-10 flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-primary text-on-primary font-headline-md text-headline-md flex items-center justify-center mb-space-md">
+                  2
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Contrato y precio cerrado</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Definimos el alcance exacto. Sabes el importe al céntimo y la fecha de entrega fijada por escrito en contrato. Cero costes sorpresa.
+                </p>
+              </div>
+              <div class="mt-space-md pt-space-xs text-label-sm text-primary font-semibold flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">description</span>
+                <span>Seguridad legal mutua</span>
+              </div>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm relative z-10 flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-whatsapp-green text-on-primary font-headline-md text-headline-md flex items-center justify-center mb-space-md">
+                  3
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Lanzamiento en 7 días</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Yo me encargo de todo el montaje técnico, redacción de textos comerciales y fotos. Te entrego las llaves y tu web empieza a recibir visitas.
+                </p>
+              </div>
+              <div class="mt-space-md pt-space-xs text-label-sm text-whatsapp-green font-semibold flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">rocket_launch</span>
+                <span>Lista para facturar</span>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="mt-space-xl text-center">
+            <a class="inline-flex items-center gap-space-sm bg-whatsapp-green hover:bg-whatsapp-green-hover text-on-primary font-label-md text-label-md px-8 py-3.5 rounded-lg shadow-md transition-all hover:-translate-y-0.5" href="https://wa.me/34684156359" rel="noopener noreferrer" target="_blank">
+              <span class="material-symbols-outlined text-[20px]">chat</span>
+              <span>Empezar ahora por WhatsApp</span>
+            </a>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Respuesta en menos de 2 horas en horario laboral</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. PRECIOS TRANSPARENTES -->
+      <section class="py-space-2xl md:py-space-3xl bg-surface">
+        <div class="max-w-[1200px] mx-auto px-margin md:px-gutter lg:px-gutter-desktop">
+          <div class="text-center max-w-2xl mx-auto mb-space-xl">
+            <span class="font-label-md text-label-sm text-primary uppercase tracking-wider font-semibold">Tarifas honestas</span>
+            <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface mt-2">
+              Precios claros, sin sorpresas ni costes ocultos
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-3">
+              Inversión fija para que rentabilices tu web desde las primeras semanas de funcionamiento.
+            </p>
+          </div>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg items-stretch">
+            
+            <!-- Plan 1 -->
+            <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+              <div>
+                <span class="font-label-md text-label-sm text-on-surface-variant uppercase">Presencia Esencial</span>
+                <h3 class="font-headline-md text-headline-md text-on-surface mt-1">Básico Local</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Ideal para pequeños negocios que necesitan presencia seria y rápida en internet.</p>
+                
+                <div class="mt-space-md pb-space-md">
+                  <span class="text-body-sm text-on-surface-variant">Desde</span>
+                  <div class="flex items-baseline gap-1">
+                    <span class="font-display-hero text-headline-lg text-on-surface font-extrabold">490</span>
+                    <span class="font-headline-sm text-headline-sm text-on-surface">€</span>
+                    <span class="text-label-sm text-on-surface-variant">+ IVA</span>
+                  </div>
+                </div>
+                
+                <div class="space-y-2.5 pt-space-xs">
+                  <div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px] shrink-0">check</span>
+                    <span>Landing page completa de 1 página</span>
+                  </div>
+                  <div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px] shrink-0">check</span>
+                    <span>Diseño 100% adaptado a móviles</span>
+                  </div>
+                  <div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px] shrink-0">check</span>
+                    <span>Botón directo WhatsApp integrado</span>
+                  </div>
+                  <div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px] shrink-0">check</span>
+                    <span>Dominio y hosting incluido 1 año</span>
+                  </div>
+                  <div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px] shrink-0">check</span>
+                    <span>Entrega en 7 días laborables</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="pt-space-lg mt-space-md">
+                <a class="w-full inline-flex justify-center items-center py-3 bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md rounded-lg transition-colors" href="https://wa.me/34684156359?text=Hola%20Enrique,%20me%20interesa%20el%20Plan%20Básico%20Local" rel="noopener noreferrer" target="_blank">
+                  Pedir este pack
+                </a>
+              </div>
+            </div>
+            
+            <!-- Plan 2: Destacado -->
+            <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-xl flex flex-col justify-between relative transform lg:-translate-y-2">
+              <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-4 py-1 rounded-full text-label-sm font-label-md shadow-md uppercase tracking-wider">
+                Más elegido ⭐
+              </div>
+              
+              <div>
+                <span class="font-label-md text-label-sm text-primary uppercase font-bold">Máximo Rendimiento</span>
+                <h3 class="font-headline-md text-headline-md text-on-surface mt-1">Profesional Local</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">El más completo para clínicas, restaurantes con carta y salas de eventos.</p>
+                
+                <div class="mt-space-md pb-space-md">
+                  <span class="text-body-sm text-on-surface-variant">Desde</span>
+                  <div class="flex items-baseline gap-1">
+                    <span class="font-display-hero text-headline-lg text-primary font-extrabold">790</span>
+                    <span class="font-headline-sm text-headline-sm text-primary">€</span>
+                    <span class="text-label-sm text-on-surface-variant">+ IVA</span>
+                  </div>
+                </div>
+                
+                <div class="space-y-2.5 pt-space-xs">
+                  <div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px] shrink-0">check</span>
+                    <span class="font-medium">Todo lo incluido en el plan Básico</span>
+                  </div>
+                  <div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px] shrink-0">check</span>
+                    <span>Web multipágina o catálogo interactivo de servicios</span>
+                  </div>
+                  <div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px] shrink-0">check</span>
+                    <span>Optimización SEO local en Google y Google Maps</span>
+                  </div>
+                  <div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px] shrink-0">check</span>
+                    <span>Sincronización con perfil Google Business</span>
+                  </div>
+                  <div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px] shrink-0">check</span>
+                    <span>Soporte prioritario y entrega en 7 días</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="pt-space-lg mt-space-md">
+                <a class="w-full inline-flex justify-center items-center py-3 bg-whatsapp-green hover:bg-whatsapp-green-hover text-on-primary font-label-md text-label-md rounded-lg shadow-md transition-all hover:-translate-y-0.5" href="https://wa.me/34684156359?text=Hola%20Enrique,%20quiero%20el%20Plan%20Profesional%20Local" rel="noopener noreferrer" target="_blank">
+                  Pedir este pack
+                </a>
+              </div>
+            </div>
+            
+            <!-- Plan 3 -->
+            <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+              <div>
+                <span class="font-label-md text-label-sm text-on-surface-variant uppercase">Solución Avanzada</span>
+                <h3 class="font-headline-md text-headline-md text-on-surface mt-1">A Medida &amp; Automatización</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Para locales y negocios con gestión de reservas o redacción de contratos.</p>
+                
+                <div class="mt-space-md pb-space-md">
+                  <span class="text-body-sm text-on-surface-variant">Desde</span>
+                  <div class="flex items-baseline gap-1">
+                    <span class="font-display-hero text-headline-lg text-on-surface font-extrabold">1.250</span>
+                    <span class="font-headline-sm text-headline-sm text-on-surface">€</span>
+                    <span class="text-label-sm text-on-surface-variant">+ IVA</span>
+                  </div>
+                </div>
+                
+                <div class="space-y-2.5 pt-space-xs">
+                  <div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px] shrink-0">check</span>
+                    <span class="font-medium">Todo lo del plan Profesional</span>
+                  </div>
+                  <div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px] shrink-0">check</span>
+                    <span>Generador automático de contratos en PDF</span>
+                  </div>
+                  <div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px] shrink-0">check</span>
+                    <span>Calendario de reservas y cobros automáticos</span>
+                  </div>
+                  <div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-whatsapp-green text-[18px] shrink-0">check</span>
+                    <span>Integraciones con CRM y notificaciones WhatsApp</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="pt-space-lg mt-space-md">
+                <a class="w-full inline-flex justify-center items-center py-3 bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md rounded-lg transition-colors" href="https://wa.me/34684156359?text=Hola%20Enrique,%20quiero%20el%20Plan%20A%20Medida%20con%20Automatización" rel="noopener noreferrer" target="_blank">
+                  Pedir este pack
+                </a>
+              </div>
+            </div>
+            
+          </div>
+          
+          <!-- Trust Badges Under Pricing -->
+          <div class="mt-space-xl flex flex-col sm:flex-row items-center justify-center gap-space-lg text-center text-label-sm font-label-md text-on-surface-variant">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-[20px]">credit_card</span>
+              <span>Pago fraccionado: 50% al inicio y 50% tras entrega conforme</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-whatsapp-green text-[20px]">lock</span>
+              <span>Sin cuotas mensuales obligatorias ni ataduras de permanencia</span>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+      <!-- 9. TESTIMONIOS -->
+      <section class="py-space-2xl md:py-space-3xl bg-surface-container-low">
+        <div class="max-w-[1200px] mx-auto px-margin md:px-gutter lg:px-gutter-desktop">
+          <div class="text-center max-w-2xl mx-auto mb-space-xl">
+            <span class="font-label-md text-label-sm text-primary uppercase tracking-wider font-semibold">Opiniones reales</span>
+            <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface mt-2">
+              Lo que dicen los dueños de negocios locales
+            </h2>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+            
+            <!-- Testimonio 1 -->
+            <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-1 text-amber-500 mb-space-sm">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface italic">
+                  "La mejor inversión del año para nuestra clínica dental. En dos semanas ya teníamos pacientes nuevos reservando directamente por WhatsApp. Enrique entendió todo a la primera."
+                </p>
+              </div>
+              <div class="mt-space-lg pt-space-sm flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold">
+                  CM
+                </div>
+                <div>
+                  <p class="font-label-md text-label-sm text-on-surface font-semibold">Dra. Carmen M.</p>
+                  <p class="font-body-sm text-[12px] text-on-surface-variant">Clínica Dental Alameda (Madrid)</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Testimonio 2 -->
+            <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-1 text-amber-500 mb-space-sm">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface italic">
+                  "Nuestra carta digital ahora carga en medio segundo. Los fines de semana llenamos las mesas gracias a que nos encuentran fácilmente en Google y ven los platos claros."
+                </p>
+              </div>
+              <div class="mt-space-lg pt-space-sm flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold">
+                  JR
+                </div>
+                <div>
+                  <p class="font-label-md text-label-sm text-on-surface font-semibold">Javier R.</p>
+                  <p class="font-body-sm text-[12px] text-on-surface-variant">Asador Los Robles</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Testimonio 3 -->
+            <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-1 text-amber-500 mb-space-sm">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface italic">
+                  "Enrique comprende las necesidades de un local porque él mismo gestiona uno. Nos ahorra 10 horas semanales redactando contratos de forma automática. Trato impecable."
+                </p>
+              </div>
+              <div class="mt-space-lg pt-space-sm flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold">
+                  MS
+                </div>
+                <div>
+                  <p class="font-label-md text-label-sm text-on-surface font-semibold">Marcos S.</p>
+                  <p class="font-body-sm text-[12px] text-on-surface-variant">Espacio Eventos Norte</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. GARANTÍA SIN RIESGO -->
+      <section class="py-space-2xl md:py-space-3xl bg-surface">
+        <div class="max-w-[1200px] mx-auto px-margin md:px-gutter lg:px-gutter-desktop">
+          <div class="bg-surface-dark text-surface-bright rounded-2xl p-space-xl md:p-space-2xl shadow-2xl relative overflow-hidden">
+            <div class="absolute -right-16 -bottom-16 w-80 h-80 bg-primary/20 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-space-lg items-center relative z-10">
+              <div class="md:col-span-3 flex justify-center md:justify-start">
+                <div class="w-24 h-24 md:w-32 md:md-32 rounded-2xl bg-surface-dark-subtle flex items-center justify-center text-whatsapp-green">
+                  <span class="material-symbols-outlined text-[64px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                </div>
+              </div>
+              <div class="md:col-span-9 flex flex-col gap-space-xs">
+                <span class="font-label-md text-label-sm text-whatsapp-green uppercase tracking-wider font-bold">Compromiso 100% Blindado</span>
+                <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-surface-bright">
+                  Garantía Total de Satisfacción: Sin Riesgo
+                </h2>
+                <p class="font-body-lg text-body-lg text-outline-variant max-w-2xl mt-1">
+                  Si no te convence el diseño inicial que te propongo para tu negocio, no pagas el resto. Así de simple. Además, el proyecto incluye una ronda completa de cambios para pulir cada detalle hasta que quedes 100% satisfecho antes del lanzamiento.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11. SOBRE MÍ -->
+      <section class="py-space-2xl md:py-space-3xl bg-surface-alt">
+        <div class="max-w-[1200px] mx-auto px-margin md:px-gutter lg:px-gutter-desktop">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+            
+            <!-- Left: Image -->
+            <div class="lg:col-span-5 relative">
+              <div class="relative mx-auto max-w-md">
+                <div class="aspect-square rounded-2xl overflow-hidden shadow-xl bg-surface-container">
+                  <img alt="Enrique Gómez, desarrollador y consultor para negocios locales" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwiU06pF8jUGs201mQPZNiVaaLdp0m8agPQFQFuTor2t16ILYCRte2NpMSPz2858ZlAMRi37XA8sZNdItPtGfesAw4Eqrng5aQald0CuiyjZBdh4CSEXx1-XhqXaXerxktEObaPdhDxzWEm-A-Ii32NdGbqWNIbu21Pa8V9I2BNj9GNAR3N7bLV3mxvFokiBEkJly8uL4-V13OAd4p8rGO1svwEx-t4SAe7OEBQXahVB1hsY6OWaZG" />
+                </div>
+                <div class="absolute -bottom-4 -right-4 bg-surface-container-lowest text-on-surface px-4 py-2.5 rounded-xl shadow-lg flex items-center gap-2">
+                  <span class="w-3 h-3 rounded-full bg-whatsapp-green"></span>
+                  <span class="font-label-md text-label-sm font-bold">Trato 100% Directo</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Right: Text Content -->
+            <div class="lg:col-span-7 flex flex-col gap-space-md">
+              <span class="font-label-md text-label-sm text-primary uppercase tracking-wider font-semibold">Cercanía y profesionalidad</span>
+              <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface">
+                La persona detrás de tu web
+              </h2>
+              <div class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+                <p>
+                  Soy Enrique, estudiante de Ingeniería en Tecnologías Industriales en la Universidad de Alcalá y empresario local.
+                </p>
+                <p>
+                  Combino el rigor técnico y la optimización de procesos de la ingeniería con la experiencia real del día a día de gestionar un negocio físico en Madrid. Sé perfectamente que como autónomo no tienes tiempo que perder con agencias lentas que te hablan con términos técnicos que no necesitas.
+                </p>
+                <p>
+                  Te doy soluciones limpias, directas, que cargan al segundo y que están pensadas para generar ventas desde la primera semana.
+                </p>
+              </div>
+              
+              <!-- 3 Badges de confianza -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm pt-space-xs">
+                <div class="bg-surface-container-lowest p-3 rounded-lg shadow-sm">
+                  <span class="material-symbols-outlined text-primary text-[20px]">assignment</span>
+                  <p class="font-label-md text-label-sm text-on-surface mt-1">Precio cerrado</p>
+                  <p class="font-body-sm text-[12px] text-on-surface-variant">Garantizado en contrato</p>
+                </div>
+                <div class="bg-surface-container-lowest p-3 rounded-lg shadow-sm">
+                  <span class="material-symbols-outlined text-primary text-[20px]">edit_document</span>
+                  <p class="font-label-md text-label-sm text-on-surface mt-1">Contrato formal</p>
+                  <p class="font-body-sm text-[12px] text-on-surface-variant">Seguridad y plazos fijos</p>
+                </div>
+                <div class="bg-surface-container-lowest p-3 rounded-lg shadow-sm">
+                  <span class="material-symbols-outlined text-primary text-[20px]">handshake</span>
+                  <p class="font-label-md text-label-sm text-on-surface mt-1">Sin intermediarios</p>
+                  <p class="font-body-sm text-[12px] text-on-surface-variant">Hablas siempre conmigo</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <!-- 12. PREGUNTAS FRECUENTES -->
+      <section class="py-space-2xl md:py-space-3xl bg-surface">
+        <div class="max-w-[900px] mx-auto px-margin md:px-gutter lg:px-gutter-desktop">
+          <div class="text-center mb-space-xl">
+            <span class="font-label-md text-label-sm text-primary uppercase tracking-wider font-semibold">Claridad ante todo</span>
+            <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface mt-2">
+              Preguntas frecuentes resueltas
+            </h2>
+          </div>
+          
+          <div class="space-y-space-md" id="faq-accordion">
+            
+            <!-- FAQ 1 -->
+            <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+              <button class="w-full p-5 text-left flex items-center justify-between gap-4 font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors focus:outline-none" onclick="toggleFaq(this)" type="button">
+                <span>¿Cuánto tarda en estar lista la web?</span>
+                <span class="material-symbols-outlined text-[24px] text-primary transition-transform duration-200">expand_more</span>
+              </button>
+              <div class="px-5 pb-5 font-body-md text-body-md text-on-surface-variant hidden">
+                Exactamente 7 días laborables desde que recibo la información básica y fotos de tu negocio. Si no cumplo el plazo acordado, te compenso en el precio final.
+              </div>
+            </div>
+            
+            <!-- FAQ 2 -->
+            <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+              <button class="w-full p-5 text-left flex items-center justify-between gap-4 font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors focus:outline-none" onclick="toggleFaq(this)" type="button">
+                <span>¿La web es 100% mía para siempre?</span>
+                <span class="material-symbols-outlined text-[24px] text-primary transition-transform duration-200">expand_more</span>
+              </button>
+              <div class="px-5 pb-5 font-body-md text-body-md text-on-surface-variant hidden">
+                Sí, absoluta y totalmente tuya. Tienes los accesos completos de hosting y dominio a tu nombre. Sin modelos de renting, sin cuotas cautivas ni letra pequeña.
+              </div>
+            </div>
+            
+            <!-- FAQ 3 -->
+            <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+              <button class="w-full p-5 text-left flex items-center justify-between gap-4 font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors focus:outline-none" onclick="toggleFaq(this)" type="button">
+                <span>¿Tengo que pagar una cuota todos los meses?</span>
+                <span class="material-symbols-outlined text-[24px] text-primary transition-transform duration-200">expand_more</span>
+              </button>
+              <div class="px-5 pb-5 font-body-md text-body-md text-on-surface-variant hidden">
+                No. Solo pagas por el desarrollo una vez. El hosting y tu dominio están 100% incluidos el primer año. A partir del segundo año, únicamente pagas la renovación estándar del servidor y dominio (aprox. 80-100€ al año directamente al proveedor o gestionado conmigo).
+              </div>
+            </div>
+            
+            <!-- FAQ 4 -->
+            <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+              <button class="w-full p-5 text-left flex items-center justify-between gap-4 font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors focus:outline-none" onclick="toggleFaq(this)" type="button">
+                <span>¿Puedo cambiar textos, precios y fotos después?</span>
+                <span class="material-symbols-outlined text-[24px] text-primary transition-transform duration-200">expand_more</span>
+              </button>
+              <div class="px-5 pb-5 font-body-md text-body-md text-on-surface-variant hidden">
+                Sí. Te grabo un vídeo explicativo personalizado de 5 minutos para que puedas modificar precios de la carta o cambiar imágenes cuando quieras. Y si prefieres no tocar nada, puedes pedirme cambios puntuales.
+              </div>
+            </div>
+            
+            <!-- FAQ 5 -->
+            <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+              <button class="w-full p-5 text-left flex items-center justify-between gap-4 font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors focus:outline-none" onclick="toggleFaq(this)" type="button">
+                <span>¿Qué necesitas de mí para empezar?</span>
+                <span class="material-symbols-outlined text-[24px] text-primary transition-transform duration-200">expand_more</span>
+              </button>
+              <div class="px-5 pb-5 font-body-md text-body-md text-on-surface-variant hidden">
+                Solo una breve llamada de 10 minutos para conocernos y que me envíes fotos de tu local o clínica y tu logotipo si ya lo tienes. Del diseño técnico, textos comerciales persuasivos y configuración de servidores me encargo yo al 100%.
+              </div>
+            </div>
+            
+            <!-- FAQ 6 -->
+            <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+              <button class="w-full p-5 text-left flex items-center justify-between gap-4 font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors focus:outline-none" onclick="toggleFaq(this)" type="button">
+                <span>¿Qué pasa si quiero cambios antes del lanzamiento?</span>
+                <span class="material-symbols-outlined text-[24px] text-primary transition-transform duration-200">expand_more</span>
+              </button>
+              <div class="px-5 pb-5 font-body-md text-body-md text-on-surface-variant hidden">
+                El proyecto incluye una ronda completa de revisiones y ajustes para dejar cada color, texto y botón exactamente como te guste antes de publicar la web de forma definitiva.
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <!-- 13. FORMULARIO DE PRESUPUESTO EXPRESS -->
+      <section class="py-space-2xl md:py-space-3xl bg-surface-container-low">
+        <div class="max-w-[1200px] mx-auto px-margin md:px-gutter lg:px-gutter-desktop">
+          <div class="bg-surface-container-lowest rounded-2xl shadow-xl p-space-lg md:p-space-2xl">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+              
+              <!-- Left Column -->
+              <div class="lg:col-span-5 flex flex-col justify-between">
+                <div>
+                  <span class="font-label-md text-label-sm text-primary uppercase tracking-wider font-semibold">Sin compromiso</span>
+                  <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface mt-2">
+                    Pide tu presupuesto express
+                  </h2>
+                  <p class="font-body-md text-body-md text-on-surface-variant mt-3">
+                    Te respondo en menos de 24 horas con una propuesta clara, alcance definido y precio cerrado.
+                  </p>
+                  
+                  <div class="mt-space-lg space-y-3">
+                    <div class="flex items-center gap-3 font-label-md text-label-sm text-on-surface">
+                      <span class="material-symbols-outlined text-whatsapp-green text-[20px]">check_circle</span>
+                      <span>Presupuesto exacto, sin costes ocultos</span>
+                    </div>
+                    <div class="flex items-center gap-3 font-label-md text-label-sm text-on-surface">
+                      <span class="material-symbols-outlined text-whatsapp-green text-[20px]">check_circle</span>
+                      <span>Contrato formal firmado por escrito</span>
+                    </div>
+                    <div class="flex items-center gap-3 font-label-md text-label-sm text-on-surface">
+                      <span class="material-symbols-outlined text-whatsapp-green text-[20px]">check_circle</span>
+                      <span>Respuesta rápida en menos de 24 horas</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="mt-space-lg pt-space-md bg-surface-container-low p-4 rounded-xl space-y-2">
+                  <p class="font-label-md text-label-sm text-on-surface font-semibold">¿Prefieres contactar directamente?</p>
+                  <div class="flex flex-col gap-1 text-body-sm text-on-surface-variant">
+                    <a class="hover:text-primary flex items-center gap-1.5" href="tel:+34684156359">
+                      <span class="material-symbols-outlined text-[16px]">call</span>
+                      <span>684 15 63 59</span>
+                    </a>
+                    <a class="hover:text-primary flex items-center gap-1.5" href="mailto:enrique.gomez.moreno.egm@gmail.com">
+                      <span class="material-symbols-outlined text-[16px]">mail</span>
+                      <span>enrique.gomez.moreno.egm@gmail.com</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Right Column: Interactive Form -->
+              <div class="lg:col-span-7 bg-surface p-space-lg rounded-xl">
+                <form class="space-y-4" onsubmit="handleExpressSubmit(event)">
+                  <div>
+                    <label class="block font-label-md text-label-sm text-on-surface mb-1">Nombre de tu negocio o local *</label>
+                    <input class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary text-body-md shadow-sm" id="form-business" placeholder="Ej. Clínica Dental Alameda / Asador Los Robles" required="" type="text" />
+                  </div>
+                  <div>
+                    <label class="block font-label-md text-label-sm text-on-surface mb-1">Tipo de web que necesitas *</label>
+                    <select class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary text-body-md shadow-sm" id="form-type">
+                      <option value="Modelo Escaparate (Clínicas y Salud)">Modelo Escaparate (Clínicas y Salud)</option>
+                      <option value="Modelo Catálogo Visual (Restaurantes y Bares)">Modelo Catálogo Visual (Restaurantes y Bares)</option>
+                      <option value="Modelo Reservas Rápidas (Locales de Eventos)">Modelo Reservas Rápidas (Locales de Eventos)</option>
+                      <option value="Automatización de Contratos y Software">Automatización de Contratos y Software</option>
+                      <option value="Otra necesidad / No estoy seguro">Otra necesidad / No estoy seguro</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block font-label-md text-label-sm text-on-surface mb-1">Teléfono o WhatsApp de contacto *</label>
+                    <input class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary text-body-md shadow-sm" id="form-phone" placeholder="Ej. 612 34 56 78" required="" type="tel" />
+                  </div>
+                  <div>
+                    <label class="block font-label-md text-label-sm text-on-surface mb-1">Cuéntame brevemente qué necesitas (opcional)</label>
+                    <textarea class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary text-body-md shadow-sm" id="form-message" placeholder="Ej. Queremos renovar la carta web y añadir botón de reservas directas..." rows="3"></textarea>
+                  </div>
+                  <button class="w-full inline-flex items-center justify-center gap-space-sm bg-whatsapp-green hover:bg-whatsapp-green-hover text-on-primary font-label-md text-label-md py-3.5 px-6 rounded-lg shadow-md transition-all hover:-translate-y-0.5" type="submit">
+                    <span class="material-symbols-outlined text-[20px]">chat</span>
+                    <span>Generar presupuesto por WhatsApp</span>
+                  </button>
+                </form>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 14. LLAMADA A LA ACCIÓN FINAL -->
+      <section class="py-space-2xl md:py-space-3xl bg-surface-dark text-surface-bright relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-secondary-container/10 pointer-events-none"></div>
+        <div class="max-w-[900px] mx-auto px-margin md:px-gutter lg:px-gutter-desktop text-center relative z-10">
+          <h2 class="font-display-hero text-headline-lg md:text-display-hero text-surface-bright tracking-tight">
+            ¿Listo para que tu negocio local destaque en internet?
+          </h2>
+          <p class="font-body-lg text-body-lg text-outline-variant mt-4 max-w-xl mx-auto">
+            No dejes pasar más clientes a tu competencia. Hablemos hoy mismo y en 7 días tendrás tu web funcionando y captando ventas.
+          </p>
+          
+          <div class="mt-space-xl flex flex-col sm:flex-row items-center justify-center gap-space-md">
+            <a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-sm bg-whatsapp-green hover:bg-whatsapp-green-hover text-on-primary font-label-md text-label-md px-8 py-4 rounded-xl shadow-[0_8px_24px_-4px_rgba(37,211,102,0.4)] transition-all transform hover:-translate-y-0.5 active:translate-y-0" href="https://wa.me/34684156359" rel="noopener noreferrer" target="_blank">
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path>
+              </svg>
+              <span class="text-[16px]">Hablar con Enrique por WhatsApp</span>
+            </a>
+          </div>
+          
+          <div class="mt-space-md text-label-sm font-label-sm text-outline-variant flex items-center justify-center gap-4">
+            <span>⚡ Plazas limitadas cada mes</span>
+            <span>•</span>
+            <span>Sin compromiso previo</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <aside class="fixed bottom-6 right-6 z-40 group">
+    <a class="flex items-center gap-space-sm bg-whatsapp-green hover:bg-whatsapp-green-hover text-on-primary px-space-lg py-3.5 rounded-full shadow-[0_8px_24px_-4px_rgba(37,211,102,0.35)] hover:shadow-[0_12px_28px_-4px_rgba(37,211,102,0.45)] transition-all transform hover:-translate-y-1 active:translate-y-0" href="https://wa.me/34684156359" rel="noopener noreferrer" target="_blank">
+      <span class="material-symbols-outlined text-[24px]">chat</span>
+      <span class="font-label-md text-label-md">Hablar con Enrique</span>
+    </a>
+  </aside>
+
+  <footer class="w-full bg-surface-dark text-surface-bright pt-space-3xl pb-space-2xl">
+    <div class="max-w-[1200px] mx-auto px-margin md:px-gutter lg:px-gutter-desktop">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-xl pb-space-2xl">
+        
+        <div class="lg:col-span-5 flex flex-col gap-space-md">
+          <div class="flex items-center gap-space-md">
+            <img alt="Logo enriquegomez.dev" class="h-8 w-auto object-contain brightness-0 invert" src="https://lh3.googleusercontent.com/aida/AEtjO1XU041zvcQkMoXcyFe24y2Lq4GEsYCypn4QHMBZ0ASqUzOQrf9rg2btdKG60oyB9LFPlG64N2eW2A2feULqUTncmbjvwxZ4FPc7vN5cmOyfCROjDOX2paK5hzeHPdP0hVN39EXoYoMc3KcZ-ZP4oVIR-xsl9pfI2Tyq6yYYBuLZRe5zT_5jt1WQFfDQPgYZf9NRHHX2sFkvenCdT54RExTaGJV42RSBjdKE2uolVKWw-_LJ-djaeJd2VOI" />
+            <span class="font-headline-sm text-headline-sm text-surface-bright tracking-tight">
+              enriquegomez<span class="text-primary-fixed-dim">.dev</span>
+            </span>
+          </div>
+          <p class="font-body-md text-body-md text-outline-variant max-w-md">
+            Soluciones digitales y automatización para negocios locales. Páginas web rápidas, claras y orientadas a captar clientes de manera predecible.
+          </p>
+          <div class="flex items-center gap-space-xs text-label-sm font-label-sm text-whatsapp-green pt-space-xs">
+            <span class="material-symbols-outlined text-[16px]">verified</span>
+            <span>Atención directa y transparente en Madrid y resto de España</span>
+          </div>
+        </div>
+        
+        <div class="lg:col-span-3 flex flex-col gap-space-md">
+          <h4 class="font-label-md text-label-md text-surface-bright uppercase tracking-wider">Navegación</h4>
+          <div class="flex flex-col gap-space-sm font-body-sm text-body-sm">
+            <a class="text-outline-variant hover:text-surface-bright transition-colors" data-path="inicio" href="#">Modelos para negocios</a>
+            <a class="text-outline-variant hover:text-surface-bright transition-colors" data-path="como-trabajo" href="#">Metodología de trabajo</a>
+            <a class="text-outline-variant hover:text-surface-bright transition-colors" data-path="precios" href="#">Planes y precios</a>
+            <a class="text-outline-variant hover:text-surface-bright transition-colors" data-path="casos" href="#">Casos de éxito</a>
+            <a class="text-outline-variant hover:text-surface-bright transition-colors" data-path="sobre-mi" href="#">Sobre Enrique Gómez</a>
+            <a class="text-outline-variant hover:text-surface-bright transition-colors" data-path="garantia" href="#">Garantía de servicio</a>
+          </div>
+        </div>
+        
+        <div class="lg:col-span-4 flex flex-col gap-space-md">
+          <h4 class="font-label-md text-label-md text-surface-bright uppercase tracking-wider">Contacto directo</h4>
+          <div class="flex flex-col gap-space-sm font-body-sm text-body-sm text-outline-variant">
+            <a class="flex items-center gap-space-xs text-outline-variant hover:text-whatsapp-green transition-colors" href="https://wa.me/34684156359">
+              <span class="material-symbols-outlined text-[18px]">chat</span>
+              <span>WhatsApp directo</span>
+            </a>
+            <a class="flex items-center gap-space-xs text-outline-variant hover:text-surface-bright transition-colors" href="tel:+34684156359">
+              <span class="material-symbols-outlined text-[18px]">call</span>
+              <span>+34 684 156 359</span>
+            </a>
+            <a class="flex items-center gap-space-xs text-outline-variant hover:text-surface-bright transition-colors" href="mailto:enrique.gomez.moreno.egm@gmail.com">
+              <span class="material-symbols-outlined text-[18px]">mail</span>
+              <span>enrique.gomez.moreno.egm@gmail.com</span>
+            </a>
+            <div class="flex items-center gap-space-xs text-outline-variant pt-space-xs">
+              <span class="material-symbols-outlined text-[18px]">location_on</span>
+              <span>Madrid, España (Servicio nacional)</span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+      <div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-outline-variant">
+        <p>© 2026 enriquegomez.dev — Soluciones digitales y automatización para negocios locales.</p>
+        <div class="flex items-center gap-space-lg">
+          <a class="text-outline-variant hover:text-surface-bright transition-colors" data-path="aviso-legal" href="#">Aviso legal</a>
+          <a class="text-outline-variant hover:text-surface-bright transition-colors" data-path="privacidad" href="#">Privacidad</a>
+          <a class="text-outline-variant hover:text-surface-bright transition-colors" data-path="cookies" href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
