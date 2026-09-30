@@ -1,178 +1,1452 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica Vitalia - Bienestar y Salud Avanzada</title>
-    <link rel="stylesheet" href="escaparate.css">
-    <!-- Google Fonts & FontAwesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-
-    <!-- Navegación Orgánica y Fluida -->
-    <header class="organic-header" id="navbar">
-        <div class="nav-container">
-            <div class="logo">Vitalia<span>.</span></div>
-            <nav class="nav-links" id="organicNav">
-                <a href="#inicio" class="active">Inicio</a>
-                <a href="#especialidades">Especialidades</a>
-                <a href="#selector">Tratamientos</a>
-                <a href="#equipo">Filosofía</a>
-                <a href="#contacto">Cita Previa</a>
-            </nav>
-            <div class="nav-actions-organic">
-                <a href="#contacto" class="btn-organic">Pedir Cita Online</a>
-                <button class="menu-toggle-org" id="orgToggle" aria-label="Menú"><i class="fa-solid fa-bars"></i></button>
+<html class="scroll-smooth" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <title>Clínica Vitalia · Fisioterapia &amp; Osteopatía</title>
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    
+    <style>
+      @layer base {
+        html, body { margin: 0; padding: 0; }
+        body { overscroll-behavior: none; }
+        main > :first-child { margin-top: 0 !important; }
+        main > :last-child { margin-bottom: 0 !important; }
+      }
+      ::-webkit-scrollbar { display: none; }
+    </style>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#c5ebd4", "on-secondary-fixed-variant": "#414845", "surface-variant": "#e7e1df",
+              "primary": "#406250", "on-surface": "#1d1b1a", "primary-container": "#587b68",
+              "tertiary-container": "#5e7a6b", "surface-bright": "#fef8f6", "inverse-primary": "#aacfb9",
+              "on-tertiary": "#ffffff", "on-secondary-container": "#5c6461", "background": "#fef8f6",
+              "tertiary": "#466153", "on-error-container": "#93000a", "surface-container": "#f2edeb",
+              "outline": "#727973", "secondary": "#58605c", "tertiary-fixed": "#cbead7",
+              "on-tertiary-fixed": "#052015", "primary-fixed-dim": "#aacfb9", "surface-container-high": "#ede7e5",
+              "on-primary-fixed": "#002113", "on-secondary-fixed": "#161d1a", "secondary-fixed": "#dce4df",
+              "on-primary-container": "#eefff2", "on-surface-variant": "#414844", "surface-container-low": "#f8f2f0",
+              "secondary-fixed-dim": "#c0c8c4", "surface-container-lowest": "#ffffff", "surface-container-highest": "#e7e1df",
+              "on-secondary": "#ffffff", "on-tertiary-fixed-variant": "#324c3f", "surface": "#fef8f6",
+              "inverse-surface": "#32302f", "error": "#ba1a1a", "on-primary": "#ffffff", "surface-tint": "#436654",
+              "on-error": "#ffffff", "on-primary-fixed-variant": "#2c4d3d", "error-container": "#ffdad6",
+              "outline-variant": "#c1c8c2", "inverse-on-surface": "#f5efed", "tertiary-fixed-dim": "#b0cdbc",
+              "secondary-container": "#dae2dd", "surface-dim": "#ded9d7", "on-background": "#1d1b1a",
+              "on-tertiary-container": "#f0fff4"
+            },
+            borderRadius: {
+              "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"
+            },
+            spacing: {
+              "space-md": "1.25rem", "margin-mobile": "1.25rem", "space-xs": "0.375rem", "gutter-mobile": "1rem",
+              "space-sm": "0.75rem", "gutter": "1.5rem", "space-xl": "3.5rem", "space-lg": "2rem", "margin": "3rem"
+            },
+            fontFamily: {
+              "body-md": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"],
+              "headline-lg": ["Playfair Display"], "headline-md": ["Playfair Display"], "display-mobile": ["Playfair Display"],
+              "body-lg": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Playfair Display"],
+              "label-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "headline-sm": ["Playfair Display"],
+              "display": ["Playfair Display"], "title-lg": ["Plus Jakarta Sans"]
+            },
+            fontSize: {
+              "body-md": ["15px", {lineHeight: "24px", letterSpacing: "0em", fontWeight: "400"}],
+              "title-md": ["16px", {lineHeight: "24px", letterSpacing: "-0.005em", fontWeight: "600"}],
+              "body-sm": ["13px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "400"}],
+              "headline-lg": ["40px", {lineHeight: "48px", letterSpacing: "-0.015em", fontWeight: "600"}],
+              "headline-md": ["28px", {lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "500"}],
+              "display-mobile": ["36px", {lineHeight: "44px", letterSpacing: "-0.01em", fontWeight: "500"}],
+              "body-lg": ["18px", {lineHeight: "28px", letterSpacing: "0em", fontWeight: "400"}],
+              "label-sm": ["11px", {lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "500"}],
+              "headline-lg-mobile": ["28px", {lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600"}],
+              "label-md": ["12px", {lineHeight: "16px", letterSpacing: "0.03em", fontWeight: "600"}],
+              "label-lg": ["14px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600"}],
+              "headline-sm": ["22px", {lineHeight: "30px", letterSpacing: "0em", fontWeight: "600"}],
+              "display": ["52px", {lineHeight: "64px", letterSpacing: "-0.02em", fontWeight: "500"}],
+              "title-lg": ["18px", {lineHeight: "26px", letterSpacing: "-0.01em", fontWeight: "600"}]
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  
+  <body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+    
+    <!-- HEADER -->
+    <header class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+      <div class="bg-primary-container text-on-primary-container text-center py-2 px-margin-mobile sm:px-gutter text-label-sm font-label-sm tracking-wide">
+        <p class="flex items-center justify-center gap-2">
+          <span>✨ Primera valoración gratuita · Pide tu cita hoy con nuestros fisioterapeutas colegiados</span>
+        </p>
+      </div>
+      
+      <div class="h-20 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(44,42,41,0.04)]">
+        <div class="max-w-[1240px] h-full mx-auto px-margin-mobile md:px-gutter flex items-center justify-between gap-4">
+          <div class="flex items-center gap-3 shrink-0">
+            <a class="flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-primary-container rounded-full pr-2" data-path="inicio" href="#">
+              <img alt="Logo Clínica Vitalia" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1US_zRdOTS-DDp21ZfGQ_BfrwH0RP8PIJasZGrECZQMghMPnNlbaUhOe7ILi9HuLqJ8ryT2Le92n2fLYecuiKAaBG4W9ARlPJIJyLCbxAiQje-er66kqwjLEJbv7rvWPY1ffMOa4VcZUT4Sw4Wy7MrgFNnwl6XwGmzlK4zjoc0tRw6bHTwixVYWyrM3ZaM8eL37WCcQ5eTQlTJw5qcV1rUPPrkh03FRFt_cxYARgI-NRC6lM3VznpWgELry" />
+              <span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold hidden sm:inline-block">Vitalia</span>
+            </a>
+          </div>
+          
+          <nav class="hidden xl:flex items-center gap-7" data-active-classes="text-primary font-bold">
+            <a aria-current="page" class="transition-colors text-primary font-bold" data-path="inicio" href="#">Inicio</a>
+            <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="servicios" href="#">Servicios</a>
+            <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="tratamientos" href="#">Tratamientos</a>
+            <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="equipo" href="#">Equipo</a>
+            <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="tarifas" href="#">Tarifas</a>
+            <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="instalaciones" href="#">Instalaciones</a>
+            <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="contacto" href="#">Contacto</a>
+          </nav>
+          
+          <div class="flex items-center gap-3 sm:gap-4 shrink-0">
+            <a class="hidden sm:inline-flex items-center justify-center h-12 px-7 rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-[0_10px_30px_-10px_rgba(44,42,41,0.06)] hover:bg-primary transition-all duration-200 transform hover:-translate-y-0.5" data-path="pedir-cita" href="#">
+              Pedir Cita Online
+            </a>
+            <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
             </div>
+          </div>
         </div>
+      </div>
     </header>
 
-    <!-- Sección Hero Orgánica -->
-    <section id="inicio" class="hero-organic">
-        <div class="container hero-grid">
-            <div class="hero-text reveal-load">
-                <span class="badge-organic"><i class="fa-solid fa-seedling"></i> Cuidado Integral y Humano</span>
-                <h1>El equilibrio perfecto <br>para tu <span>salud y bienestar.</span></h1>
-                <p>Un espacio diseñado para ofrecerte tratamientos personalizados de fisioterapia y bienestar en un ambiente de absoluta paz y profesionalidad.</p>
-                <div class="hero-actions">
-                    <a href="#contacto" class="btn-primary-organic">Reservar Sesión <i class="fa-solid fa-arrow-right"></i></a>
-                    <a href="#selector" class="btn-secondary-organic">Ver Catálogo</a>
+    <!-- MAIN CONTENT -->
+    <main class="w-full pt-28 bg-background">
+      <div class="flex flex-col w-full">
+        
+        <!-- 1. HERO SECTION -->
+        <section class="relative w-full max-w-[1240px] mx-auto px-margin-mobile md:px-gutter py-space-md lg:py-space-xl">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg lg:gap-gutter items-center">
+            <div class="lg:col-span-6 flex flex-col items-start gap-space-sm sm:gap-space-md">
+              <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                <span>🌱 Cuidado integral y humano</span>
+              </div>
+              <h1 class="font-headline-lg text-headline-lg lg:text-display text-on-surface leading-tight tracking-tight">
+                El equilibrio perfecto para tu <span class="italic text-primary-container font-headline-lg lg:text-display">salud y bienestar</span>.
+              </h1>
+              <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
+                Recupera tu movilidad, alivia el dolor persistente y cuida de tu cuerpo con fisioterapia avanzada y osteopatía personalizada.
+              </p>
+              
+              <div class="flex flex-wrap items-center gap-2 py-1 px-3.5 rounded-full bg-surface-container-low text-on-surface text-label-md font-label-md shadow-sm">
+                <div class="flex items-center text-[#e5a024] gap-0.5">
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
                 </div>
+                <span class="font-semibold text-on-surface">4.9 en Google</span>
+                <span class="text-outline">·</span>
+                <span class="text-on-surface-variant">+600 reseñas de pacientes reales</span>
+              </div>
+              
+              <div class="flex flex-wrap items-center gap-3 pt-2">
+                <a class="inline-flex items-center justify-center h-12 px-7 rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-sm hover:bg-primary transition-all duration-200 transform hover:-translate-y-0.5" href="#pedir-cita-formulario">
+                  <span class="material-symbols-outlined text-[20px] mr-2">calendar_today</span>
+                  Reservar Sesión
+                </a>
+                <a class="inline-flex items-center justify-center h-12 px-7 rounded-full bg-surface-container-lowest text-primary font-label-lg text-label-lg shadow-sm hover:bg-surface-container-low transition-all duration-200" href="#selector-tratamientos">
+                  Ver Tratamientos
+                </a>
+              </div>
+              
+              <p class="font-label-sm text-label-sm text-outline flex items-center gap-1.5 pt-1">
+                <span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+                Sin compromiso · Respuesta en menos de 2 horas
+              </p>
             </div>
-            <div class="hero-image-wrapper reveal-load delay-1">
-                <div class="image-box">
-                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1000&auto=format&fit=crop" alt="Clínica Vitalia">
+            
+            <div class="lg:col-span-6 relative mt-space-md lg:mt-0">
+              <div class="relative overflow-hidden rounded-[28px] shadow-xl bg-surface-container-high">
+                <img alt="Fisioterapeuta tratando a una paciente en consulta luminosa" class="w-full h-[400px] sm:h-[490px] object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt-1HSQD-nDaiGPEcOEyYAPGmudFK2x1LzcSfrLsYin8Ruuya1CBLwdTqix__KQXgVR2R4bC7feHZ1sVNeKkOe57zuKXeAAOBm0x4qVGRqvdeM3du9MMP1Xf-YiLdG9zGscCG1CvQKYA49TF4tXqRKRvNh6PkJ8KjJPsYcs3R2k6WPfFGv3Zd6Nl1vGjiQOb6j-XWQvrYJ2L2IamTdU5dCxg6YMkTrpf_SEoCfoEGb85xFV5psixn14w" />
+                <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/40 via-transparent to-transparent"></div>
+              </div>
+              <div class="absolute -bottom-6 -left-2 sm:left-6 z-10 bg-surface-container-lowest/95 backdrop-blur-md px-5 py-3.5 rounded-full shadow-lg flex items-center gap-3 max-w-[90%]">
+                <span class="w-3.5 h-3.5 rounded-full bg-[#10b981] animate-ping shrink-0"></span>
+                <div class="flex flex-col min-w-0">
+                  <span class="font-label-sm text-label-sm text-outline">Agenda abierta</span>
+                  <span class="font-label-md text-label-md text-on-surface font-semibold truncate">🟢 Próximo hueco: Mañana a las 10:30h</span>
                 </div>
+              </div>
             </div>
-        </div>
-    </section>
+          </div>
+        </section>
 
-    <!-- Especialidades (Tarjetas Orgánicas) -->
-    <section id="especialidades" class="services-organic">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Lo que hacemos</span>
-                <h2 class="section-title reveal">Especialidades Destacadas</h2>
+        <!-- 2. FRANJA DE CONFIANZA & MUTUAS -->
+        <section class="w-full bg-surface-container-low py-space-lg sm:py-space-xl mt-space-lg">
+          <div class="max-w-[1240px] mx-auto px-margin-mobile md:px-gutter flex flex-col gap-space-lg">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-space-md">
+              <div class="flex items-center gap-3.5 bg-surface-container-lowest p-4 rounded-lg shadow-sm">
+                <div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center shrink-0 text-primary">
+                  <span class="material-symbols-outlined text-[24px]">workspace_premium</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="font-title-lg text-title-lg text-primary font-bold">+12 años</span>
+                  <span class="font-body-sm text-body-sm text-on-surface-variant">Experiencia clínica</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-3.5 bg-surface-container-lowest p-4 rounded-lg shadow-sm">
+                <div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center shrink-0 text-primary">
+                  <span class="material-symbols-outlined text-[24px]">favorite</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="font-title-lg text-title-lg text-primary font-bold">+8.000</span>
+                  <span class="font-body-sm text-body-sm text-on-surface-variant">Pacientes recuperados</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-3.5 bg-surface-container-lowest p-4 rounded-lg shadow-sm">
+                <div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center shrink-0 text-primary">
+                  <span class="material-symbols-outlined text-[24px]">star</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="font-title-lg text-title-lg text-primary font-bold">4.9★</span>
+                  <span class="font-body-sm text-body-sm text-on-surface-variant">Valoración media</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-3.5 bg-surface-container-lowest p-4 rounded-lg shadow-sm">
+                <div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center shrink-0 text-primary">
+                  <span class="material-symbols-outlined text-[24px]">verified_user</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="font-title-lg text-title-lg text-primary font-bold">100%</span>
+                  <span class="font-body-sm text-body-sm text-on-surface-variant">Colegiados activos</span>
+                </div>
+              </div>
             </div>
-
-            <div class="services-grid">
-                <div class="service-card reveal delay-1">
-                    <div class="icon-circle"><i class="fa-solid fa-hands-holding-child"></i></div>
-                    <h3>Fisioterapia Avanzada</h3>
-                    <p>Recuperación de lesiones deportivas y tratamiento de dolencias crónicas mediante técnicas manuales especializadas.</p>
-                </div>
-                <div class="service-card reveal delay-2">
-                    <div class="icon-circle"><i class="fa-solid fa-spa"></i></div>
-                    <h3>Bienestar y Osteopatía</h3>
-                    <p>Reajuste corporal global para liberar tensiones acumuladas por el estrés diario y mejorar tu postura corporal.</p>
-                </div>
-                <div class="service-card reveal delay-3">
-                    <div class="icon-circle"><i class="fa-solid fa-heart-pulse"></i></div>
-                    <h3>Rehabilitación Activa</h3>
-                    <p>Planes de ejercicio supervisados y adaptados individualmente para potenciar tu recuperación de forma segura.</p>
-                </div>
+            
+            <div class="pt-space-xs flex flex-col sm:flex-row items-center justify-between gap-4">
+              <span class="font-label-sm text-label-sm text-outline tracking-wider uppercase">Reembolsos &amp; Convenios de Salud</span>
+              <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-8 opacity-75">
+                <span class="font-headline-sm text-headline-sm text-secondary tracking-wider font-semibold">Sanitas</span>
+                <span class="font-headline-sm text-headline-sm text-secondary tracking-wider font-semibold">Adeslas</span>
+                <span class="font-headline-sm text-headline-sm text-secondary tracking-wider font-semibold">Asisa</span>
+                <span class="font-headline-sm text-headline-sm text-secondary tracking-wider font-semibold">DKV</span>
+                <span class="font-headline-sm text-headline-sm text-secondary tracking-wider font-semibold">MAPFRE</span>
+                <span class="font-headline-sm text-headline-sm text-secondary tracking-wider font-semibold">Caser</span>
+              </div>
             </div>
-        </div>
-    </section>
+          </div>
+        </section>
 
-    <!-- NUEVO: Selector Interactivo de Tratamientos -->
-    <section id="selector" class="interactive-selector-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Explora a fondo</span>
-                <h2 class="section-title reveal">Selecciona tu Tratamiento</h2>
-                <p class="section-subtitle" style="margin-top: 10px;">Pulsa en las categorías para ver los detalles específicos.</p>
-            </div>
-
-            <div class="selector-box reveal">
-                <div class="selector-tabs">
-                    <button class="tab-btn active" data-target="fisio">Fisioterapia</button>
-                    <button class="tab-btn" data-target="osteo">Osteopatía</button>
-                    <button class="tab-btn" data-target="rehab">Rehabilitación</button>
+        <!-- 3. ESPECIALIDADES (4 Cards Grid) -->
+        <section class="max-w-[1240px] mx-auto px-margin-mobile md:px-gutter py-space-xl">
+          <div class="text-center max-w-2xl mx-auto mb-space-lg">
+            <span class="font-label-md text-label-md text-primary tracking-widest uppercase">Especialidades Médicas</span>
+            <h2 class="font-headline-md text-headline-md sm:text-headline-lg text-on-surface mt-2">Atención experta para cada necesidad corporal</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-2">Combinamos técnicas científicas contrastadas con una escucha activa en cada sesión.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+            <!-- Card 1 -->
+            <div class="bg-surface-container-lowest p-space-md rounded-[28px] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div class="w-14 h-14 rounded-full bg-secondary-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors mb-space-sm">
+                  <span class="material-symbols-outlined text-[28px]">personal_injury</span>
                 </div>
-                <div class="selector-content-wrapper">
-                    <div class="selector-panel active" id="fisio">
-                        <div class="panel-text">
-                            <h3>Fisioterapia Deportiva y Traumatológica</h3>
-                            <p>Enfoque clínico enfocado en acelerar los plazos de recuperación tisular. Utilizamos diatermia, punción seca y terapia manual avanzada.</p>
-                            <ul>
-                                <li><i class="fa-solid fa-check"></i> Duración estimada: 50 minutos</li>
-                                <li><i class="fa-solid fa-check"></i> 100% atención individualizada</li>
-                            </ul>
-                        </div>
-                        <div class="panel-image">
-                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop" alt="Fisio">
-                        </div>
+                <h3 class="font-title-lg text-title-lg text-on-surface mb-2 font-semibold">Fisioterapia Avanzada</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Terapia manual ortopédica, ecografía guiada, punción seca y alivio específico de contracturas cervicales y lumbalgias agudas.</p>
+              </div>
+              <a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary mt-space-md group-hover:translate-x-1 transition-transform" href="#selector-tratamientos">
+                Saber más <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </a>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="bg-surface-container-lowest p-space-md rounded-[28px] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div class="w-14 h-14 rounded-full bg-secondary-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors mb-space-sm">
+                  <span class="material-symbols-outlined text-[28px]">spa</span>
+                </div>
+                <h3 class="font-title-lg text-title-lg text-on-surface mb-2 font-semibold">Bienestar y Osteopatía</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Reajuste articular sutil, osteopatía craneosacral, alivio de migrañas tensionales, problemas de ATM y sobrecarga nerviosa por estrés.</p>
+              </div>
+              <a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary mt-space-md group-hover:translate-x-1 transition-transform" href="#selector-tratamientos">
+                Saber más <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </a>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="bg-surface-container-lowest p-space-md rounded-[28px] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div class="w-14 h-14 rounded-full bg-secondary-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors mb-space-sm">
+                  <span class="material-symbols-outlined text-[28px]">accessibility_new</span>
+                </div>
+                <h3 class="font-title-lg text-title-lg text-on-surface mb-2 font-semibold">Rehabilitación Activa</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Recuperación postquirúrgica de rodilla y hombro, regeneración tisular en roturas musculares y tendinopatías crónicas.</p>
+              </div>
+              <a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary mt-space-md group-hover:translate-x-1 transition-transform" href="#selector-tratamientos">
+                Saber más <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </a>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="bg-surface-container-lowest p-space-md rounded-[28px] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div class="w-14 h-14 rounded-full bg-secondary-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors mb-space-sm">
+                  <span class="material-symbols-outlined text-[28px]">directions_run</span>
+                </div>
+                <h3 class="font-title-lg text-title-lg text-on-surface mb-2 font-semibold">Readaptación Deportiva</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Optimización biomecánica, prevención de recidivas, retorno seguro al entrenamiento y prescripción de ejercicio terapéutico.</p>
+              </div>
+              <a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary mt-space-md group-hover:translate-x-1 transition-transform" href="#selector-tratamientos">
+                Saber más <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. SELECTOR INTERACTIVO DE TRATAMIENTOS (Tabs) -->
+        <section class="w-full bg-surface-container-low py-space-xl scroll-mt-24" id="selector-tratamientos">
+          <div class="max-w-[1240px] mx-auto px-margin-mobile md:px-gutter">
+            <div class="text-center max-w-xl mx-auto mb-space-md">
+              <span class="font-label-md text-label-md text-primary tracking-widest uppercase">Tratamientos a Medida</span>
+              <h2 class="font-headline-md text-headline-md text-on-surface mt-2">Conoce en detalle cada protocolo clínico</h2>
+            </div>
+            
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-space-lg" id="treatments-tabs">
+              <button class="h-11 px-6 rounded-full font-label-md text-label-md bg-primary-container text-on-primary-container shadow-sm transition-all" id="tab-btn-fisio" onclick="switchTab('fisio')">
+                Fisioterapia Avanzada
+              </button>
+              <button class="h-11 px-6 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-all" id="tab-btn-osteo" onclick="switchTab('osteo')">
+                Osteopatía Clínica
+              </button>
+              <button class="h-11 px-6 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-all" id="tab-btn-rehab" onclick="switchTab('rehab')">
+                Rehabilitación Funcional
+              </button>
+              <button class="h-11 px-6 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-all" id="tab-btn-pelvico" onclick="switchTab('pelvico')">
+                Suelo Pélvico y Maternidad
+              </button>
+            </div>
+            
+            <div class="bg-surface-container-lowest p-space-md md:p-space-lg rounded-[30px] shadow-sm">
+              <!-- Content 1: Fisio -->
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center" id="tab-content-fisio">
+                <div class="lg:col-span-7 flex flex-col gap-space-sm">
+                  <span class="inline-block px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm w-fit">Ecografía &amp; Terapia Manual</span>
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Terapia invasiva guiada y alivio articular profundo</h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    Trabajamos sobre el origen real de la dolencia. Con la ayuda del ecógrafo de alta resolución identificamos la estructura lesionada antes de aplicar punción seca, neuromodulación o masoterapia miofascial.
+                  </p>
+                  <ul class="flex flex-col gap-2.5 my-2">
+                    <li class="flex items-center gap-2.5 font-body-sm text-body-sm text-on-surface">
+                      <span class="material-symbols-outlined text-[20px] text-primary shrink-0">check_circle</span>
+                      Diagnóstico ecográfico inicial de cortesía en la consulta
+                    </li>
+                    <li class="flex items-center gap-2.5 font-body-sm text-body-sm text-on-surface">
+                      <span class="material-symbols-outlined text-[20px] text-primary shrink-0">check_circle</span>
+                      Técnicas no invasivas de alivio sin dolor innecesario
+                    </li>
+                    <li class="flex items-center gap-2.5 font-body-sm text-body-sm text-on-surface">
+                      <span class="material-symbols-outlined text-[20px] text-primary shrink-0">check_circle</span>
+                      Pauta de micro-ejercicios en app médica para realizar en casa
+                    </li>
+                  </ul>
+                  <div class="flex flex-wrap items-center gap-6 py-3 border-t border-b border-surface-variant/40">
+                    <div>
+                      <span class="font-label-sm text-label-sm text-outline block">Duración</span>
+                      <span class="font-title-md text-title-md text-on-surface font-semibold">50 minutos</span>
                     </div>
-                    <div class="selector-panel" id="osteo">
-                        <div class="panel-text">
-                            <h3>Osteopatía Estructural y Craneal</h3>
-                            <p>Restablecemos la movilidad de las articulaciones, la columna y los tejidos blandos, aliviando dolores de cabeza, cervicalgias y lumbalgias.</p>
-                            <ul>
-                                <li><i class="fa-solid fa-check"></i> Enfoque global del organismo</li>
-                                <li><i class="fa-solid fa-check"></i> Técnicas suaves y seguras</li>
-                            </ul>
-                        </div>
-                        <div class="panel-image">
-                            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop" alt="Osteo">
-                        </div>
+                    <div class="w-px h-8 bg-surface-variant/60"></div>
+                    <div>
+                      <span class="font-label-sm text-label-sm text-outline block">Inversión</span>
+                      <span class="font-title-md text-title-md text-primary font-bold">Desde 48€ / sesión</span>
                     </div>
-                    <div class="selector-panel" id="rehab">
-                        <div class="panel-text">
-                            <h3>Rehabilitación Funcional Activa</h3>
-                            <p>Gimnasio terapéutico propio donde te guiamos paso a paso para que recuperes la fuerza muscular tras una intervención o lesión grave.</p>
-                            <ul>
-                                <li><i class="fa-solid fa-check"></i> Equipamiento de última generación</li>
-                                <li><i class="fa-solid fa-check"></i> Readaptación al deporte o trabajo</li>
-                            </ul>
-                        </div>
-                        <div class="panel-image">
-                            <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=800&auto=format&fit=crop" alt="Rehab">
-                        </div>
-                    </div>
+                  </div>
+                  <div class="pt-2">
+                    <a class="inline-flex items-center justify-center h-12 px-7 rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-sm hover:bg-primary transition-all" href="#pedir-cita-formulario">
+                      Pedir cita para este tratamiento
+                    </a>
+                  </div>
                 </div>
+                <div class="lg:col-span-5 overflow-hidden rounded-[24px]">
+                  <img alt="Cabina de tratamiento con luz natural y camilla ergonómica" class="w-full h-80 lg:h-96 object-cover rounded-[24px]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX-BpHLl4vlVvY9IxQpT2Nzz2m_OpXSNetiuVPWLty9WWjAsilHCXI3q6_Rywf747mHHOSB60cfVmU5BroXGZsDFZpCXIjueSMGIjEWuN7eoZ_bGKZanetGgTGysOBW_CIwba1EN_a79IQeack-eqwe9siyJceOttOZhQK3rvUsBuyv-S0aVI7AGNprPnRoyhUP8YAOiKzrqqsbj-6y_CACWcVBSSULYRVWWoEERyAatKRpHpVUwEXkg" />
+                </div>
+              </div>
+              
+              <!-- Content 2: Osteopatía -->
+              <div class="hidden grid-cols-1 lg:grid-cols-12 gap-space-lg items-center" id="tab-content-osteo">
+                <div class="lg:col-span-7 flex flex-col gap-space-sm">
+                  <span class="inline-block px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm w-fit">Enfoque Holístico Integral</span>
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Osteopatía estructural, visceral y craneomandibular</h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    Tratamos el cuerpo como una unidad interconectada. Mediante suaves manipulaciones normalizamos la movilidad de la columna, el diafragma y las suturas craneales para recuperar la fluidez fisiológica.
+                  </p>
+                  <ul class="flex flex-col gap-2.5 my-2">
+                    <li class="flex items-center gap-2.5 font-body-sm text-body-sm text-on-surface">
+                      <span class="material-symbols-outlined text-[20px] text-primary shrink-0">check_circle</span>
+                      Tratamiento especializado en ATM, bruxismo y cefaleas
+                    </li>
+                    <li class="flex items-center gap-2.5 font-body-sm text-body-sm text-on-surface">
+                      <span class="material-symbols-outlined text-[20px] text-primary shrink-0">check_circle</span>
+                      Terapia craneosacral suave para regular el sistema nervioso
+                    </li>
+                    <li class="flex items-center gap-2.5 font-body-sm text-body-sm text-on-surface">
+                      <span class="material-symbols-outlined text-[20px] text-primary shrink-0">check_circle</span>
+                      Liberación de restricciones viscerales y digestivas
+                    </li>
+                  </ul>
+                  <div class="flex flex-wrap items-center gap-6 py-3 border-t border-b border-surface-variant/40">
+                    <div>
+                      <span class="font-label-sm text-label-sm text-outline block">Duración</span>
+                      <span class="font-title-md text-title-md text-on-surface font-semibold">50 minutos</span>
+                    </div>
+                    <div class="w-px h-8 bg-surface-variant/60"></div>
+                    <div>
+                      <span class="font-label-sm text-label-sm text-outline block">Inversión</span>
+                      <span class="font-title-md text-title-md text-primary font-bold">Desde 50€ / sesión</span>
+                    </div>
+                  </div>
+                  <div class="pt-2">
+                    <a class="inline-flex items-center justify-center h-12 px-7 rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-sm hover:bg-primary transition-all" href="#pedir-cita-formulario">
+                      Pedir cita para este tratamiento
+                    </a>
+                  </div>
+                </div>
+                <div class="lg:col-span-5 overflow-hidden rounded-[24px]">
+                  <img alt="Espacio terapéutico con espalderas de madera y luz solar" class="w-full h-80 lg:h-96 object-cover rounded-[24px]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOyYRwnf25lGGc3_H_dEIRLJBYOQyx_zk2rJjA4pKJuhXEU7Jz_jnI5SrjoUVpimSVFTAH5RGbjLJWLfqcQLk7zX2__FTAahytQqoJawS0jar1JzcMK469iMs8mWHGwlR0yiLDltHINyLxMZvfPuQYEf51_YSvzEVHzFh_x27t1_ZJ58yqGP0pOdNe_pccs8K8aNJ-QKDFperyooMfOc-6H5NNtMITR0qrXFQmJ1gS0c8OK206t9Umfw" />
+                </div>
+              </div>
+              
+              <!-- Content 3: Rehab -->
+              <div class="hidden grid-cols-1 lg:grid-cols-12 gap-space-lg items-center" id="tab-content-rehab">
+                <div class="lg:col-span-7 flex flex-col gap-space-sm">
+                  <span class="inline-block px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm w-fit">Fuerza &amp; Movimiento Consciente</span>
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Rehabilitación funcional y readaptación de columna</h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    El reposo absoluto prolonga el dolor. Te enseñamos a moverte de forma segura con cargas progresivas y pautas de control motor para que vuelvas a confiar plenamente en tu espalda y articulaciones.
+                  </p>
+                  <ul class="flex flex-col gap-2.5 my-2">
+                    <li class="flex items-center gap-2.5 font-body-sm text-body-sm text-on-surface">
+                      <span class="material-symbols-outlined text-[20px] text-primary shrink-0">check_circle</span>
+                      Gimnasio terapéutico exclusivo con pilates reformer y espalderas
+                    </li>
+                    <li class="flex items-center gap-2.5 font-body-sm text-body-sm text-on-surface">
+                      <span class="material-symbols-outlined text-[20px] text-primary shrink-0">check_circle</span>
+                      Control neuromuscular de la estabilidad pélvica y escapular
+                    </li>
+                    <li class="flex items-center gap-2.5 font-body-sm text-body-sm text-on-surface">
+                      <span class="material-symbols-outlined text-[20px] text-primary shrink-0">check_circle</span>
+                      Monitorización de fuerza con dinamometría digital
+                    </li>
+                  </ul>
+                  <div class="flex flex-wrap items-center gap-6 py-3 border-t border-b border-surface-variant/40">
+                    <div>
+                      <span class="font-label-sm text-label-sm text-outline block">Duración</span>
+                      <span class="font-title-md text-title-md text-on-surface font-semibold">50 minutos</span>
+                    </div>
+                    <div class="w-px h-8 bg-surface-variant/60"></div>
+                    <div>
+                      <span class="font-label-sm text-label-sm text-outline block">Inversión</span>
+                      <span class="font-title-md text-title-md text-primary font-bold">Desde 45€ / sesión</span>
+                    </div>
+                  </div>
+                  <div class="pt-2">
+                    <a class="inline-flex items-center justify-center h-12 px-7 rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-sm hover:bg-primary transition-all" href="#pedir-cita-formulario">
+                      Pedir cita para este tratamiento
+                    </a>
+                  </div>
+                </div>
+                <div class="lg:col-span-5 overflow-hidden rounded-[24px]">
+                  <img alt="Zona de ejercicio y rehabilitación motora activa" class="w-full h-80 lg:h-96 object-cover rounded-[24px]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOyYRwnf25lGGc3_H_dEIRLJBYOQyx_zk2rJjA4pKJuhXEU7Jz_jnI5SrjoUVpimSVFTAH5RGbjLJWLfqcQLk7zX2__FTAahytQqoJawS0jar1JzcMK469iMs8mWHGwlR0yiLDltHINyLxMZvfPuQYEf51_YSvzEVHzFh_x27t1_ZJ58yqGP0pOdNe_pccs8K8aNJ-QKDFperyooMfOc-6H5NNtMITR0qrXFQmJ1gS0c8OK206t9Umfw" />
+                </div>
+              </div>
+              
+              <!-- Content 4: Suelo Pélvico -->
+              <div class="hidden grid-cols-1 lg:grid-cols-12 gap-space-lg items-center" id="tab-content-pelvico">
+                <div class="lg:col-span-7 flex flex-col gap-space-sm">
+                  <span class="inline-block px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm w-fit">Cuidado Íntimo y Maternidad</span>
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Fisioterapia uro-ginecológica y preparación al parto</h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    Un espacio íntimo y seguro para tratar diástasis abdominal, incontinencia urinaria, cicatrices de cesárea/episiotomía y rehabilitación tras el parto con radiofrecuencia y biofeedback.
+                  </p>
+                  <ul class="flex flex-col gap-2.5 my-2">
+                    <li class="flex items-center gap-2.5 font-body-sm text-body-sm text-on-surface">
+                      <span class="material-symbols-outlined text-[20px] text-primary shrink-0">check_circle</span>
+                      Ecografía funcional transabdominal del periné
+                    </li>
+                    <li class="flex items-center gap-2.5 font-body-sm text-body-sm text-on-surface">
+                      <span class="material-symbols-outlined text-[20px] text-primary shrink-0">check_circle</span>
+                      Terapia manual intracavitaria indolora y suave
+                    </li>
+                    <li class="flex items-center gap-2.5 font-body-sm text-body-sm text-on-surface">
+                      <span class="material-symbols-outlined text-[20px] text-primary shrink-0">check_circle</span>
+                      Talleres de pujo fisiológico y masaje perineal preparto
+                    </li>
+                  </ul>
+                  <div class="flex flex-wrap items-center gap-6 py-3 border-t border-b border-surface-variant/40">
+                    <div>
+                      <span class="font-label-sm text-label-sm text-outline block">Duración</span>
+                      <span class="font-title-md text-title-md text-on-surface font-semibold">50 minutos</span>
+                    </div>
+                    <div class="w-px h-8 bg-surface-variant/60"></div>
+                    <div>
+                      <span class="font-label-sm text-label-sm text-outline block">Inversión</span>
+                      <span class="font-title-md text-title-md text-primary font-bold">Desde 50€ / sesión</span>
+                    </div>
+                  </div>
+                  <div class="pt-2">
+                    <a class="inline-flex items-center justify-center h-12 px-7 rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-sm hover:bg-primary transition-all" href="#pedir-cita-formulario">
+                      Pedir cita para este tratamiento
+                    </a>
+                  </div>
+                </div>
+                <div class="lg:col-span-5 overflow-hidden rounded-[24px]">
+                  <img alt="Consulta tranquila con iluminación suave" class="w-full h-80 lg:h-96 object-cover rounded-[24px]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX-BpHLl4vlVvY9IxQpT2Nzz2m_OpXSNetiuVPWLty9WWjAsilHCXI3q6_Rywf747mHHOSB60cfVmU5BroXGZsDFZpCXIjueSMGIjEWuN7eoZ_bGKZanetGgTGysOBW_CIwba1EN_a79IQeack-eqwe9siyJceOttOZhQK3rvUsBuyv-S0aVI7AGNprPnRoyhUP8YAOiKzrqqsbj-6y_CACWcVBSSULYRVWWoEERyAatKRpHpVUwEXkg" />
+                </div>
+              </div>
             </div>
-        </div>
-    </section>
+          </div>
+        </section>
 
-    <!-- Testimonios de Confianza -->
-    <section class="trust-section">
-        <div class="container trust-flex">
-            <div class="trust-content reveal">
-                <h2>¿Por qué confían nuestros pacientes?</h2>
-                <p>Nos tomamos el tiempo necesario para escuchar tu caso de forma individualizada. No aplicamos soluciones estandarizadas, sino que diseñamos un plan a tu absoluta medida.</p>
-                <ul class="check-list">
-                    <li><i class="fa-solid fa-check"></i> Profesionales colegiados con amplia experiencia</li>
-                    <li><i class="fa-solid fa-check"></i> Instalaciones modernas, cálidas y equipadas</li>
-                    <li><i class="fa-solid fa-check"></i> Flexibilidad horaria adaptada a tu rutina</li>
+        <!-- 5. CÓMO FUNCIONA (Proceso en 4 pasos con línea conectora orgánica) -->
+        <section class="max-w-[1240px] mx-auto px-margin-mobile md:px-gutter py-space-xl">
+          <div class="text-center max-w-xl mx-auto mb-space-lg">
+            <span class="font-label-md text-label-md text-primary tracking-widest uppercase">Paso a Paso</span>
+            <h2 class="font-headline-md text-headline-md text-on-surface mt-2">Cómo acompañamos tu recuperación</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-2">Un proceso estructurado para que sientas seguridad y claridad desde el minuto uno.</p>
+          </div>
+          
+          <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+            <!-- Step 1 -->
+            <div class="relative flex flex-col bg-surface-container-lowest p-space-md rounded-[28px] shadow-sm">
+              <span class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container font-title-md text-title-md flex items-center justify-center font-bold mb-4">1</span>
+              <h3 class="font-title-lg text-title-lg text-on-surface font-semibold mb-2">Pide tu cita</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Selecciona tu horario online en 1 minuto, llámanos o escríbenos directamente por WhatsApp sin esperas.</p>
+              <div class="mt-4 pt-3 border-t border-surface-variant/40 flex items-center gap-1.5 text-primary font-label-sm text-label-sm">
+                <span class="material-symbols-outlined text-[16px]">touch_app</span>
+                Respuesta instantánea
+              </div>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="relative flex flex-col bg-surface-container-lowest p-space-md rounded-[28px] shadow-sm">
+              <span class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container font-title-md text-title-md flex items-center justify-center font-bold mb-4">2</span>
+              <h3 class="font-title-lg text-title-lg text-on-surface font-semibold mb-2">Valoración clínica</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Entrevista exhaustiva, exploración biomecánica y ecografía para diagnosticar con exactitud el foco del dolor.</p>
+              <div class="mt-4 pt-3 border-t border-surface-variant/40 flex items-center gap-1.5 text-primary font-label-sm text-label-sm">
+                <span class="material-symbols-outlined text-[16px]">search</span>
+                Diagnóstico certero
+              </div>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="relative flex flex-col bg-surface-container-lowest p-space-md rounded-[28px] shadow-sm">
+              <span class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container font-title-md text-title-md flex items-center justify-center font-bold mb-4">3</span>
+              <h3 class="font-title-lg text-title-lg text-on-surface font-semibold mb-2">Plan a tu medida</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Combinamos terapia manual, tecnología médica y ejercicios adaptados rigurosamente a tus horarios y ritmo de vida.</p>
+              <div class="mt-4 pt-3 border-t border-surface-variant/40 flex items-center gap-1.5 text-primary font-label-sm text-label-sm">
+                <span class="material-symbols-outlined text-[16px]">tune</span>
+                100% individualizado
+              </div>
+            </div>
+            
+            <!-- Step 4 -->
+            <div class="relative flex flex-col bg-surface-container-lowest p-space-md rounded-[28px] shadow-sm">
+              <span class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container font-title-md text-title-md flex items-center justify-center font-bold mb-4">4</span>
+              <h3 class="font-title-lg text-title-lg text-on-surface font-semibold mb-2">Seguimiento y alta</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Evaluamos tu evolución progresiva para darte el alta definitiva y las herramientas de prevención autónoma.</p>
+              <div class="mt-4 pt-3 border-t border-surface-variant/40 flex items-center gap-1.5 text-primary font-label-sm text-label-sm">
+                <span class="material-symbols-outlined text-[16px]">health_and_safety</span>
+                Prevención a largo plazo
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. SOBRE NOSOTROS / FILOSOFÍA (2 Columnas) -->
+        <section class="w-full bg-surface-container-low py-space-xl">
+          <div class="max-w-[1240px] mx-auto px-margin-mobile md:px-gutter">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+              <div class="lg:col-span-6 relative">
+                <div class="overflow-hidden rounded-[28px] shadow-md">
+                  <img alt="Instalaciones serenas de Clínica Vitalia con maderas cálidas" class="w-full h-[430px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX-BpHLl4vlVvY9IxQpT2Nzz2m_OpXSNetiuVPWLty9WWjAsilHCXI3q6_Rywf747mHHOSB60cfVmU5BroXGZsDFZpCXIjueSMGIjEWuN7eoZ_bGKZanetGgTGysOBW_CIwba1EN_a79IQeack-eqwe9siyJceOttOZhQK3rvUsBuyv-S0aVI7AGNprPnRoyhUP8YAOiKzrqqsbj-6y_CACWcVBSSULYRVWWoEERyAatKRpHpVUwEXkg" />
+                </div>
+                <div class="absolute -bottom-5 -right-2 sm:right-6 bg-surface-container-lowest p-4 rounded-xl shadow-lg flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold font-title-md">
+                    12+
+                  </div>
+                  <div>
+                    <span class="font-title-sm text-title-sm text-on-surface font-semibold block">Años de dedicación</span>
+                    <span class="font-label-sm text-label-sm text-outline">Cuidando de tu salud activa</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="lg:col-span-6 flex flex-col gap-space-sm">
+                <span class="font-label-md text-label-md text-primary tracking-widest uppercase">Nuestra Filosofía</span>
+                <h2 class="font-headline-md text-headline-md sm:text-headline-lg text-on-surface font-semibold">¿Por qué confían en nosotros nuestros pacientes?</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                  En Vitalia nos alejamos del modelo de camillas masificadas o tratamientos express. Diseñamos un entorno sereno y armónico donde cada sesión dura 50 minutos exclusivos con tu terapeuta colegiado, escuchando tanto el síntoma físico como tus circunstancias vitales.
+                </p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+                  <div class="flex items-start gap-2.5">
+                    <span class="material-symbols-outlined text-[20px] text-primary shrink-0 mt-0.5">verified</span>
+                    <span class="font-body-sm text-body-sm text-on-surface"><strong>Colegiados activos</strong> en formación médica continua</span>
+                  </div>
+                  <div class="flex items-start gap-2.5">
+                    <span class="material-symbols-outlined text-[20px] text-primary shrink-0 mt-0.5">wb_sunny</span>
+                    <span class="font-body-sm text-body-sm text-on-surface">Instalaciones modernas con <strong>luz natural relajante</strong></span>
+                  </div>
+                  <div class="flex items-start gap-2.5">
+                    <span class="material-symbols-outlined text-[20px] text-primary shrink-0 mt-0.5">schedule</span>
+                    <span class="font-body-sm text-body-sm text-on-surface"><strong>Flexibilidad horaria:</strong> de 08:30 a 21:00 ininterrumpido</span>
+                  </div>
+                  <div class="flex items-start gap-2.5">
+                    <span class="material-symbols-outlined text-[20px] text-primary shrink-0 mt-0.5">psychology</span>
+                    <span class="font-body-sm text-body-sm text-on-surface">Planes adaptados a tu <strong>estilo de vida real</strong></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. EQUIPO PROFESIONAL (3 Tarjetas) -->
+        <section class="max-w-[1240px] mx-auto px-margin-mobile md:px-gutter py-space-xl">
+          <div class="text-center max-w-xl mx-auto mb-space-lg">
+            <span class="font-label-md text-label-md text-primary tracking-widest uppercase">Especialistas Colegiados</span>
+            <h2 class="font-headline-md text-headline-md text-on-surface mt-2">Manos expertas comprometidas con tu calma</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-2">Conoce a los profesionales de la salud que coordinarán tu tratamiento.</p>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <!-- Tarjeta 1: Dr. Alejandro Morales -->
+            <div class="bg-surface-container-lowest p-space-md rounded-[28px] shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+              <div>
+                <div class="overflow-hidden rounded-[20px] mb-4 bg-surface-container">
+                  <img alt="Dr. Alejandro Morales sonriendo en consulta" class="w-full h-64 object-cover object-top hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1ZtwpQn75xgco1xByRLAs82HOpqs-VAqP9GNmgTJsqB2_M63Fp9WxiFlyPgzNyXCSdLdHN3FC1vEeOq_X8tjxfY26TTlsWggPD8lMQC82U6hhUNHP2m_XIOPcKlbXpe4N46G2P1K1TR_pjr9AmBHAzuVdtD0CBUkB2t9nC31SYnjr9iEFGNOi197jhwpSCFwr93irvxJ6JYTkAVFTbci7Hqj5wc1LVjIf1LHld9fyKD8FOhaeiWg8GQ" />
+                </div>
+                <div class="flex items-center justify-between gap-2 mb-1">
+                  <h3 class="font-title-lg text-title-lg text-on-surface font-semibold">Dr. Alejandro Morales</h3>
+                  <span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Col. 4.821</span>
+                </div>
+                <span class="font-body-sm text-body-sm text-primary font-medium block mb-2.5">Osteópata D.O. &amp; Fisioterapeuta · 14 años exp.</span>
+                <p class="font-body-sm text-body-sm text-on-surface-variant italic leading-relaxed">
+                  "La salud no es solo la ausencia de dolor; es la capacidad de moverte con vitalidad y alegría en cada etapa de la vida."
+                </p>
+              </div>
+              <div class="pt-5 mt-4 border-t border-surface-variant/40">
+                <a class="w-full inline-flex items-center justify-center h-11 px-4 rounded-full bg-surface-container-low text-primary hover:bg-primary-container hover:text-on-primary-container font-label-md text-label-md transition-colors" href="#pedir-cita-formulario">
+                  Pedir cita con Alejandro
+                </a>
+              </div>
+            </div>
+            
+            <!-- Tarjeta 2: Dra. Elena Garrido -->
+            <div class="bg-surface-container-lowest p-space-md rounded-[28px] shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+              <div>
+                <div class="overflow-hidden rounded-[20px] mb-4 bg-surface-container">
+                  <img alt="Dra. Elena Garrido en consulta de suelo pélvico" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt-1HSQD-nDaiGPEcOEyYAPGmudFK2x1LzcSfrLsYin8Ruuya1CBLwdTqix__KQXgVR2R4bC7feHZ1sVNeKkOe57zuKXeAAOBm0x4qVGRqvdeM3du9MMP1Xf-YiLdG9zGscCG1CvQKYA49TF4tXqRKRvNh6PkJ8KjJPsYcs3R2k6WPfFGv3Zd6Nl1vGjiQOb6j-XWQvrYJ2L2IamTdU5dCxg6YMkTrpf_SEoCfoEGb85xFV5psixn14w" />
+                </div>
+                <div class="flex items-center justify-between gap-2 mb-1">
+                  <h3 class="font-title-lg text-title-lg text-on-surface font-semibold">Dra. Elena Garrido</h3>
+                  <span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Col. 5.112</span>
+                </div>
+                <span class="font-body-sm text-body-sm text-primary font-medium block mb-2.5">Esp. en Suelo Pélvico &amp; Ecografía · 10 años exp.</span>
+                <p class="font-body-sm text-body-sm text-on-surface-variant italic leading-relaxed">
+                  "Acompaño a mujeres y hombres a normalizar su función pélvica con rigor científico, empatía y sin tabúes."
+                </p>
+              </div>
+              <div class="pt-5 mt-4 border-t border-surface-variant/40">
+                <a class="w-full inline-flex items-center justify-center h-11 px-4 rounded-full bg-surface-container-low text-primary hover:bg-primary-container hover:text-on-primary-container font-label-md text-label-md transition-colors" href="#pedir-cita-formulario">
+                  Pedir cita con Elena
+                </a>
+              </div>
+            </div>
+            
+            <!-- Tarjeta 3: Marc Soler -->
+            <div class="bg-surface-container-lowest p-space-md rounded-[28px] shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+              <div>
+                <div class="overflow-hidden rounded-[20px] mb-4 bg-surface-container">
+                  <img alt="Marc Soler en el gimnasio de readaptación funcional" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOyYRwnf25lGGc3_H_dEIRLJBYOQyx_zk2rJjA4pKJuhXEU7Jz_jnI5SrjoUVpimSVFTAH5RGbjLJWLfqcQLk7zX2__FTAahytQqoJawS0jar1JzcMK469iMs8mWHGwlR0yiLDltHINyLxMZvfPuQYEf51_YSvzEVHzFh_x27t1_ZJ58yqGP0pOdNe_pccs8K8aNJ-QKDFperyooMfOc-6H5NNtMITR0qrXFQmJ1gS0c8OK206t9Umfw" />
+                </div>
+                <div class="flex items-center justify-between gap-2 mb-1">
+                  <h3 class="font-title-lg text-title-lg text-on-surface font-semibold">Marc Soler</h3>
+                  <span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Col. 6.340</span>
+                </div>
+                <span class="font-body-sm text-body-sm text-primary font-medium block mb-2.5">Fisio Deportivo &amp; Readaptador · 8 años exp.</span>
+                <p class="font-body-sm text-body-sm text-on-surface-variant italic leading-relaxed">
+                  "El movimiento específico y controlado es la mejor medicina. Superar una lesión deportiva requiere paciencia y método."
+                </p>
+              </div>
+              <div class="pt-5 mt-4 border-t border-surface-variant/40">
+                <a class="w-full inline-flex items-center justify-center h-11 px-4 rounded-full bg-surface-container-low text-primary hover:bg-primary-container hover:text-on-primary-container font-label-md text-label-md transition-colors" href="#pedir-cita-formulario">
+                  Pedir cita con Marc
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 8. RESEÑAS Y CASOS DE ÉXITO -->
+        <section class="w-full bg-surface-container-low py-space-xl">
+          <div class="max-w-[1240px] mx-auto px-margin-mobile md:px-gutter">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-space-lg">
+              <div>
+                <span class="font-label-md text-label-md text-primary tracking-widest uppercase">Experiencias Reales</span>
+                <h2 class="font-headline-md text-headline-md text-on-surface mt-2">La tranquilidad de estar en las mejores manos</h2>
+              </div>
+              <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface shadow-sm">
+                <span class="material-symbols-outlined text-[20px] text-[#4285F4]">verified</span>
+                <span class="font-label-md text-label-md font-semibold">Verificado en Google Reviews (4.9 / 5★)</span>
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-space-lg">
+              <div class="bg-surface-container-lowest p-space-md rounded-[28px] shadow-sm flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center text-[#e5a024] gap-0.5 mb-3">
+                    <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-4">
+                    "Llevaba más de dos años con dolor cervical por el ordenador. En sólo tres sesiones con el Dr. Alejandro noté un alivio brutal y aprendí ejercicios sencillos que cambiaron mi día a día. Clínica impecable y trato humano inmejorable."
+                  </p>
+                </div>
+                <div class="flex items-center gap-3 pt-3 border-t border-surface-variant/40">
+                  <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container font-title-sm text-title-sm flex items-center justify-center font-bold">
+                    CG
+                  </div>
+                  <div>
+                    <span class="font-title-sm text-title-sm text-on-surface font-semibold block">Carmen Gómez</span>
+                    <span class="font-label-sm text-label-sm text-outline">Fisioterapia Cervical · Hace 2 semanas</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-surface-container-lowest p-space-md rounded-[28px] shadow-sm flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center text-[#e5a024] gap-0.5 mb-3">
+                    <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-4">
+                    "Elena me ayudó en mi posparto con una diástasis considerable. Me explicó cada paso con una delicadeza y empatía increíbles. Hoy puedo correr sin molestias ni miedo. Las instalaciones transmiten pura paz."
+                  </p>
+                </div>
+                <div class="flex items-center gap-3 pt-3 border-t border-surface-variant/40">
+                  <div class="w-10 h-10 rounded-full bg-secondary-container text-primary font-title-sm text-title-sm flex items-center justify-center font-bold">
+                    LR
+                  </div>
+                  <div>
+                    <span class="font-title-sm text-title-sm text-on-surface font-semibold block">Laura Rivas</span>
+                    <span class="font-label-sm text-label-sm text-outline">Suelo Pélvico · Hace 1 mes</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-surface-container-lowest p-space-md rounded-[28px] shadow-sm flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center text-[#e5a024] gap-0.5 mb-3">
+                    <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-4">
+                    "Rotura fibrilar en gemelo preparando la maratón de Madrid. Marc diseñó una readaptación progresiva que me permitió llegar a la carrera y terminar sin secuelas. Máxima profesionalidad y rigor."
+                  </p>
+                </div>
+                <div class="flex items-center gap-3 pt-3 border-t border-surface-variant/40">
+                  <div class="w-10 h-10 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-title-sm text-title-sm flex items-center justify-center font-bold">
+                    JM
+                  </div>
+                  <div>
+                    <span class="font-title-sm text-title-sm text-on-surface font-semibold block">Javier Méndez</span>
+                    <span class="font-label-sm text-label-sm text-outline">Readaptación Deportiva · Hace 2 meses</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-surface-container-lowest p-space-md lg:p-space-lg rounded-[30px] shadow-sm">
+              <div class="flex flex-wrap items-center justify-between gap-3 mb-space-sm">
+                <span class="font-label-md text-label-md text-primary font-semibold uppercase tracking-wider">Caso Clínico Documentado</span>
+                <span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Recuperación funcional 8 semanas</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-space-md">Historia de recuperación: Hernia discal lumbar L5-S1 sin cirugía</h3>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+                <div class="bg-surface-container-low p-4 rounded-[20px]">
+                  <span class="font-label-sm text-label-sm text-error font-semibold block mb-1">01. El Problema</span>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">Paciente de 42 años con ciática irradiada a pierna izquierda, incapacidad para caminar más de 10 minutos y recomendación quirúrgica previa.</p>
+                </div>
+                <div class="bg-surface-container-low p-4 rounded-[20px]">
+                  <span class="font-label-sm text-label-sm text-primary font-semibold block mb-1">02. El Tratamiento (8 sem)</span>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">Descompresión manual osteopática, neuromodulación percutánea ecoguiada y progresión de fuerza en pilates reformer terapéutico.</p>
+                </div>
+                <div class="bg-surface-container-low p-4 rounded-[20px]">
+                  <span class="font-label-sm text-label-sm text-primary font-semibold block mb-1">03. Resultado Actual</span>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">Remisión del 100% de la ciática, reincorporación laboral plena y vuelta al senderismo de montaña sin medicación analgésica.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 9. TARIFAS Y BONOS TRANSPARENTES (3 Tarjetas) -->
+        <section class="max-w-[1240px] mx-auto px-margin-mobile md:px-gutter py-space-xl">
+          <div class="text-center max-w-xl mx-auto mb-space-lg">
+            <span class="font-label-md text-label-md text-primary tracking-widest uppercase">Precios Claros</span>
+            <h2 class="font-headline-md text-headline-md text-on-surface mt-2">Tarifas transparentes, sin letra pequeña</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-2">Invierte en tu salud con planes flexibles adaptados a la duración de tu recuperación.</p>
+          </div>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter items-stretch">
+            <div class="bg-surface-container-lowest p-space-md lg:p-space-lg rounded-[28px] shadow-sm flex flex-col justify-between">
+              <div>
+                <span class="font-label-md text-label-md text-outline block mb-1">Primera Consulta</span>
+                <h3 class="font-title-lg text-title-lg text-on-surface font-semibold mb-2">Valoración + Diagnóstico</h3>
+                <div class="flex items-baseline gap-2 mb-4">
+                  <span class="font-headline-lg text-headline-lg text-on-surface font-bold">40€</span>
+                  <span class="font-label-sm text-label-sm text-primary font-semibold">Gratuita contratando bono</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Evaluación exhaustiva de 50 minutos para conocer el origen real de tu molestia antes de comenzar cualquier terapia.</p>
+                <ul class="flex flex-col gap-3">
+                  <li class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-[18px] text-primary">check</span>
+                    Historia clínica y exploración biomecánica
+                  </li>
+                  <li class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-[18px] text-primary">check</span>
+                    Ecografía musculoesquelética de alta definición
+                  </li>
+                  <li class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-[18px] text-primary">check</span>
+                    Primera sesión de tratamiento incluida
+                  </li>
                 </ul>
+              </div>
+              <div class="pt-6 mt-6 border-t border-surface-variant/40">
+                <a class="w-full inline-flex items-center justify-center h-12 px-6 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-colors" href="#pedir-cita-formulario">
+                  Reservar Valoración
+                </a>
+              </div>
             </div>
-            <div class="trust-card reveal delay-1">
-                <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                <p class="quote-text">"La atención y el trato son inmejorables. Noté una mejoría enorme en pocas sesiones. Da gusto encontrar profesionales con tanta vocación."</p>
-                <div class="patient-info">
-                    <strong>María Gómez</strong>
-                    <span>Paciente de Fisioterapia</span>
+            
+            <div class="relative bg-surface-container-lowest p-space-md lg:p-space-lg rounded-[30px] shadow-xl flex flex-col justify-between transform lg:-translate-y-2 bg-gradient-to-b from-surface-container-lowest to-secondary-container/20">
+              <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary-container text-on-primary-container px-4 py-1 rounded-full font-label-sm text-label-sm font-semibold tracking-wide shadow-sm">
+                Más Elegido · Recomendado
+              </div>
+              <div>
+                <span class="font-label-md text-label-md text-primary font-semibold block mb-1">Plan de Recuperación Completo</span>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-2">Bono 5 Sesiones</h3>
+                <div class="flex items-baseline gap-2 mb-1">
+                  <span class="font-headline-lg text-headline-lg text-primary font-bold">215€</span>
+                  <span class="font-label-md text-label-md text-outline">(43€ / sesión)</span>
                 </div>
+                <span class="inline-block px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold mb-4">Ahorro directo de 35€</span>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mb-6">El formato óptimo para lesiones con dolor persistente, rehabilitación de columna o fisioterapia de suelo pélvico continuada.</p>
+                <ul class="flex flex-col gap-3">
+                  <li class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface font-medium">
+                    <span class="material-symbols-outlined text-[18px] text-primary">check_circle</span>
+                    5 sesiones individuales completas de 50 min
+                  </li>
+                  <li class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface font-medium">
+                    <span class="material-symbols-outlined text-[18px] text-primary">check_circle</span>
+                    Sin caducidad y transferible a familiares
+                  </li>
+                  <li class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface font-medium">
+                    <span class="material-symbols-outlined text-[18px] text-primary">check_circle</span>
+                    Seguimiento personalizado de ejercicios por App
+                  </li>
+                  <li class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface font-medium">
+                    <span class="material-symbols-outlined text-[18px] text-primary">check_circle</span>
+                    Prioridad en reservas de agenda
+                  </li>
+                </ul>
+              </div>
+              <div class="pt-6 mt-6 border-t border-surface-variant/40">
+                <a class="w-full inline-flex items-center justify-center h-12 px-6 rounded-full bg-primary-container text-on-primary-container hover:bg-primary font-label-md text-label-md font-semibold shadow-sm transition-all" href="#pedir-cita-formulario">
+                  Elegir Bono 5 Sesiones
+                </a>
+              </div>
             </div>
-        </div>
-    </section>
+            
+            <div class="bg-surface-container-lowest p-space-md lg:p-space-lg rounded-[28px] shadow-sm flex flex-col justify-between">
+              <div>
+                <span class="font-label-md text-label-md text-outline block mb-1">Mantenimiento Puntual</span>
+                <h3 class="font-title-lg text-title-lg text-on-surface font-semibold mb-2">Sesión Individual</h3>
+                <div class="flex items-baseline gap-2 mb-4">
+                  <span class="font-headline-lg text-headline-lg text-on-surface font-bold">50€</span>
+                  <span class="font-label-sm text-label-sm text-outline">/ 50 min</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Perfecto para descargas musculares puntuales, mantenimiento osteopático preventivo o molestias repentinas.</p>
+                <ul class="flex flex-col gap-3">
+                  <li class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-[18px] text-primary">check</span>
+                    50 minutos dedicados exclusivamente a ti
+                  </li>
+                  <li class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-[18px] text-primary">check</span>
+                    Terapia manual, punción o neuromodulación
+                  </li>
+                  <li class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
+                    <span class="material-symbols-outlined text-[18px] text-primary">check</span>
+                    Recomendaciones posturales ergonómicas
+                  </li>
+                </ul>
+              </div>
+              <div class="pt-6 mt-6 border-t border-surface-variant/40">
+                <a class="w-full inline-flex items-center justify-center h-12 px-6 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-colors" href="#pedir-cita-formulario">
+                  Reservar Sesión Suelta
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-space-md flex flex-wrap items-center justify-center gap-6 font-body-sm text-body-sm text-on-surface-variant text-center">
+            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px] text-primary">verified</span> Trabajamos con las principales aseguradoras y mutuas de reembolso</span>
+            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px] text-primary">credit_card</span> Posibilidad de financiación sin intereses en tratamientos largos</span>
+          </div>
+        </section>
 
-    <!-- Sección Cita Previa / Contacto -->
-    <section id="contacto" class="contact-organic">
-        <div class="container contact-container reveal">
-            <h2>¿Comenzamos a cuidarte?</h2>
-            <p>Escríbenos directamente o consulta horarios disponibles para tu primera sesión.</p>
-            <a href="https://wa.me/34600000000?text=Hola,%20quiero%20pedir%20información%20sobre%20vuestros%20servicios" target="_blank" class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Contactar por WhatsApp</a>
-        </div>
-    </section>
+        <!-- 10. INSTALACIONES DE LA CLÍNICA (Galería Mosaico) -->
+        <section class="w-full bg-surface-container-low py-space-xl">
+          <div class="max-w-[1240px] mx-auto px-margin-mobile md:px-gutter">
+            <div class="text-center max-w-xl mx-auto mb-space-lg">
+              <span class="font-label-md text-label-md text-primary tracking-widest uppercase">Un espacio para tu tranquilidad</span>
+              <h2 class="font-headline-md text-headline-md text-on-surface mt-2">Luz natural, serenidad y tecnología médica</h2>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-2">Cada rincón de Clínica Vitalia está diseñado para reducir la sobrecarga sensorial y favorecer la sanación.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-space-md">
+              <div class="md:col-span-8 overflow-hidden rounded-[28px] shadow-sm relative group">
+                <img alt="Sala de tratamiento amplia con luz natural y camilla confortable" class="w-full h-80 md:h-[420px] object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX-BpHLl4vlVvY9IxQpT2Nzz2m_OpXSNetiuVPWLty9WWjAsilHCXI3q6_Rywf747mHHOSB60cfVmU5BroXGZsDFZpCXIjueSMGIjEWuN7eoZ_bGKZanetGgTGysOBW_CIwba1EN_a79IQeack-eqwe9siyJceOttOZhQK3rvUsBuyv-S0aVI7AGNprPnRoyhUP8YAOiKzrqqsbj-6y_CACWcVBSSULYRVWWoEERyAatKRpHpVUwEXkg" />
+                <div class="absolute bottom-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-4 py-2 rounded-full font-label-sm text-label-sm text-on-surface shadow-sm">
+                  Salas individuales insonorizadas con madera natural
+                </div>
+              </div>
+              
+              <div class="md:col-span-4 overflow-hidden rounded-[28px] shadow-sm relative group">
+                <img alt="Gimnasio con pilates reformer y espalderas de madera" class="w-full h-80 md:h-[420px] object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOyYRwnf25lGGc3_H_dEIRLJBYOQyx_zk2rJjA4pKJuhXEU7Jz_jnI5SrjoUVpimSVFTAH5RGbjLJWLfqcQLk7zX2__FTAahytQqoJawS0jar1JzcMK469iMs8mWHGwlR0yiLDltHINyLxMZvfPuQYEf51_YSvzEVHzFh_x27t1_ZJ58yqGP0pOdNe_pccs8K8aNJ-QKDFperyooMfOc-6H5NNtMITR0qrXFQmJ1gS0c8OK206t9Umfw" />
+                <div class="absolute bottom-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-4 py-2 rounded-full font-label-sm text-label-sm text-on-surface shadow-sm">
+                  Pilates reformer &amp; ejercicio terapéutico
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-    <footer class="footer-organic">
-        <p>&copy; 2026 Clínica Vitalia. Todos los derechos reservados.</p>
+        <!-- 11. FORMULARIO DE CITA ONLINE DESTACADO -->
+        <section class="w-full py-space-xl bg-secondary-container/50 scroll-mt-20" id="pedir-cita-formulario">
+          <div class="max-w-[1040px] mx-auto px-margin-mobile md:px-gutter">
+            <div class="bg-surface-container-lowest p-space-md md:p-space-xl rounded-[30px] shadow-xl">
+              <div class="text-center max-w-xl mx-auto mb-space-lg">
+                <span class="font-label-md text-label-md text-primary tracking-widest uppercase">Cita Inmediata</span>
+                <h2 class="font-headline-md text-headline-md sm:text-headline-lg text-on-surface mt-1">Tu recuperación empieza aquí</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-2">Solicita tu cita en menos de 1 minuto y te confirmaremos el horario definitivo al instante.</p>
+              </div>
+              
+              <form class="flex flex-col gap-space-md" onsubmit="event.preventDefault(); document.getElementById('form-feedback').classList.remove('hidden');">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                  <div class="flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface font-semibold" for="f-nombre">Nombre y Apellidos *</label>
+                    <input class="h-12 px-4 rounded-xl bg-surface-container-lowest border border-surface-variant focus:border-primary-container focus:outline-none font-body-md text-body-md text-on-surface shadow-sm" id="f-nombre" placeholder="Ej: María Delgado Ramos" required="" type="text" />
+                  </div>
+                  
+                  <div class="flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface font-semibold" for="f-telefono">Teléfono de contacto *</label>
+                    <input class="h-12 px-4 rounded-xl bg-surface-container-lowest border border-surface-variant focus:border-primary-container focus:outline-none font-body-md text-body-md text-on-surface shadow-sm" id="f-telefono" placeholder="Ej: 612 345 678" required="" type="tel" />
+                  </div>
+                  
+                  <div class="flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface font-semibold" for="f-email">Correo Electrónico *</label>
+                    <input class="h-12 px-4 rounded-xl bg-surface-container-lowest border border-surface-variant focus:border-primary-container focus:outline-none font-body-md text-body-md text-on-surface shadow-sm" id="f-email" placeholder="tuemail@ejemplo.com" required="" type="email" />
+                  </div>
+                  
+                  <div class="flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface font-semibold" for="f-esp">Especialidad deseada *</label>
+                    <select class="h-12 px-4 rounded-xl bg-surface-container-lowest border border-surface-variant focus:border-primary-container focus:outline-none font-body-md text-body-md text-on-surface shadow-sm" id="f-esp" required="">
+                      <option value="fisio">Fisioterapia Avanzada</option>
+                      <option value="osteo">Osteopatía Clínica</option>
+                      <option value="rehab">Rehabilitación Activa</option>
+                      <option value="pelvico">Suelo Pélvico &amp; Maternidad</option>
+                      <option value="valoracion">Primera Valoración General</option>
+                    </select>
+                  </div>
+                  
+                  <div class="flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface font-semibold" for="f-prof">Profesional preferido</label>
+                    <select class="h-12 px-4 rounded-xl bg-surface-container-lowest border border-surface-variant focus:border-primary-container focus:outline-none font-body-md text-body-md text-on-surface shadow-sm" id="f-prof">
+                      <option value="indiferente">Primer profesional disponible</option>
+                      <option value="alejandro">Dr. Alejandro Morales (Osteópata)</option>
+                      <option value="elena">Dra. Elena Garrido (Suelo Pélvico)</option>
+                      <option value="marc">Marc Soler (Fisio Deportivo)</option>
+                    </select>
+                  </div>
+                  
+                  <div class="flex flex-col gap-1.5">
+                    <label class="font-label-sm text-label-sm text-on-surface font-semibold" for="f-franja">Franja horaria preferida</label>
+                    <select class="h-12 px-4 rounded-xl bg-surface-container-lowest border border-surface-variant focus:border-primary-container focus:outline-none font-body-md text-body-md text-on-surface shadow-sm" id="f-franja">
+                      <option value="manana">Mañanas (08:30 - 14:00)</option>
+                      <option value="tarde">Tardes (15:00 - 21:00)</option>
+                      <option value="sabado">Sábados (09:00 - 14:00)</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="flex flex-col gap-1.5">
+                  <label class="font-label-sm text-label-sm text-on-surface font-semibold" for="f-motivo">Breve motivo de la consulta o zona del dolor</label>
+                  <textarea class="p-3.5 rounded-xl bg-surface-container-lowest border border-surface-variant focus:border-primary-container focus:outline-none font-body-md text-body-md text-on-surface shadow-sm" id="f-motivo" placeholder="Ej: Dolor lumbar irradiado a la pierna tras esfuerzo hace 1 semana..." rows="3"></textarea>
+                </div>
+                
+                <div class="flex items-start gap-3 py-1">
+                  <input class="mt-1 w-4 h-4 rounded text-primary focus:ring-primary accent-primary" id="f-rgpd" required="" type="checkbox" />
+                  <label class="font-body-sm text-body-sm text-on-surface-variant" for="f-rgpd">
+                    Acepto la <a class="text-primary underline" href="#">política de privacidad</a> y el tratamiento de mis datos de salud con fines exclusivamente terapéuticos (RGPD).
+                  </label>
+                </div>
+                
+                <div class="hidden p-4 rounded-xl bg-primary-fixed text-on-primary-fixed font-body-sm text-body-sm flex items-center gap-2" id="form-feedback">
+                  <span class="material-symbols-outlined text-[20px]">check_circle</span>
+                  ¡Solicitud recibida! Te llamaremos o enviaremos confirmación en menos de 2 horas.
+                </div>
+                
+                <div class="pt-2">
+                  <button class="w-full inline-flex items-center justify-center h-14 rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg font-bold shadow-md hover:bg-primary transition-all duration-200" type="submit">
+                    <span class="material-symbols-outlined text-[22px] mr-2">send</span>
+                    Solicitar Cita Ahora
+                  </button>
+                </div>
+              </form>
+              
+              <div class="mt-space-md pt-space-md border-t border-surface-variant/40 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <span class="font-body-sm text-body-sm text-on-surface-variant">¿Prefieres atención inmediata en directo?</span>
+                <div class="flex flex-wrap items-center gap-3">
+                  <a class="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-[#25D366] text-white font-label-md text-label-md font-semibold hover:brightness-105 transition-all shadow-sm" href="https://wa.me/34912345678" rel="noopener noreferrer" target="_blank">
+                    <span class="material-symbols-outlined text-[20px]">chat</span>
+                    Hablar por WhatsApp
+                  </a>
+                  <a class="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" href="tel:+34912345678">
+                    <span class="material-symbols-outlined text-[20px] text-primary">call</span>
+                    Llamar al 912 345 678
+                  </a>
+                </div>
+              </div>
+              <p class="font-label-sm text-label-sm text-outline text-center mt-4">
+                ✓ Te confirmaremos la hora exacta en menos de 2 horas laborables · Cancelación gratuita hasta 24h antes
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 12. UBICACIÓN, HORARIOS Y ACCESIBILIDAD (2 Columnas) -->
+        <section class="max-w-[1240px] mx-auto px-margin-mobile md:px-gutter py-space-xl">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+            <div class="lg:col-span-6 flex flex-col gap-4">
+              <div class="relative w-full h-80 sm:h-96 rounded-[28px] overflow-hidden shadow-sm bg-surface-container flex flex-col items-center justify-center p-6 text-center">
+                <div class="w-16 h-16 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-md mb-3 animate-bounce">
+                  <span class="material-symbols-outlined text-[32px]">location_on</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">Clínica Vitalia Salamanca</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm mb-4">Calle Velázquez 48, Barrio de Salamanca, 28001 Madrid</p>
+                <a class="inline-flex items-center gap-2 h-11 px-6 rounded-full bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm hover:bg-surface-bright transition-colors" href="https://maps.google.com/?q=Calle+Velazquez+48+Madrid" rel="noopener noreferrer" target="_blank">
+                  <span class="material-symbols-outlined text-[18px]">map</span>
+                  Cómo llegar en Google Maps
+                </a>
+              </div>
+            </div>
+            
+            <div class="lg:col-span-6 flex flex-col gap-space-sm">
+              <span class="font-label-md text-label-md text-primary tracking-widest uppercase">Visítanos</span>
+              <h2 class="font-headline-md text-headline-md text-on-surface font-semibold">En pleno corazón del Barrio de Salamanca</h2>
+              <p class="font-body-md text-body-md text-on-surface-variant">Un entorno céntrico y sereno, comunicado con las principales arterias de Madrid.</p>
+              
+              <div class="bg-surface-container-lowest p-4 rounded-[20px] shadow-sm my-2">
+                <div class="flex justify-between items-center py-2 border-b border-surface-variant/40 font-body-sm text-body-sm">
+                  <span class="font-semibold text-on-surface">Lunes a Viernes</span>
+                  <span class="text-primary font-bold">08:30 – 21:00 ininterrumpido</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-surface-variant/40 font-body-sm text-body-sm">
+                  <span class="font-semibold text-on-surface">Sábados</span>
+                  <span class="text-on-surface-variant">09:00 – 14:00</span>
+                </div>
+                <div class="flex justify-between items-center py-2 font-body-sm text-body-sm">
+                  <span class="font-semibold text-on-surface">Domingos y Festivos</span>
+                  <span class="text-outline">Cerrado por descanso</span>
+                </div>
+              </div>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                <div class="bg-surface-container-low p-3 rounded-xl flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-[22px] text-primary">local_parking</span>
+                  <span class="font-label-sm text-label-sm text-on-surface">Parking concertado a 50m</span>
+                </div>
+                <div class="bg-surface-container-low p-3 rounded-xl flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-[22px] text-primary">subway</span>
+                  <span class="font-label-sm text-label-sm text-on-surface">Metro Velázquez (3 min)</span>
+                </div>
+                <div class="bg-surface-container-low p-3 rounded-xl flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-[22px] text-primary">accessible</span>
+                  <span class="font-label-sm text-label-sm text-on-surface">100% Accesible PMR</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 13. PREGUNTAS FRECUENTES (Acordeón expandible interactivo) -->
+        <section class="w-full bg-surface-container-low py-space-xl">
+          <div class="max-w-[840px] mx-auto px-margin-mobile md:px-gutter">
+            <div class="text-center mb-space-lg">
+              <span class="font-label-md text-label-md text-primary tracking-widest uppercase">Resolvemos tus Dudas</span>
+              <h2 class="font-headline-md text-headline-md text-on-surface mt-2">Preguntas frecuentes antes de tu consulta</h2>
+            </div>
+            
+            <div class="flex flex-col gap-3" id="faq-accordion">
+              <!-- FAQ 1 -->
+              <div class="bg-surface-container-lowest rounded-[20px] shadow-sm overflow-hidden">
+                <button class="w-full p-5 text-left flex items-center justify-between gap-4 focus:outline-none" onclick="toggleFaq(1)">
+                  <span class="font-title-md text-title-md text-on-surface font-semibold">¿Cuántas sesiones necesitaré para notar mejoría?</span>
+                  <span class="material-symbols-outlined text-primary text-[24px] transition-transform" id="faq-icon-1">expand_more</span>
+                </button>
+                <div class="hidden px-5 pb-5 font-body-sm text-body-sm text-on-surface-variant leading-relaxed" id="faq-content-1">
+                  La mayoría de nuestros pacientes experimenta un alivio notable a partir de la 1ª o 2ª sesión. En la primera consulta de valoración te daremos un pronóstico realista de las semanas necesarias según la cronicidad y tipo de lesión.
+                </div>
+              </div>
+              
+              <!-- FAQ 2 -->
+              <div class="bg-surface-container-lowest rounded-[20px] shadow-sm overflow-hidden">
+                <button class="w-full p-5 text-left flex items-center justify-between gap-4 focus:outline-none" onclick="toggleFaq(2)">
+                  <span class="font-title-md text-title-md text-on-surface font-semibold">¿Duele el tratamiento de fisioterapia u osteopatía?</span>
+                  <span class="material-symbols-outlined text-primary text-[24px] transition-transform" id="faq-icon-2">expand_more</span>
+                </button>
+                <div class="hidden px-5 pb-5 font-body-sm text-body-sm text-on-surface-variant leading-relaxed" id="faq-content-2">
+                  No creemos en el tratamiento con sufrimiento. Adaptamos la presión minuciosamente a tu umbral de dolor. Aunque técnicas puntuales como la punción seca pueden generar una ligera molestia momentánea, el objetivo es siempre una liberación reconfortante.
+                </div>
+              </div>
+              
+              <!-- FAQ 3 -->
+              <div class="bg-surface-container-lowest rounded-[20px] shadow-sm overflow-hidden">
+                <button class="w-full p-5 text-left flex items-center justify-between gap-4 focus:outline-none" onclick="toggleFaq(3)">
+                  <span class="font-title-md text-title-md text-on-surface font-semibold">¿Necesito receta o derivación médica para acudir?</span>
+                  <span class="material-symbols-outlined text-primary text-[24px] transition-transform" id="faq-icon-3">expand_more</span>
+                </button>
+                <div class="hidden px-5 pb-5 font-body-sm text-body-sm text-on-surface-variant leading-relaxed" id="faq-content-3">
+                  No es necesaria ninguna derivación. Como fisioterapeutas y osteópatas colegiados, estamos capacitados para realizar una valoración diagnóstica autónoma. Si sospechamos una patología no musculoesquelética, te derivaremos al especialista pertinente.
+                </div>
+              </div>
+              
+              <!-- FAQ 4 -->
+              <div class="bg-surface-container-lowest rounded-[20px] shadow-sm overflow-hidden">
+                <button class="w-full p-5 text-left flex items-center justify-between gap-4 focus:outline-none" onclick="toggleFaq(4)">
+                  <span class="font-title-md text-title-md text-on-surface font-semibold">¿Cómo funcionan los reembolsos con seguros de salud (Sanitas, Adeslas, etc.)?</span>
+                  <span class="material-symbols-outlined text-primary text-[24px] transition-transform" id="faq-icon-4">expand_more</span>
+                </button>
+                <div class="hidden px-5 pb-5 font-body-sm text-body-sm text-on-surface-variant leading-relaxed" id="faq-content-4">
+                  Emitimos factura clínica con número de colegiado y desglose médico para que la presentes a tu póliza de reembolso. La mayoría de aseguradoras reembolsa entre el 80% y el 100% del importe según tus condiciones de póliza mixta.
+                </div>
+              </div>
+              
+              <!-- FAQ 5 -->
+              <div class="bg-surface-container-lowest rounded-[20px] shadow-sm overflow-hidden">
+                <button class="w-full p-5 text-left flex items-center justify-between gap-4 focus:outline-none" onclick="toggleFaq(5)">
+                  <span class="font-title-md text-title-md text-on-surface font-semibold">¿Qué debo llevar a la primera consulta?</span>
+                  <span class="material-symbols-outlined text-primary text-[24px] transition-transform" id="faq-icon-5">expand_more</span>
+                </button>
+                <div class="hidden px-5 pb-5 font-body-sm text-body-sm text-on-surface-variant leading-relaxed" id="faq-content-5">
+                  Te sugerimos venir con ropa cómoda o deportiva. Si tienes pruebas diagnósticas previas (resonancias, radiografías o informes médicos), tráelas o envíalas con anterioridad para que podamos revisarlas a fondo.
+                </div>
+              </div>
+              
+              <!-- FAQ 6 -->
+              <div class="bg-surface-container-lowest rounded-[20px] shadow-sm overflow-hidden">
+                <button class="w-full p-5 text-left flex items-center justify-between gap-4 focus:outline-none" onclick="toggleFaq(6)">
+                  <span class="font-title-md text-title-md text-on-surface font-semibold">¿Puedo cambiar o cancelar mi cita si me surge un imprevisto?</span>
+                  <span class="material-symbols-outlined text-primary text-[24px] transition-transform" id="faq-icon-6">expand_more</span>
+                </button>
+                <div class="hidden px-5 pb-5 font-body-sm text-body-sm text-on-surface-variant leading-relaxed" id="faq-content-6">
+                  Por supuesto. Te pedimos avisarnos con al menos 24 horas de antelación para poder ceder el hueco a otro paciente en lista de espera y reubicar tu sesión sin ningún coste adicional.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 14. BLOG / CONSEJOS DE SALUD Y BIENESTAR (3 Tarjetas) -->
+        <section class="max-w-[1240px] mx-auto px-margin-mobile md:px-gutter py-space-xl">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-space-lg">
+            <div>
+              <span class="font-label-md text-label-md text-primary tracking-widest uppercase">Divulgación Clínica</span>
+              <h2 class="font-headline-md text-headline-md text-on-surface mt-2">Consejos para cuidar tu cuerpo cada día</h2>
+            </div>
+            <a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary hover:text-on-surface font-semibold" href="#">
+              Ver todos los artículos <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </a>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <!-- Article 1 -->
+            <article class="bg-surface-container-lowest rounded-[28px] overflow-hidden shadow-sm flex flex-col justify-between group">
+              <div>
+                <div class="overflow-hidden bg-surface-container h-48">
+                  <img alt="Postura correcta y ergonomía laboral" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt-1HSQD-nDaiGPEcOEyYAPGmudFK2x1LzcSfrLsYin8Ruuya1CBLwdTqix__KQXgVR2R4bC7feHZ1sVNeKkOe57zuKXeAAOBm0x4qVGRqvdeM3du9MMP1Xf-YiLdG9zGscCG1CvQKYA49TF4tXqRKRvNh6PkJ8KjJPsYcs3R2k6WPfFGv3Zd6Nl1vGjiQOb6j-XWQvrYJ2L2IamTdU5dCxg6YMkTrpf_SEoCfoEGb85xFV5psixn14w" />
+                </div>
+                <div class="p-space-md">
+                  <div class="flex items-center justify-between gap-2 mb-2">
+                    <span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Salud postural</span>
+                    <span class="font-label-sm text-label-sm text-outline">4 min lectura</span>
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-2 group-hover:text-primary transition-colors">
+                    Teletrabajo sin dolor lumbar: 5 micro-pausas que salvan tu espalda
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    Descubre cómo pequeñas movilizaciones de cadera cada 50 minutos descompresionan tus discos vertebrales sin interrumpir tu jornada.
+                  </p>
+                </div>
+              </div>
+              <div class="px-space-md pb-space-md">
+                <span class="font-label-md text-label-md text-primary group-hover:underline inline-flex items-center gap-1">
+                  Leer artículo completo →
+                </span>
+              </div>
+            </article>
+            
+            <!-- Article 2 -->
+            <article class="bg-surface-container-lowest rounded-[28px] overflow-hidden shadow-sm flex flex-col justify-between group">
+              <div>
+                <div class="overflow-hidden bg-surface-container h-48">
+                  <img alt="Ejercicios de fuerza para rodilla y cadera" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOyYRwnf25lGGc3_H_dEIRLJBYOQyx_zk2rJjA4pKJuhXEU7Jz_jnI5SrjoUVpimSVFTAH5RGbjLJWLfqcQLk7zX2__FTAahytQqoJawS0jar1JzcMK469iMs8mWHGwlR0yiLDltHINyLxMZvfPuQYEf51_YSvzEVHzFh_x27t1_ZJ58yqGP0pOdNe_pccs8K8aNJ-QKDFperyooMfOc-6H5NNtMITR0qrXFQmJ1gS0c8OK206t9Umfw" />
+                </div>
+                <div class="p-space-md">
+                  <div class="flex items-center justify-between gap-2 mb-2">
+                    <span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Ejercicio preventivo</span>
+                    <span class="font-label-sm text-label-sm text-outline">5 min lectura</span>
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-2 group-hover:text-primary transition-colors">
+                    Fuerza muscular frente a estiramientos pasivos: el nuevo paradigma
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    La evidencia científica demuestra que unos tendones fuertes previenen más roturas que el exceso de flexibilidad descontrolada.
+                  </p>
+                </div>
+              </div>
+              <div class="px-space-md pb-space-md">
+                <span class="font-label-md text-label-md text-primary group-hover:underline inline-flex items-center gap-1">
+                  Leer artículo completo →
+                </span>
+              </div>
+            </article>
+            
+            <!-- Article 3 -->
+            <article class="bg-surface-container-lowest rounded-[28px] overflow-hidden shadow-sm flex flex-col justify-between group">
+              <div>
+                <div class="overflow-hidden bg-surface-container h-48">
+                  <img alt="Ambiente calmado para relajación miofascial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX-BpHLl4vlVvY9IxQpT2Nzz2m_OpXSNetiuVPWLty9WWjAsilHCXI3q6_Rywf747mHHOSB60cfVmU5BroXGZsDFZpCXIjueSMGIjEWuN7eoZ_bGKZanetGgTGysOBW_CIwba1EN_a79IQeack-eqwe9siyJceOttOZhQK3rvUsBuyv-S0aVI7AGNprPnRoyhUP8YAOiKzrqqsbj-6y_CACWcVBSSULYRVWWoEERyAatKRpHpVUwEXkg" />
+                </div>
+                <div class="p-space-md">
+                  <div class="flex items-center justify-between gap-2 mb-2">
+                    <span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Bienestar</span>
+                    <span class="font-label-sm text-label-sm text-outline">3 min lectura</span>
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-2 group-hover:text-primary transition-colors">
+                    Bruxismo y tensión en la mandíbula: su conexión con la respiración
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    Cómo la relajación de la musculatura masticatoria mediante osteopatía alivia cefaleas y mejora el descanso nocturno.
+                  </p>
+                </div>
+              </div>
+              <div class="px-space-md pb-space-md">
+                <span class="font-label-md text-label-md text-primary group-hover:underline inline-flex items-center gap-1">
+                  Leer artículo completo →
+                </span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 15. NEWSLETTER Y COMUNIDAD -->
+        <section class="max-w-[1240px] mx-auto px-margin-mobile md:px-gutter pb-space-xl">
+          <div class="bg-surface-container-lowest p-space-md md:p-space-lg rounded-[30px] shadow-sm flex flex-col md:flex-row items-center justify-between gap-space-md">
+            <div class="max-w-md">
+              <span class="font-label-md text-label-md text-primary tracking-widest uppercase">Comunidad Vitalia</span>
+              <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-1">Recibe nuestros consejos mensuales de ergonomía y salud activa</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">Un correo al mes con pautas de fisioterapeutas colegiados. Cero spam, cancelas cuando quieras.</p>
+            </div>
+            
+            <div class="w-full md:w-auto flex flex-col sm:flex-row items-center gap-2.5">
+              <input class="w-full sm:w-72 h-12 px-4 rounded-full bg-surface-container-low border border-surface-variant focus:outline-none focus:border-primary font-body-md text-body-md text-on-surface" placeholder="Introduce tu correo electrónico" type="email" />
+              <button class="w-full sm:w-auto h-12 px-6 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold hover:bg-primary transition-colors shrink-0" type="button">
+                Suscribirme
+              </button>
+            </div>
+            
+            <div class="flex items-center gap-3 pt-2 md:pt-0">
+              <a aria-label="Instagram" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary-container hover:text-on-primary-container transition-colors" href="#">
+                <span class="material-symbols-outlined text-[20px]">photo_camera</span>
+              </a>
+              <a aria-label="TikTok" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary-container hover:text-on-primary-container transition-colors" href="#">
+                <span class="material-symbols-outlined text-[20px]">smart_display</span>
+              </a>
+              <a aria-label="Google" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary-container hover:text-on-primary-container transition-colors" href="#">
+                <span class="material-symbols-outlined text-[20px]">reviews</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Interactive Scripts for Tabs & FAQ -->
+        <script>
+          function switchTab(tabId) {
+            const tabs = ['fisio', 'osteo', 'rehab', 'pelvico'];
+            tabs.forEach(t => {
+              const content = document.getElementById('tab-content-' + t);
+              const btn = document.getElementById('tab-btn-' + t);
+              if (t === tabId) {
+                content.classList.remove('hidden');
+                content.classList.add('grid');
+                btn.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+                btn.classList.add('bg-primary-container', 'text-on-primary-container');
+              } else {
+                content.classList.add('hidden');
+                content.classList.remove('grid');
+                btn.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+                btn.classList.remove('bg-primary-container', 'text-on-primary-container');
+              }
+            });
+          }
+
+          function toggleFaq(num) {
+            const content = document.getElementById('faq-content-' + num);
+            const icon = document.getElementById('faq-icon-' + num);
+            if (content.classList.contains('hidden')) {
+              content.classList.remove('hidden');
+              icon.innerText = 'expand_less';
+            } else {
+              content.classList.add('hidden');
+              icon.innerText = 'expand_more';
+            }
+          }
+        </script>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="w-full bg-inverse-surface text-inverse-on-surface pt-space-xl pb-space-lg">
+      <div class="max-w-[1240px] mx-auto px-margin-mobile md:px-gutter">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg pb-space-xl">
+          <div class="flex flex-col gap-space-sm">
+            <div class="flex items-center gap-2">
+              <span class="font-headline-md text-headline-md text-primary-fixed tracking-tight font-semibold">Vitalia.</span>
+            </div>
+            <p class="font-body-sm text-body-sm text-surface-variant leading-relaxed">
+              Clínica especializada en fisioterapia neurológica, osteopatía avanzada y bienestar integral. Unimos la evidencia clínica con el descanso regenerativo.
+            </p>
+            <div class="pt-space-xs">
+              <span class="inline-block px-3 py-1 rounded-full bg-inverse-surface/80 text-outline-variant font-label-sm text-label-sm">Nº Registro Sanitario: C-28-09482</span>
+            </div>
+          </div>
+          
+          <div class="flex flex-col gap-space-sm">
+            <h3 class="font-title-md text-title-md text-surface-bright tracking-wide">Especialidades</h3>
+            <ul class="flex flex-col gap-2.5 font-body-sm text-body-sm text-surface-variant">
+              <li class="hover:text-primary-fixed transition-colors"><a data-path="tratamientos" href="#">Fisioterapia Avanzada</a></li>
+              <li class="hover:text-primary-fixed transition-colors"><a data-path="tratamientos" href="#">Osteopatía Estructural &amp; Craneal</a></li>
+              <li class="hover:text-primary-fixed transition-colors"><a data-path="tratamientos" href="#">Readaptación Deportiva</a></li>
+              <li class="hover:text-primary-fixed transition-colors"><a data-path="tratamientos" href="#">Suelo Pélvico &amp; Maternidad</a></li>
+              <li class="hover:text-primary-fixed transition-colors"><a data-path="tratamientos" href="#">Pilates Clínico &amp; Terapéutico</a></li>
+            </ul>
+          </div>
+          
+          <div class="flex flex-col gap-space-sm">
+            <h3 class="font-title-md text-title-md text-surface-bright tracking-wide">Contacto &amp; Horarios</h3>
+            <div class="flex flex-col gap-3 font-body-sm text-body-sm text-surface-variant">
+              <p class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-[18px] text-primary-fixed shrink-0 mt-0.5">location_on</span>
+                <span>C/ Velázquez 48, Salamanca, 28001 Madrid</span>
+              </p>
+              <p class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[18px] text-primary-fixed shrink-0">call</span>
+                <span>+34 912 345 678</span>
+              </p>
+              <p class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-[18px] text-primary-fixed shrink-0 mt-0.5">schedule</span>
+                <span>Lunes a Viernes: 08:30 – 21:00<br />Sábados: 09:00 – 14:00</span>
+              </p>
+            </div>
+          </div>
+          
+          <div class="flex flex-col gap-space-sm">
+            <h3 class="font-title-md text-title-md text-surface-bright tracking-wide">Garantías &amp; Legal</h3>
+            <p class="font-body-sm text-body-sm text-surface-variant">Equipo colegiado por el Ilustre Colegio Profesional de Fisioterapeutas de la Comunidad de Madrid.</p>
+            <ul class="flex flex-col gap-2 font-body-sm text-body-sm text-surface-variant">
+              <li class="hover:text-primary-fixed transition-colors"><a data-path="aviso-legal" href="#">Aviso Legal</a></li>
+              <li class="hover:text-primary-fixed transition-colors"><a data-path="politica-de-privacidad" href="#">Privacidad RGPD</a></li>
+              <li class="hover:text-primary-fixed transition-colors"><a data-path="politica-de-cookies" href="#">Política de Cookies</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-4 font-label-sm text-label-sm text-outline-variant">
+          <p>© 2026 Clínica Vitalia S.L. Todos los derechos reservados.</p>
+          <p>Diseño y arquitectura para el bienestar por Vitalia Care Studio</p>
+        </div>
+      </div>
     </footer>
 
-    <script src="escaparate.js"></script>
-</body>
+    <!-- BOTONES FLOTANTES Y MENÚ MÓVIL INFERIOR -->
+    <div class="fixed bottom-24 sm:bottom-8 right-6 z-40 flex flex-col items-end gap-3">
+      <div class="bg-surface-container-lowest text-on-surface px-3 py-1.5 rounded-full shadow-[0_10px_30px_-10px_rgba(44,42,41,0.06)] font-label-sm text-label-sm flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+        <span>Respuesta rápida en 15 min</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <a aria-label="Volver arriba" class="w-11 h-11 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center shadow-[0_10px_30px_-10px_rgba(44,42,41,0.06)] hover:bg-surface-container-high transition-all" href="#" id="scrollTopBtn">
+          <span class="material-symbols-outlined text-[20px]">north</span>
+        </a>
+        <a aria-label="Contactar por WhatsApp" class="h-12 px-5 rounded-full bg-[#25D366] text-white flex items-center gap-2 shadow-[0_10px_30px_-10px_rgba(44,42,41,0.06)] hover:brightness-105 transition-all transform hover:-translate-y-0.5" href="https://wa.me/34912345678" rel="noopener noreferrer" target="_blank">
+          <span class="material-symbols-outlined text-[22px]">chat</span>
+          <span class="font-label-md text-label-md font-semibold hidden md:inline">WhatsApp Directo</span>
+        </a>
+      </div>
+    </div>
+    
+    <div class="fixed bottom-0 inset-x-0 z-40 bg-surface/95 backdrop-blur-md shadow-[0_20px_40px_-15px_rgba(44,42,41,0.09)] sm:hidden px-4 py-2 flex items-center justify-around gap-2">
+      <a class="flex-1 flex flex-col items-center justify-center py-1.5 rounded-full text-on-surface-variant hover:bg-surface-container" href="tel:+34912345678">
+        <span class="material-symbols-outlined text-[20px]">call</span>
+        <span class="font-label-sm text-label-sm">Llamar</span>
+      </a>
+      <a class="flex-[1.5] flex items-center justify-center py-2.5 px-3 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold text-center" data-path="pedir-cita" href="#">
+        <span class="material-symbols-outlined text-[18px] mr-1">calendar_month</span>
+        <span>Pedir Cita</span>
+      </a>
+      <a class="flex-1 flex flex-col items-center justify-center py-1.5 rounded-full text-on-surface-variant hover:bg-surface-container" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+        <span class="material-symbols-outlined text-[20px]">near_me</span>
+        <span class="font-label-sm text-label-sm">Llegar</span>
+      </a>
+    </div>
+    
+    <!-- BANNER COOKIES -->
+    <div class="fixed bottom-24 sm:bottom-6 left-6 z-40 max-w-sm p-4 bg-surface-container-lowest text-on-surface rounded-xl shadow-[0_20px_40px_-15px_rgba(44,42,41,0.09)] hidden sm:block" id="cookieConsent">
+      <p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Utilizamos cookies analíticas y técnicas esenciales para ofrecer una experiencia regenerativa y segura.</p>
+      <div class="flex items-center gap-2">
+        <button class="h-8 px-4 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm hover:bg-primary transition-colors" onclick="document.getElementById('cookieConsent').remove()">Aceptar</button>
+        <a class="h-8 px-3 rounded-full text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center" data-path="politica-de-cookies" href="#">Preferencias</a>
+      </div>
+    </div>
+    
+  </body>
 </html>
