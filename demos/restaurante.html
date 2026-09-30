@@ -1,151 +1,1463 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fuego & Brasa - Asador Urbano de Alta Gama</title>
-    <link rel="stylesheet" href="restaurante.css">
-    <!-- Google Fonts & FontAwesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-
-    <!-- Navegación Industrial Fija -->
-    <header class="culinary-header" id="navbar">
-        <div class="nav-container">
-            <div class="logo">FUEGO<span>&</span>BRASA</div>
-            <nav class="nav-links" id="culinaryNav">
-                <a href="#inicio" class="active">Inicio</a>
-                <a href="#menu">Nuestra Carta</a>
-                <a href="#experiencia">El Asador</a>
-                <a href="#reservas">Reservar Mesa</a>
-            </nav>
-            <div class="nav-actions-culinary">
-                <a href="#reservas" class="btn-culinary">Reservar Mesa</a>
-                <button class="menu-toggle-cul" id="culToggle" aria-label="Menú"><i class="fa-solid fa-bars"></i></button>
+<html class="dark" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&amp;family=Roboto+Flex:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    
+    <style>
+      @layer base {
+        html, body { margin: 0; padding: 0; }
+        body { overscroll-behavior: none; }
+        main > :first-child { margin-top: 0 !important; }
+        main > :last-child { margin-bottom: 0 !important; }
+      }
+      ::-webkit-scrollbar { display: none; }
+    </style>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "on-error": "#690005", "on-primary": "#5f1500", "outline": "#ab8980", "on-primary-fixed": "#3b0900",
+              "error-container": "#93000a", "on-tertiary-fixed": "#390c01", "surface-container": "#201f1f",
+              "inverse-on-surface": "#313030", "background": "#131313", "primary-fixed-dim": "#ffb5a0",
+              "on-tertiary-container": "#4c1a09", "outline-variant": "#5b4039", "on-primary-container": "#541200",
+              "on-secondary-fixed": "#3b0900", "on-primary-fixed-variant": "#862200", "primary": "#ffb5a0",
+              "on-error-container": "#ffdad6", "on-secondary": "#5f1500", "surface-container-high": "#2a2a2a",
+              "on-surface": "#e5e2e1", "surface": "#131313", "error": "#ffb4ab", "surface-container-highest": "#353534",
+              "surface-tint": "#ffb5a0", "on-tertiary": "#54200f", "inverse-primary": "#b02f00", "secondary-fixed": "#ffdbd1",
+              "secondary-fixed-dim": "#ffb5a0", "primary-fixed": "#ffdbd1", "on-tertiary-fixed-variant": "#713623",
+              "surface-variant": "#353534", "secondary-container": "#ff5722", "on-background": "#e5e2e1",
+              "tertiary-fixed-dim": "#ffb59e", "tertiary": "#ffb59e", "inverse-surface": "#e5e2e1", "primary-container": "#ff5722",
+              "on-secondary-fixed-variant": "#872100", "tertiary-fixed": "#ffdbd0", "on-surface-variant": "#e4beb4",
+              "on-secondary-container": "#541100", "surface-bright": "#393939", "surface-container-low": "#1c1b1b",
+              "surface-dim": "#131313", "tertiary-container": "#c97e66", "secondary": "#ffb5a0", "surface-container-lowest": "#0e0e0e"
+            },
+            "borderRadius": {
+              "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"
+            },
+            "spacing": {
+              "space-lg": "1.5rem", "space-xs": "0.25rem", "gutter": "1.5rem", "margin": "3rem",
+              "space-sm": "0.5rem", "gutter-mobile": "1rem", "space-xl": "2.5rem", "space-md": "1rem", "margin-mobile": "1.25rem"
+            },
+            "fontFamily": {
+              "price-display": ["Oswald"], "body-lg": ["Roboto Flex"], "headline-sm": ["Oswald"],
+              "display-lg": ["Oswald"], "label-lg": ["Oswald"], "display-lg-mobile": ["Oswald"],
+              "body-sm": ["Roboto Flex"], "headline-lg-mobile": ["Oswald"], "label-sm": ["Oswald"],
+              "headline-md": ["Oswald"], "body-md": ["Roboto Flex"], "label-md": ["Oswald"], "headline-lg": ["Oswald"]
+            },
+            "fontSize": {
+              "price-display": ["22px", {"lineHeight": "26px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+              "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+              "headline-sm": ["20px", {"lineHeight": "26px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+              "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "0.04em", "fontWeight": "700"}],
+              "label-lg": ["15px", {"lineHeight": "20px", "letterSpacing": "0.08em", "fontWeight": "600"}],
+              "display-lg-mobile": ["38px", {"lineHeight": "44px", "letterSpacing": "0.03em", "fontWeight": "700"}],
+              "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+              "headline-lg-mobile": ["28px", {"lineHeight": "34px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+              "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+              "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+              "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}],
+              "label-md": ["13px", {"lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "500"}],
+              "headline-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "0.03em", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  
+  <body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen">
+    
+    <!-- HEADER Y NAVEGACIÓN FIJA -->
+    <div class="fixed top-0 left-0 right-0 z-50">
+      <aside class="w-full bg-secondary-container text-on-secondary-container py-1 px-margin-mobile md:px-margin text-center text-label-sm font-label-sm uppercase tracking-wider flex items-center justify-center gap-space-sm shadow-[0_2px_12px_rgba(255,87,34,0.25)]">
+        <span class="w-2 h-2 rounded-full bg-surface animate-ping inline-block"></span>
+        <span>Hoy abierto hasta las 00:00 · Reserva tu mesa para el fin de semana</span>
+      </aside>
+      <header class="w-full bg-surface/85 backdrop-blur-xl shadow-[0_10px_30px_-10px_rgba(0,0,0,0.7)]">
+        <div class="h-20 max-w-[1360px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-gutter">
+          <div class="flex items-center gap-space-md">
+            <img alt="Fuego &amp; Brasa Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UtccwobbasUGswc0k7XFRn7_iyhqawF0WbrXy17LjEQWa5smoTWZOK07lLJzvOksTPgmiv_-7P4rFNUbGIY8CJvS8axJg3ZhD_0hAxJ6mVOQjpsKOer9FLHDbUlPHSWiRZ_72EAl5vZpJiPfozRC9yJVmY0O0VoCWUJr8uh62PWTRvO7bmdJsgahuml2x04t9Qw1TFFZXWc5MOKdd7Vdz_EroGkGWCxJLaZ6-BizdkCiFUV0WX0cLIw9dn" />
+            <span class="font-headline-sm text-headline-sm uppercase tracking-widest text-on-surface">Fuego &amp; Brasa</span>
+          </div>
+          <nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary-container border-b-2 border-primary-container">
+            <a aria-current="page" class="font-label-lg uppercase tracking-wider transition-colors py-1 text-primary-container border-b-2 border-primary-container" data-path="inicio" href="#">Inicio</a>
+            <a class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="carta" href="#">Carta</a>
+            <a class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="experiencia" href="#">Experiencia</a>
+            <a class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="reseñas" href="#">Reseñas</a>
+            <a class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="contacto" href="#">Contacto</a>
+          </nav>
+          <div class="flex items-center gap-space-md">
+            <a class="hidden sm:inline-flex items-center justify-center bg-primary-container hover:bg-[#e04006] text-on-primary-container font-label-lg text-label-lg uppercase px-space-lg py-space-sm rounded shadow-[0_0_24px_0_rgba(255,87,34,0.35)] hover:shadow-[0_0_28px_rgba(255,87,34,0.55)] transition-all transform hover:-translate-y-0.5" data-path="reservas" href="#">Reservar Mesa</a>
+            <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
             </div>
+          </div>
         </div>
-    </header>
+      </header>
+    </div>
 
-    <!-- Hero Gastronómico Cinemático -->
-    <section id="inicio" class="hero-culinary">
-        <div class="hero-overlay"></div>
-        <div class="hero-content reveal-load">
-            <span class="badge-culinary"><i class="fa-solid fa-fire-flame-curved"></i> Carbón de Encina y 100% Producto Local</span>
-            <h1>Pura carne a la brasa. <br><span>Sin artificios.</span></h1>
-            <p>Seleccionamos cortes exclusivos madurados y los cocinamos a fuego vivo para ofrecerte una experiencia carnívora inolvidable.</p>
-            <div class="hero-actions">
-                <a href="#menu" class="btn-primary-culinary">Ver Carta Interactiva <i class="fa-solid fa-arrow-down"></i></a>
-                <a href="#reservas" class="btn-outline-culinary">Reservar Online</a>
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="w-full pt-28 bg-surface">
+      <div class="flex flex-col w-full">
+        
+        <!-- ================= 1. HERO SECTION ================= -->
+        <section class="relative w-full -mt-28 min-h-[92vh] flex items-center justify-center overflow-hidden bg-surface">
+          <div class="absolute inset-0 z-0">
+            <img alt="Maestro asador sellando tomahawk a la brasa con chispas de encina" class="w-full h-full object-cover object-center filter brightness-[0.42] contrast-125 scale-105 transform animate-pulse duration-[8000ms]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmLqiNhE4kd_RiAWIbSRL75DEOgYWaY5YLBD8Db8Q4SO3aKV0VOaSsn7i5uG0G3aa4lcAEPwx-iq0CxfUIqEy6NvyMGhVZbZYlAKO7JKiO_7c1TXzfmrn3UVpydX3Qwyu_AMRoEiSX-Wjjwo1yIPzRmfIsh7nzCyA35-k20JgZMKn1DLHcenof37DnwmYN7Q6OoA2qgp_aDtBjgR-dvNQvoVj3XAEZ70ASTZ5b1YNo7-pygXr6yC0PeQ" />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/75 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/40 to-transparent"></div>
+          </div>
+          
+          <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-primary-container/15 blur-[140px] pointer-events-none rounded-full"></div>
+          
+          <div class="relative z-10 w-full max-w-[1360px] mx-auto px-margin-mobile md:px-margin pt-36 pb-20 flex flex-col items-start justify-center">
+            <div class="inline-flex items-center gap-space-xs px-space-md py-1 rounded bg-surface-container-high/90 text-primary-container shadow-[0_0_18px_rgba(255,87,34,0.25)] mb-space-md">
+              <span class="material-symbols-outlined text-[16px] text-primary-container" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+              <span class="font-label-md text-label-md uppercase tracking-widest text-primary-fixed">Carbón de encina · Producto 100% de origen</span>
             </div>
+            
+            <h1 class="font-display-lg text-display-lg md:text-[76px] md:leading-[80px] uppercase font-bold text-on-surface max-w-4xl tracking-tight mb-space-md">
+              Pura carne a la brasa. <br />
+              <span class="text-primary-container inline-block drop-shadow-[0_0_28px_rgba(255,87,34,0.45)]">Sin artificios.</span>
+            </h1>
+            
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-space-lg leading-relaxed">
+              Cortes nobles seleccionados en dehesas nacionales y madurados en nuestra cámara de cristal a la vista. Afinados sobre el pulso vivo de ascuas de roble y encina centenaria.
+            </p>
+            
+            <div class="flex items-center gap-space-sm bg-surface-container-low/80 backdrop-blur-md px-space-md py-space-xs rounded mb-space-xl">
+              <div class="flex text-[#FFB300]">
+                <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              </div>
+              <span class="font-label-md text-label-md text-on-surface font-semibold tracking-wide">4.8 en Google</span>
+              <span class="text-on-surface-variant/50">·</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">+1.200 reseñas verificadas</span>
+            </div>
+            
+            <div class="flex flex-wrap items-center gap-space-md">
+              <a class="inline-flex items-center justify-center gap-space-xs bg-primary-container hover:bg-[#e04006] text-on-primary-container font-label-lg text-label-lg uppercase px-space-xl py-4 rounded shadow-[0_0_28px_0_rgba(255,87,34,0.45)] hover:shadow-[0_0_36px_rgba(255,87,34,0.65)] transition-all transform hover:-translate-y-0.5" href="#reservas">
+                <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">table_restaurant</span>
+                <span>Reservar Mesa Online</span>
+              </a>
+              <a class="inline-flex items-center justify-center gap-space-xs bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-lg text-label-lg uppercase px-space-xl py-4 rounded shadow-md hover:text-primary-container transition-all" href="#carta">
+                <span class="material-symbols-outlined text-[20px]">restaurant_menu</span>
+                <span>Ver la Carta</span>
+              </a>
+            </div>
+            
+            <div class="mt-space-xl pt-space-md flex items-center gap-space-sm text-on-surface-variant/70">
+              <div class="w-5 h-9 rounded-full bg-surface-container-high flex items-start justify-center p-1">
+                <div class="w-1.5 h-2 rounded-full bg-primary-container animate-bounce"></div>
+              </div>
+              <span class="font-label-sm text-label-sm uppercase tracking-widest">Desliza para explorar</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= 2. FRANJA DE CONFIANZA / STATS BAR ================= -->
+        <section class="w-full bg-surface-container-lowest py-space-xl relative z-10 shadow-xl">
+          <div class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-lg">
+              <div class="bg-surface-container p-space-md rounded flex items-center gap-space-md shadow-sm hover:bg-surface-container-high transition-colors">
+                <div class="w-12 h-12 rounded bg-surface-container-highest flex items-center justify-center text-primary-container flex-shrink-0">
+                  <span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                </div>
+                <div>
+                  <div class="font-display-lg text-headline-lg font-bold text-on-surface leading-none">4.8★</div>
+                  <div class="font-body-sm text-body-sm text-on-surface-variant mt-1">Google Reviews (+1.200)</div>
+                </div>
+              </div>
+              <div class="bg-surface-container p-space-md rounded flex items-center gap-space-md shadow-sm hover:bg-surface-container-high transition-colors">
+                <div class="w-12 h-12 rounded bg-surface-container-highest flex items-center justify-center text-primary-container flex-shrink-0">
+                  <span class="material-symbols-outlined text-[28px]">workspace_premium</span>
+                </div>
+                <div>
+                  <div class="font-display-lg text-headline-lg font-bold text-on-surface leading-none">+15 AÑOS</div>
+                  <div class="font-body-sm text-body-sm text-on-surface-variant mt-1">Maestría de brasas vivas</div>
+                </div>
+              </div>
+              <div class="bg-surface-container p-space-md rounded flex items-center gap-space-md shadow-sm hover:bg-surface-container-high transition-colors">
+                <div class="w-12 h-12 rounded bg-surface-container-highest flex items-center justify-center text-primary-container flex-shrink-0">
+                  <span class="material-symbols-outlined text-[28px]">kitchen</span>
+                </div>
+                <div>
+                  <div class="font-display-lg text-headline-lg font-bold text-on-surface leading-none">45 DÍAS</div>
+                  <div class="font-body-sm text-body-sm text-on-surface-variant mt-1">Maduración Dry-Aged óptima</div>
+                </div>
+              </div>
+              <div class="bg-surface-container p-space-md rounded flex items-center gap-space-md shadow-sm hover:bg-surface-container-high transition-colors">
+                <div class="w-12 h-12 rounded bg-surface-container-highest flex items-center justify-center text-primary-container flex-shrink-0">
+                  <span class="material-symbols-outlined text-[28px]">group</span>
+                </div>
+                <div>
+                  <div class="font-display-lg text-headline-lg font-bold text-on-surface leading-none">+50.000</div>
+                  <div class="font-body-sm text-body-sm text-on-surface-variant mt-1">Comensales apasionados</div>
+                </div>
+              </div>
+            </div>
+            <div class="pt-space-md flex flex-wrap items-center justify-center md:justify-between gap-space-md text-on-surface-variant/60 uppercase font-label-md text-label-md tracking-widest text-center">
+              <span class="hover:text-primary-container transition-colors flex items-center gap-1">
+                <span class="material-symbols-outlined text-[18px]">wb_sunny</span> Guía Repsol · 1 Sol 2024
+              </span>
+              <span class="hidden md:inline text-on-surface-variant/30">•</span>
+              <span class="hover:text-primary-container transition-colors flex items-center gap-1">
+                <span class="material-symbols-outlined text-[18px]">restaurant</span> Michelin Bib Gourmand 2024
+              </span>
+              <span class="hidden md:inline text-on-surface-variant/30">•</span>
+              <span class="hover:text-primary-container transition-colors flex items-center gap-1">
+                <span class="material-symbols-outlined text-[18px]">trophy</span> TripAdvisor Travellers' Choice 2024
+              </span>
+              <span class="hidden md:inline text-on-surface-variant/30">•</span>
+              <span class="hover:text-primary-container transition-colors flex items-center gap-1">
+                <span class="material-symbols-outlined text-[18px]">verified</span> Crítica Gastronómica El País
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= 3. PLATOS ESTRELLA (3 HERO CONVERSION CARDS) ================= -->
+        <section class="w-full py-24 bg-surface relative">
+          <div class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-md">
+              <div>
+                <span class="text-primary-container font-label-lg text-label-lg uppercase tracking-widest block mb-2">Selección de la Casa</span>
+                <h2 class="font-display-lg text-display-lg uppercase font-bold text-on-surface tracking-tight">Nuestros Platos Estrella</h2>
+              </div>
+              <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+                Tres creaciones icónicas donde convergen la precisión milimétrica del corte, la combustión lenta de la leña y salsas reducidas pacientemente durante 18 horas.
+              </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+              <!-- Card 1: Chuletón de Vaca Vieja -->
+              <div class="bg-surface-container-low hover:bg-surface-container rounded-xl overflow-hidden shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col group">
+                <div class="relative h-64 overflow-hidden">
+                  <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Thick-cut prime dry-aged bone-in ribeye steak sizzling on an open cast-iron charcoal grill, ember glow lighting, dramatic culinary food photography, dark moody restaurant atmosphere, deep charcoal background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2-yeU2PE10s__x4pDn7EP9vo4kG2H8C6aUDo67KCFudN73ax_-tX5ovGvFLsizhVoApbExVfXH2GKR0iKh4uZD5ExsOdXWDwWiqJAPrLkD08tPxxDAQMGKuOL3XdhpDXwXUntF2Nq6M45aVDH-DRE1iKEgHsHEnD-okP91b8VtjYb8AQiROzvDOA-US9ZN2q1QdmRCbNetIoiSYO138zwZS7zRmSgKBZxrN34rE66Ul7nwvPzElHDLg" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+                  <div class="absolute top-4 left-4 bg-primary-container text-on-primary-container px-space-sm py-1 rounded font-label-sm text-label-sm uppercase font-bold tracking-wider shadow-md">
+                    Recomendado del Chef
+                  </div>
+                  <div class="absolute bottom-4 right-4 bg-surface-container-highest/90 backdrop-blur-md px-space-sm py-1 rounded font-price-display text-price-display text-primary">
+                    26,50€ <span class="font-body-sm text-[12px] text-on-surface-variant">/ 100g</span>
+                  </div>
+                </div>
+                <div class="p-space-lg flex-1 flex flex-col justify-between">
+                  <div>
+                    <div class="flex items-center justify-between mb-2">
+                      <h3 class="font-headline-md text-headline-md uppercase text-on-surface font-bold group-hover:text-primary transition-colors">Chuletón de Vaca Vieja</h3>
+                    </div>
+                    <span class="inline-block text-primary font-label-sm text-label-sm uppercase tracking-wider mb-space-sm">Maduración Dry-Aged 45 días</span>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-space-lg leading-relaxed">
+                      Infiltración uniforme de grasa dorada, corteza sellada en fuego vivo y corazón tierno de notas avellanadas. Servido con escamas de sal marina fósil.
+                    </p>
+                  </div>
+                  <button class="w-full py-3 bg-surface-container-high hover:bg-primary-container text-on-surface hover:text-on-primary-container font-label-md text-label-md uppercase tracking-wider rounded transition-all flex items-center justify-center gap-space-xs shadow-sm" onclick="document.getElementById('reservas').scrollIntoView({behavior: 'smooth'})">
+                    <span class="material-symbols-outlined text-[18px]">add_circle</span>
+                    <span>Añadir a mi reserva</span>
+                  </button>
+                </div>
+              </div>
+              
+              <!-- Card 2: Costillar Ibérico -->
+              <div class="bg-surface-container-low hover:bg-surface-container rounded-xl overflow-hidden shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col group">
+                <div class="relative h-64 overflow-hidden">
+                  <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Glazed barbecued pork ribs caramelized over glowing wood embers with bourbon and honey shimmer, professional culinary dark food styling, high contrast, warm ember sparks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVTtYUXtzm86PCmrrpUH0uJ0WNbKQlGVVMZckVqcHA5s7OU7Xo8-vZfC1fWHeqEuovNlLCnsPyABf_Ide1PAiloRtXE0FCn4oNHrUNeFbYYxAlaSX9GY-lbpoJvVed4TuR7vZTjOwQkdraFsRFvUsUIEujZMmyDRsauPl9xOn4Pm3Ghbb7mOB-i6JRGTjr_kAWBo7B4joSrBsHmwvgMtdK43Gq23ucJwDXdxUbmeYaLM6GizjADiqjXg" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+                  <div class="absolute top-4 left-4 bg-surface-container-highest/90 text-on-surface px-space-sm py-1 rounded font-label-sm text-label-sm uppercase font-bold tracking-wider">
+                    Cocción Lenta 14 Horas
+                  </div>
+                  <div class="absolute bottom-4 right-4 bg-surface-container-highest/90 backdrop-blur-md px-space-sm py-1 rounded font-price-display text-price-display text-primary">
+                    18,90€
+                  </div>
+                </div>
+                <div class="p-space-lg flex-1 flex flex-col justify-between">
+                  <div>
+                    <div class="flex items-center justify-between mb-2">
+                      <h3 class="font-headline-md text-headline-md uppercase text-on-surface font-bold group-hover:text-primary transition-colors">Costillar Ibérico</h3>
+                    </div>
+                    <span class="inline-block text-primary font-label-sm text-label-sm uppercase tracking-wider mb-space-sm">Baja temperatura &amp; golpe de brasa</span>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-space-lg leading-relaxed">
+                      Carne melosa que se desprende del hueso al roce, lacada con nuestro glaseado artesanal de bourbon añejo, miel silvestre de encina y pimienta ahumada.
+                    </p>
+                  </div>
+                  <button class="w-full py-3 bg-surface-container-high hover:bg-primary-container text-on-surface hover:text-on-primary-container font-label-md text-label-md uppercase tracking-wider rounded transition-all flex items-center justify-center gap-space-xs shadow-sm" onclick="document.getElementById('reservas').scrollIntoView({behavior: 'smooth'})">
+                    <span class="material-symbols-outlined text-[18px]">add_circle</span>
+                    <span>Añadir a mi reserva</span>
+                  </button>
+                </div>
+              </div>
+              
+              <!-- Card 3: Provoleta Artesana -->
+              <div class="bg-surface-container-low hover:bg-surface-container rounded-xl overflow-hidden shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col group">
+                <div class="relative h-64 overflow-hidden">
+                  <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Melted bubbling provolone cheese served in a black iron skillet straight from wood fire grill with sun-dried tomatoes fresh oregano and crispy rustic focaccia, dark moody gastropub style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCDQVJlJ0m3RmohbQ3Rs0IlyKcQIa_85hHhO8ROzyfYRef4O7P38X_IubfSKZp_Bme9xWX5hJm_OeLx9QcqLuyIsPwOzG8_6PH4LZPnhrWRxPJMHG7tUJRYMmNsd934jNZAAL04ao1PBfQtiH06PskgrIcEpUk_Hyop9a5n6SRH67FZMxIBquQAZQwLpvhURKaBUpLenEWs3Tt2W6j1drDhjZ8_DeskumN713os4x7RHEjreFwWQ6rhQ" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+                  <div class="absolute top-4 left-4 bg-surface-container-highest/90 text-on-surface px-space-sm py-1 rounded font-label-sm text-label-sm uppercase font-bold tracking-wider">
+                    El Entrante Indispensable
+                  </div>
+                  <div class="absolute bottom-4 right-4 bg-surface-container-highest/90 backdrop-blur-md px-space-sm py-1 rounded font-price-display text-price-display text-primary">
+                    9,50€
+                  </div>
+                </div>
+                <div class="p-space-lg flex-1 flex flex-col justify-between">
+                  <div>
+                    <div class="flex items-center justify-between mb-2">
+                      <h3 class="font-headline-md text-headline-md uppercase text-on-surface font-bold group-hover:text-primary transition-colors">Provoleta Artesana</h3>
+                    </div>
+                    <span class="inline-block text-primary font-label-sm text-label-sm uppercase tracking-wider mb-space-sm">Horno de brasa con hierro fundido</span>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-space-lg leading-relaxed">
+                      Queso hilado fundente con costra caramelizada al fuego, orégano recolectado a mano, dados de tomate semiseco confitado y focaccia crujiente de masa madre.
+                    </p>
+                  </div>
+                  <button class="w-full py-3 bg-surface-container-high hover:bg-primary-container text-on-surface hover:text-on-primary-container font-label-md text-label-md uppercase tracking-wider rounded transition-all flex items-center justify-center gap-space-xs shadow-sm" onclick="document.getElementById('reservas').scrollIntoView({behavior: 'smooth'})">
+                    <span class="material-symbols-outlined text-[18px]">add_circle</span>
+                    <span>Añadir a mi reserva</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= 4. CARTA COMPLETA INTERACTIVA CON FILTROS ================= -->
+        <section class="w-full py-24 bg-surface-container-lowest" id="carta">
+          <div class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin">
+            <div class="text-center max-w-3xl mx-auto mb-space-xl">
+              <span class="text-primary-container font-label-lg text-label-lg uppercase tracking-widest block mb-2">Parrilla &amp; Recetario Noble</span>
+              <h2 class="font-display-lg text-display-lg uppercase font-bold text-on-surface tracking-tight mb-space-sm">La Carta Completa</h2>
+              <p class="font-body-md text-body-md text-on-surface-variant">Cada plato responde a una técnica precisa de control de temperaturas, afinado sobre brasas de madera de encina y sal marina natural.</p>
+            </div>
+            
+            <div class="flex items-center justify-start lg:justify-center overflow-x-auto gap-space-xs pb-space-md mb-space-xl no-scrollbar">
+              <button class="filter-tab active px-space-md py-2.5 rounded bg-primary-container text-on-primary-container font-label-md text-label-md uppercase tracking-wider transition-all whitespace-nowrap" data-category="all">
+                Todos los Platos
+              </button>
+              <button class="filter-tab px-space-md py-2.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md uppercase tracking-wider transition-all whitespace-nowrap" data-category="entrantes">
+                Entrantes
+              </button>
+              <button class="filter-tab px-space-md py-2.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md uppercase tracking-wider transition-all whitespace-nowrap" data-category="carnes">
+                Carnes a la Brasa
+              </button>
+              <button class="filter-tab px-space-md py-2.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md uppercase tracking-wider transition-all whitespace-nowrap" data-category="pescados">
+                Pescados al Fuego
+              </button>
+              <button class="filter-tab px-space-md py-2.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md uppercase tracking-wider transition-all whitespace-nowrap" data-category="guarniciones">
+                Guarniciones
+              </button>
+              <button class="filter-tab px-space-md py-2.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md uppercase tracking-wider transition-all whitespace-nowrap" data-category="postres">
+                Postres Caseros
+              </button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg" id="menu-grid">
+              <!-- Dish 1 -->
+              <div class="menu-item bg-surface-container p-space-lg rounded-xl flex flex-col justify-between shadow-md hover:bg-surface-container-high transition-all" data-category="entrantes">
+                <div>
+                  <div class="flex items-start justify-between gap-space-sm mb-space-xs">
+                    <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface font-semibold">Cecina de León I.G.P.</h3>
+                    <span class="font-price-display text-price-display text-primary whitespace-nowrap">14,50€</span>
+                  </div>
+                  <div class="flex items-center gap-space-xs mb-space-sm">
+                    <span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary-fixed text-label-sm font-label-sm uppercase">Reserva 18m</span>
+                    <span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-label-sm font-label-sm">GF</span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    Corte fino a cuchillo con pan de cristal horneado, tomate de colgar rallado y virutas de almendra tostada.
+                  </p>
+                </div>
+                <div class="mt-space-md pt-space-sm flex items-center justify-between text-on-surface-variant/60 font-body-sm text-body-sm">
+                  <span>Ración individual / Para compartir</span>
+                  <span class="material-symbols-outlined text-[18px] text-primary-container">done</span>
+                </div>
+              </div>
+              
+              <!-- Dish 2 -->
+              <div class="menu-item bg-surface-container p-space-lg rounded-xl flex flex-col justify-between shadow-md hover:bg-surface-container-high transition-all" data-category="entrantes">
+                <div>
+                  <div class="flex items-start justify-between gap-space-sm mb-space-xs">
+                    <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface font-semibold">Mollejas de Ternera Glaseadas</h3>
+                    <span class="font-price-display text-price-display text-primary whitespace-nowrap">12,80€</span>
+                  </div>
+                  <div class="flex items-center gap-space-xs mb-space-sm">
+                    <span class="px-2 py-0.5 rounded bg-primary-container/20 text-primary-container text-label-sm font-label-sm uppercase font-semibold">★ Estrella</span>
+                    <span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-label-sm font-label-sm">GF</span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    Doradas en brasas de roble, textura crujiente exterior y fondo untuoso reducido al vino Pedro Ximénez.
+                  </p>
+                </div>
+                <div class="mt-space-md pt-space-sm flex items-center justify-between text-on-surface-variant/60 font-body-sm text-body-sm">
+                  <span>Maridaje sugerido: Tinto Garnacha</span>
+                  <span class="material-symbols-outlined text-[18px] text-primary-container">done</span>
+                </div>
+              </div>
+              
+              <!-- Dish 3 -->
+              <div class="menu-item bg-surface-container p-space-lg rounded-xl flex flex-col justify-between shadow-md hover:bg-surface-container-high transition-all" data-category="entrantes">
+                <div>
+                  <div class="flex items-start justify-between gap-space-sm mb-space-xs">
+                    <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface font-semibold">Tomate de Huerta &amp; Bonito</h3>
+                    <span class="font-price-display text-price-display text-primary whitespace-nowrap">11,00€</span>
+                  </div>
+                  <div class="flex items-center gap-space-xs mb-space-sm">
+                    <span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-label-sm font-label-sm">GF</span>
+                    <span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary-fixed text-label-sm font-label-sm">Temporada</span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    Tomates de caserío pelados, ventresca de bonito del norte en aceite virgen extra, cebolla morada encurtida y piparras.
+                  </p>
+                </div>
+                <div class="mt-space-md pt-space-sm flex items-center justify-between text-on-surface-variant/60 font-body-sm text-body-sm">
+                  <span>Huerta km 0</span>
+                  <span class="material-symbols-outlined text-[18px] text-primary-container">done</span>
+                </div>
+              </div>
+              
+              <!-- Dish 4 -->
+              <div class="menu-item bg-surface-container p-space-lg rounded-xl flex flex-col justify-between shadow-md hover:bg-surface-container-high transition-all" data-category="carnes">
+                <div>
+                  <div class="flex items-start justify-between gap-space-sm mb-space-xs">
+                    <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface font-semibold">Tomahawk Dry Aged 60 Días</h3>
+                    <span class="font-price-display text-price-display text-primary whitespace-nowrap">75,00€</span>
+                  </div>
+                  <div class="flex items-center gap-space-xs mb-space-sm">
+                    <span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container text-label-sm font-label-sm uppercase font-bold">Corte Noble</span>
+                    <span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-label-sm font-label-sm">1.2 - 1.4 kg</span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    Gran costilla expuesta con veteado A4. Maduración extrema en seco, sellado a fuego directo y reposo en campana de humo.
+                  </p>
+                </div>
+                <div class="mt-space-md pt-space-sm flex items-center justify-between text-on-surface-variant/60 font-body-sm text-body-sm">
+                  <span>Ideal para 2 a 3 comensales</span>
+                  <span class="material-symbols-outlined text-[18px] text-primary-container">done</span>
+                </div>
+              </div>
+              
+              <!-- Dish 5 -->
+              <div class="menu-item bg-surface-container p-space-lg rounded-xl flex flex-col justify-between shadow-md hover:bg-surface-container-high transition-all" data-category="carnes">
+                <div>
+                  <div class="flex items-start justify-between gap-space-sm mb-space-xs">
+                    <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface font-semibold">Entraña Angus Selección</h3>
+                    <span class="font-price-display text-price-display text-primary whitespace-nowrap">19,50€</span>
+                  </div>
+                  <div class="flex items-center gap-space-xs mb-space-sm">
+                    <span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-label-sm font-label-sm">GF</span>
+                    <span class="px-2 py-0.5 rounded bg-primary-container/20 text-primary-container text-label-sm font-label-sm">🌶️ Especiado suave</span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    Corte jugoso y fibroso con su membrana crocante, servido con chimichurri casero emulsionado con aceite de hierbas silvestres.
+                  </p>
+                </div>
+                <div class="mt-space-md pt-space-sm flex items-center justify-between text-on-surface-variant/60 font-body-sm text-body-sm">
+                  <span>350g peso limpio</span>
+                  <span class="material-symbols-outlined text-[18px] text-primary-container">done</span>
+                </div>
+              </div>
+              
+              <!-- Dish 6 -->
+              <div class="menu-item bg-surface-container p-space-lg rounded-xl flex flex-col justify-between shadow-md hover:bg-surface-container-high transition-all" data-category="carnes">
+                <div>
+                  <div class="flex items-start justify-between gap-space-sm mb-space-xs">
+                    <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface font-semibold">Solomillo de Vaca &amp; Foie</h3>
+                    <span class="font-price-display text-price-display text-primary whitespace-nowrap">24,00€</span>
+                  </div>
+                  <div class="flex items-center gap-space-xs mb-space-sm">
+                    <span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary-fixed text-label-sm font-label-sm uppercase">Corte Centro</span>
+                    <span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-label-sm font-label-sm">GF</span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    Taco central de solomillo madurado, coronado con escalope de foie fresco marcado al hierro vivo y demi-glace al oporto.
+                  </p>
+                </div>
+                <div class="mt-space-md pt-space-sm flex items-center justify-between text-on-surface-variant/60 font-body-sm text-body-sm">
+                  <span>Ternura extrema</span>
+                  <span class="material-symbols-outlined text-[18px] text-primary-container">done</span>
+                </div>
+              </div>
+              
+              <!-- Dish 7 -->
+              <div class="menu-item bg-surface-container p-space-lg rounded-xl flex flex-col justify-between shadow-md hover:bg-surface-container-high transition-all" data-category="pescados">
+                <div>
+                  <div class="flex items-start justify-between gap-space-sm mb-space-xs">
+                    <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface font-semibold">Pulpo de Roca a la Brasa</h3>
+                    <span class="font-price-display text-price-display text-primary whitespace-nowrap">21,50€</span>
+                  </div>
+                  <div class="flex items-center gap-space-xs mb-space-sm">
+                    <span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-label-sm font-label-sm">GF</span>
+                    <span class="px-2 py-0.5 rounded bg-primary-container/20 text-primary-container text-label-sm font-label-sm uppercase">★ Estrella</span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    Pata entera asada al sarmiento, base de parmentier de patata trufada, escamas de pimentón de la Vera agridulce y emulsión de ajo asado.
+                  </p>
+                </div>
+                <div class="mt-space-md pt-space-sm flex items-center justify-between text-on-surface-variant/60 font-body-sm text-body-sm">
+                  <span>Pesca del Atlántico</span>
+                  <span class="material-symbols-outlined text-[18px] text-primary-container">done</span>
+                </div>
+              </div>
+              
+              <!-- Dish 8 -->
+              <div class="menu-item bg-surface-container p-space-lg rounded-xl flex flex-col justify-between shadow-md hover:bg-surface-container-high transition-all" data-category="pescados">
+                <div>
+                  <div class="flex items-start justify-between gap-space-sm mb-space-xs">
+                    <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface font-semibold">Rodaballo Salvaje a la Espalda</h3>
+                    <span class="font-price-display text-price-display text-primary whitespace-nowrap">23,00€</span>
+                  </div>
+                  <div class="flex items-center gap-space-xs mb-space-sm">
+                    <span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary-fixed text-label-sm font-label-sm uppercase">Loma Salvaje</span>
+                    <span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-label-sm font-label-sm">GF</span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    Corte noble cocinado con besuguera en brasa de encina, terminado con refrito tradicional de ajos laminados, guindilla y vinagre de sidra.
+                  </p>
+                </div>
+                <div class="mt-space-md pt-space-sm flex items-center justify-between text-on-surface-variant/60 font-body-sm text-body-sm">
+                  <span>Piel crujiente y gelatinosa</span>
+                  <span class="material-symbols-outlined text-[18px] text-primary-container">done</span>
+                </div>
+              </div>
+              
+              <!-- Dish 9 -->
+              <div class="menu-item bg-surface-container p-space-lg rounded-xl flex flex-col justify-between shadow-md hover:bg-surface-container-high transition-all" data-category="guarniciones">
+                <div>
+                  <div class="flex items-start justify-between gap-space-sm mb-space-xs">
+                    <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface font-semibold">Patatas en Grasa de Buey</h3>
+                    <span class="font-price-display text-price-display text-primary whitespace-nowrap">5,50€</span>
+                  </div>
+                  <div class="flex items-center gap-space-xs mb-space-sm">
+                    <span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-label-sm font-label-sm">Rústicas</span>
+                    <span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-label-sm font-label-sm">GF</span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    Patata agria de montaña pochada y frita a fuego bravo en grasa pura de buey madurado, acompañadas de alioli de ajo morado asado.
+                  </p>
+                </div>
+                <div class="mt-space-md pt-space-sm flex items-center justify-between text-on-surface-variant/60 font-body-sm text-body-sm">
+                  <span>Guarnición imprescindible</span>
+                  <span class="material-symbols-outlined text-[18px] text-primary-container">done</span>
+                </div>
+              </div>
+              
+              <!-- Dish 10 -->
+              <div class="menu-item bg-surface-container p-space-lg rounded-xl flex flex-col justify-between shadow-md hover:bg-surface-container-high transition-all" data-category="guarniciones">
+                <div>
+                  <div class="flex items-start justify-between gap-space-sm mb-space-xs">
+                    <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface font-semibold">Pimientos Padrón &amp; Piquillos</h3>
+                    <span class="font-price-display text-price-display text-primary whitespace-nowrap">6,00€</span>
+                  </div>
+                  <div class="flex items-center gap-space-xs mb-space-sm">
+                    <span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary-fixed text-label-sm font-label-sm">V (Vegano)</span>
+                    <span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-label-sm font-label-sm">GF</span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    Dúo de pimientos: unos salteados al fuego vivo y otros confitados pacientemente al rescoldo con ajitos tiernos.
+                  </p>
+                </div>
+                <div class="mt-space-md pt-space-sm flex items-center justify-between text-on-surface-variant/60 font-body-sm text-body-sm">
+                  <span>Huerta de Lodosa</span>
+                  <span class="material-symbols-outlined text-[18px] text-primary-container">done</span>
+                </div>
+              </div>
+              
+              <!-- Dish 11 -->
+              <div class="menu-item bg-surface-container p-space-lg rounded-xl flex flex-col justify-between shadow-md hover:bg-surface-container-high transition-all" data-category="postres">
+                <div>
+                  <div class="flex items-start justify-between gap-space-sm mb-space-xs">
+                    <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface font-semibold">Tarta de Queso Ahumada</h3>
+                    <span class="font-price-display text-price-display text-primary whitespace-nowrap">7,50€</span>
+                  </div>
+                  <div class="flex items-center gap-space-xs mb-space-sm">
+                    <span class="px-2 py-0.5 rounded bg-primary-container/20 text-primary-container text-label-sm font-label-sm uppercase font-semibold">★ Estrella</span>
+                    <span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-label-sm font-label-sm">Artesana</span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    Cremosa tarta horneada con leve toque ahumado al sarmiento, centro fundente de quesos de oveja curados y base crujiente de galleta.
+                  </p>
+                </div>
+                <div class="mt-space-md pt-space-sm flex items-center justify-between text-on-surface-variant/60 font-body-sm text-body-sm">
+                  <span>Elaboración diaria limitada</span>
+                  <span class="material-symbols-outlined text-[18px] text-primary-container">done</span>
+                </div>
+              </div>
+              
+              <!-- Dish 12 -->
+              <div class="menu-item bg-surface-container p-space-lg rounded-xl flex flex-col justify-between shadow-md hover:bg-surface-container-high transition-all" data-category="postres">
+                <div>
+                  <div class="flex items-start justify-between gap-space-sm mb-space-xs">
+                    <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface font-semibold">Piña Asada al Ron Añejo</h3>
+                    <span class="font-price-display text-price-display text-primary whitespace-nowrap">6,80€</span>
+                  </div>
+                  <div class="flex items-center gap-space-xs mb-space-sm">
+                    <span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary-fixed text-label-sm font-label-sm">GF</span>
+                    <span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-label-sm font-label-sm">Fuego Vivo</span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    Rodajas de piña caramelizadas en la parrilla con azúcar mascabado, flambeada al momento con ron viejo y helado artesano de vainilla bourbon.
+                  </p>
+                </div>
+                <div class="mt-space-md pt-space-sm flex items-center justify-between text-on-surface-variant/60 font-body-sm text-body-sm">
+                  <span>Final fresco y aromático</span>
+                  <span class="material-symbols-outlined text-[18px] text-primary-container">done</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Footer CTA & Legal Allergen Note -->
+            <div class="mt-space-xl pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-md bg-surface-container-low p-space-lg rounded-xl">
+              <div class="flex items-center gap-space-sm text-on-surface-variant font-body-sm text-body-sm">
+                <span class="material-symbols-outlined text-primary-container text-[20px]">info</span>
+                <span>Consulta carta de alérgenos y opciones para intolerancias con nuestro personal de sala.</span>
+              </div>
+              <a class="inline-flex items-center gap-space-xs text-primary hover:text-primary-container font-label-md text-label-md uppercase tracking-wider transition-colors" href="#reservas">
+                <span class="material-symbols-outlined text-[18px]">download</span>
+                <span>Descargar Carta Completa (PDF)</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= 5. EXPERIENCIA / EL RITUAL DEL FUEGO ================= -->
+        <section class="w-full py-24 bg-surface relative overflow-hidden" id="experiencia">
+          <div class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+              <div class="lg:col-span-7 flex flex-col items-start">
+                <span class="text-primary-container font-label-lg text-label-lg uppercase tracking-widest block mb-space-xs">Filosofía &amp; Origen</span>
+                <h2 class="font-display-lg text-display-lg uppercase font-bold text-on-surface tracking-tight mb-space-md leading-tight">
+                  El secreto está en el respeto absoluto al producto.
+                </h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant mb-space-md leading-relaxed">
+                  En <strong class="text-on-surface">Fuego &amp; Brasa</strong> no disfrazamos la materia prima. Nuestro templo gastronómico rinde tributo al oficio ancestral del asador: cortes de vacuno mayor con infiltración óptima, madurados en cámaras acristaladas de humedad higrométrica controlada y tratados con la paciencia que impone la brasa de encina.
+                </p>
+                <p class="font-body-md text-body-md text-on-surface-variant/80 mb-space-lg">
+                  La leña aporta un perfume ahumado inconfundible; la pericia de nuestro equipo fija el punto térmico en el corazón de cada pieza, preservando sus jugos y potenciando el umami natural.
+                </p>
+                
+                <div class="flex flex-col gap-space-sm mb-space-xl w-full">
+                  <div class="flex items-center gap-space-sm p-space-sm rounded bg-surface-container-low">
+                    <span class="material-symbols-outlined text-primary-container text-[22px]">check_circle</span>
+                    <span class="font-label-md text-label-md uppercase text-on-surface tracking-wide">Cortes nacionales con trazabilidad certificada desde el pasto</span>
+                  </div>
+                  <div class="flex items-center gap-space-sm p-space-sm rounded bg-surface-container-low">
+                    <span class="material-symbols-outlined text-primary-container text-[22px]">check_circle</span>
+                    <span class="font-label-md text-label-md uppercase text-on-surface tracking-wide">Bodega propia con más de 120 referencias y D.O. seleccionadas</span>
+                  </div>
+                  <div class="flex items-center gap-space-sm p-space-sm rounded bg-surface-container-low">
+                    <span class="material-symbols-outlined text-primary-container text-[22px]">check_circle</span>
+                    <span class="font-label-md text-label-md uppercase text-on-surface tracking-wide">Ambiente urbano cálido, iluminación escenográfica e informalidad elegante</span>
+                  </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-space-md w-full sm:w-auto">
+                  <div class="bg-surface-container p-space-md rounded shadow-sm">
+                    <span class="font-display-lg text-headline-lg font-bold text-primary block leading-none">1.200 kg</span>
+                    <span class="font-body-sm text-body-sm text-on-surface-variant mt-1 block">Carne noble seleccionada al mes</span>
+                  </div>
+                  <div class="bg-surface-container p-space-md rounded shadow-sm">
+                    <span class="font-display-lg text-headline-lg font-bold text-primary block leading-none">100%</span>
+                    <span class="font-body-sm text-body-sm text-on-surface-variant mt-1 block">Carbón vegetal ecológico de poda</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="lg:col-span-5 relative">
+                <div class="rounded-xl overflow-hidden shadow-2xl relative">
+                  <img class="w-full h-[480px] object-cover" data-alt="Glass dry-aging meat locker displaying giant tomahawk steaks and T-bones with Himalayan salt wall and warm ember lighting in a luxury restaurant interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiccnn_foeAwDEZXGRc-FHKK55rEeV_q0oKTJubzhwGrNZZ9rgvAl6jAWwbN0dHpkjfZpDjSgasm5GtkBsC1MmJUrj6gf5PlfkhZvDbBh7Cad_kW9d8cQ4TBZgdU4jsARsLc8rf3ernyvrxoCfuf7eLH5BT_exzYsJWdbj_vgHMl7cntJOpjSIdj5dbvXfbTRGy2c2q_9BxRUqyVJJYlaUZgGH_d_Vqq7bYw8rwKP0IT0ET4iEnpvugQ" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-60"></div>
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-surface-container-high/95 backdrop-blur-md p-space-md rounded-xl shadow-xl max-w-xs hidden sm:flex items-center gap-space-sm">
+                  <div class="w-12 h-12 rounded bg-primary-container text-on-primary-container flex items-center justify-center flex-shrink-0">
+                    <span class="material-symbols-outlined text-[24px]">thermostat</span>
+                  </div>
+                  <div>
+                    <div class="font-label-md text-label-md uppercase font-bold text-on-surface">Cámara Dry-Aged</div>
+                    <div class="font-body-sm text-body-sm text-on-surface-variant">1°C constante · 80% humedad controlada</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= 6. OFERTAS Y SERVICIOS ================= -->
+        <section class="w-full py-24 bg-surface-container-lowest">
+          <div class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-md">
+              <div>
+                <span class="text-primary-container font-label-lg text-label-lg uppercase tracking-widest block mb-2">Experiencias a Medida</span>
+                <h2 class="font-display-lg text-display-lg uppercase font-bold text-on-surface tracking-tight">Ofertas &amp; Servicios</h2>
+              </div>
+              <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+                Tanto si buscas un almuerzo ejecutivo ágil como celebrar un evento privado inolvidable en torno al fuego.
+              </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+              <!-- Service 1: Menú del Día -->
+              <div class="bg-surface-container p-space-lg rounded-xl flex flex-col justify-between shadow-md hover:bg-surface-container-high transition-colors group">
+                <div>
+                  <div class="w-12 h-12 rounded bg-surface-container-highest text-primary-container flex items-center justify-center mb-space-md group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+                    <span class="material-symbols-outlined text-[28px]">lunch_dining</span>
+                  </div>
+                  <span class="text-primary font-label-sm text-label-sm uppercase tracking-wider block mb-1">Lunes a Viernes (Mediodías)</span>
+                  <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface font-bold mb-space-xs">Menú del Día Brasa</h3>
+                  <div class="font-price-display text-price-display text-on-surface mb-space-sm">16,90€</div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-lg">
+                    Primer plato de temporada, corte directo a la brasa con guarnición, bebida seleccionada, postre casero o café.
+                  </p>
+                </div>
+                <a class="w-full py-2.5 bg-surface-container-highest hover:bg-primary-container text-on-surface hover:text-on-primary-container font-label-md text-label-md uppercase tracking-wider rounded text-center transition-colors" href="#reservas">
+                  Reservar Mediodía
+                </a>
+              </div>
+              
+              <!-- Service 2: Menú Grupos -->
+              <div class="bg-surface-container p-space-lg rounded-xl flex flex-col justify-between shadow-md hover:bg-surface-container-high transition-colors group">
+                <div>
+                  <div class="w-12 h-12 rounded bg-surface-container-highest text-primary-container flex items-center justify-center mb-space-md group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+                    <span class="material-symbols-outlined text-[28px]">groups</span>
+                  </div>
+                  <span class="text-primary font-label-sm text-label-sm uppercase tracking-wider block mb-1">A partir de 6 personas</span>
+                  <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface font-bold mb-space-xs">Menú Grupos &amp; Festejos</h3>
+                  <div class="font-price-display text-price-display text-on-surface mb-space-sm"><span class="text-body-sm font-normal text-on-surface-variant">Desde</span> 38,00€ <span class="text-body-sm font-normal text-on-surface-variant">/ pax</span></div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-lg">
+                    Entrantes al centro para compartir, gran degustación de cortes nobles al punto, barra libre durante el servicio y postres.
+                  </p>
+                </div>
+                <a class="w-full py-2.5 bg-surface-container-highest hover:bg-primary-container text-on-surface hover:text-on-primary-container font-label-md text-label-md uppercase tracking-wider rounded text-center transition-colors" href="#reservas">
+                  Consultar Menús
+                </a>
+              </div>
+              
+              <!-- Service 3: Eventos Privados -->
+              <div class="bg-surface-container p-space-lg rounded-xl flex flex-col justify-between shadow-md hover:bg-surface-container-high transition-colors group">
+                <div>
+                  <div class="w-12 h-12 rounded bg-surface-container-highest text-primary-container flex items-center justify-center mb-space-md group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+                    <span class="material-symbols-outlined text-[28px]">corporate_fare</span>
+                  </div>
+                  <span class="text-primary font-label-sm text-label-sm uppercase tracking-wider block mb-1">Exclusividad Sala</span>
+                  <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface font-bold mb-space-xs">Eventos &amp; Empresas</h3>
+                  <div class="font-price-display text-price-display text-on-surface mb-space-sm">Hasta 60 pax</div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-lg">
+                    Espacio privado insonorizado con equipo audiovisual, servicio personalizado, cortador de cecina en directo y sumiller dedicado.
+                  </p>
+                </div>
+                <a class="w-full py-2.5 bg-surface-container-highest hover:bg-primary-container text-on-surface hover:text-on-primary-container font-label-md text-label-md uppercase tracking-wider rounded text-center transition-colors" href="mailto:eventos@fuegoybrasa.com">
+                  Solicitar Dossier
+                </a>
+              </div>
+              
+              <!-- Service 4: Cheque Regalo -->
+              <div class="bg-surface-container p-space-lg rounded-xl flex flex-col justify-between shadow-md hover:bg-surface-container-high transition-colors group">
+                <div>
+                  <div class="w-12 h-12 rounded bg-surface-container-highest text-primary-container flex items-center justify-center mb-space-md group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+                    <span class="material-symbols-outlined text-[28px]">card_giftcard</span>
+                  </div>
+                  <span class="text-primary font-label-sm text-label-sm uppercase tracking-wider block mb-1">Caja Experiencial</span>
+                  <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface font-bold mb-space-xs">Cheque Regalo Brasa</h3>
+                  <div class="font-price-display text-price-display text-on-surface mb-space-sm">Para 2 personas</div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-lg">
+                    Regala una cena sensorial completa con maridaje de autor y atención de sumiller. Bono físico de lujo con validez de 12 meses.
+                  </p>
+                </div>
+                <a class="w-full py-2.5 bg-primary-container text-on-primary-container hover:bg-[#e04006] font-label-md text-label-md uppercase tracking-wider rounded text-center transition-colors shadow-md" href="#reservas">
+                  Comprar Bono
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= 7. GALERÍA GASTRONÓMICA & AMBIENTE (BENTO GRID) ================= -->
+        <section class="w-full py-24 bg-surface">
+          <div class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin">
+            <div class="text-center max-w-3xl mx-auto mb-space-xl">
+              <span class="text-primary-container font-label-lg text-label-lg uppercase tracking-widest block mb-2">Atmósfera Urbana</span>
+              <h2 class="font-display-lg text-display-lg uppercase font-bold text-on-surface tracking-tight mb-space-sm">La Experiencia en Imágenes</h2>
+              <p class="font-body-md text-body-md text-on-surface-variant">Luz tenue, madera carbonizada, copas alzadas y el crepitar constante de nuestra parrilla abierta.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-space-md h-auto md:h-[580px]">
+              <div class="md:col-span-2 md:row-span-2 relative rounded-xl overflow-hidden group shadow-lg">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Chic modern urban steakhouse dining room at night with dim ambient amber lighting, industrial dark wood and iron decor, patrons enjoying dinner, blurred open kitchen background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYxKupVOM5XR7qn5SLsWdA1rRlU3IGHWziLzLJhmdWzBMSN_PPNNPHpo_kcSahwfFSNDLqMCtzq4FOwdMw7XIU_2qFpWBTCVpu65qBfG5FqpesKEqy6j7HQB3m2uXuhkkGjtAAT7h-0E04Dys5wLEoeTfZ4i75a7Ux2XmO5Oh9Zt9QGsEKZnDCfwghiB05larrT5J-5ahKEyo4sWi0LaBg-YLt9dwjk-qFArCWFPWVXJ49LkMxZpLrTA" />
+                <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80"></div>
+                <div class="absolute bottom-6 left-6">
+                  <span class="px-2 py-1 rounded bg-primary-container text-on-primary-container text-label-sm font-label-sm uppercase font-bold">Sala Principal</span>
+                  <h4 class="font-headline-md text-headline-md uppercase text-on-surface mt-1">El Comedor Central</h4>
+                </div>
+              </div>
+              
+              <div class="relative rounded-xl overflow-hidden group shadow-lg h-64 md:h-auto">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Master grill chef slicing thick juicy medium-rare steak on a rustic dark wooden cutting board with coarse sea salt and fire grill glowing behind" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl2_-laAfWW44kweCAqDlb4hbrBk5jySgLelYlzCgUH6eAA-21ey9_zniso45-Ug5qFnvBp-gGolDcWVdqDOPPjWpp0XVu2wr89hhYYPFti5I0eQBE_M5nOozNaIMmp4PXjFJZK51R1axx6XJ6GJmL-ofJ7djAY1MPtrJYxrb2ksiCwICUJsX7Jg0kAIEkbHILd-nD-AVPfCESF8S2Ir0ZM-nAgx5WnUQ6-xoBonIoVOQmKgVuUfX5kQ" />
+                <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-70"></div>
+                <div class="absolute bottom-3 left-4">
+                  <h4 class="font-label-md text-label-md uppercase text-on-surface">Punto Exacto</h4>
+                </div>
+              </div>
+              
+              <div class="relative rounded-xl overflow-hidden group shadow-lg h-64 md:h-auto">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Pouring deep red vintage wine from a bottle into a crystal glass in a dimly lit luxury steakhouse setting with warm ember reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTL79ANNmhdRhFtN64_PVKsx4nsHb6nx3JwBiXwS91WRHndK5O8EFE_aRwc7cVA_T2wKaoruFPEhYcyIYZt_D_JwUZmRBk3Hv-RI0VkK6H1eA7VO97BTNIKSkUZy3bPaQn98WEtPeVsVFbeXa-3xhieAHCicT3Qpk06VpToOGzAhVQuynmd2tNP0d0EDl9TOVgUUmRWNktJHjEU1mMstLgtolwck9TYRhfZG78kEDE5Ux_yCn9L0qWlg" />
+                <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-70"></div>
+                <div class="absolute bottom-3 left-4">
+                  <h4 class="font-label-md text-label-md uppercase text-on-surface">Bodega &amp; Sumiller</h4>
+                </div>
+              </div>
+              
+              <div class="relative rounded-xl overflow-hidden group shadow-lg h-64 md:h-auto">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Friends toasting with wine glasses around a generous wooden table full of grilled meats, artisan appetizers, and candlelight in an upscale dark restaurant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8m014liEQBnHsM6QUFDnMpOCIwJZgGEhgMTkWEb1WXg8KEhVz2Coa57HGm6xWqflNkGrRAtBu2NZnA5PYmYGXgq9Ek8UG1OWDsI_qp1wYM28cRwPR0lC_uTdfgZJ5FGX6XatHtEfzLXo4_xIGZ0nRmrsflBuGshXtEpQw6nol3zIc5MOQrFCspfRBFHzONH-DmRYVDgKDrzFBLNDJw9YPJ2I99tgbmGi-9ctnKRhUXwGMxlirYghGvQ" />
+                <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-70"></div>
+                <div class="absolute bottom-3 left-4">
+                  <h4 class="font-label-md text-label-md uppercase text-on-surface">Celebraciones</h4>
+                </div>
+              </div>
+              
+              <div class="relative rounded-xl overflow-hidden group shadow-lg h-64 md:h-auto">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close-up macro of incandescent glowing oak charcoal embers and flying orange fire sparks in a traditional heavy cast-iron steakhouse grill" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_tHG3Gfxx4JQON1a5FFSVlYM9WdjI1pCDFdSIqd68Fd82TtPHkQbvmbdL806Yc9L0g32txgdL2eIUqz149zzoDzPg047vpj3IKWgGW5ntQuXsmXxG2vVIKMa6pmClGAq9JmgHt-011Yaw-vtEh9gz_ZSpYKssgnRNUOpC5CaJmsnuiRSFAZLXpbgkCg5PeXUe43HQvhce2iLWIi-EM-hpHYWEswUR6ps0qZE5ZXMNCyIS3yBtAX0h1w" />
+                <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-70"></div>
+                <div class="absolute bottom-3 left-4">
+                  <h4 class="font-label-md text-label-md uppercase text-on-surface">El Fuego Vivo</h4>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-space-lg p-space-md rounded-xl bg-surface-container flex flex-col sm:flex-row items-center justify-between gap-space-md text-center sm:text-left">
+              <div class="flex items-center gap-space-sm">
+                <span class="material-symbols-outlined text-primary-container text-[24px]">camera_alt</span>
+                <span class="font-label-md text-label-md uppercase tracking-wider text-on-surface">@fuego_y_brasa en Instagram</span>
+                <span class="text-on-surface-variant/50 hidden sm:inline">·</span>
+                <span class="font-body-sm text-body-sm text-on-surface-variant hidden sm:inline">Síguenos para descubrir los cortes especiales del día y catas exclusivas.</span>
+              </div>
+              <a class="px-space-md py-1.5 rounded bg-surface-container-highest hover:bg-primary-container text-on-surface hover:text-on-primary-container font-label-sm text-label-sm uppercase tracking-wider transition-colors" href="https://instagram.com" rel="noopener noreferrer" target="_blank">
+                Seguir en Instagram
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= 8. EL EQUIPO ================= -->
+        <section class="w-full py-24 bg-surface-container-lowest">
+          <div class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin">
+            <div class="text-center max-w-3xl mx-auto mb-space-xl">
+              <span class="text-primary-container font-label-lg text-label-lg uppercase tracking-widest block mb-2">Maestros del Oficio</span>
+              <h2 class="font-display-lg text-display-lg uppercase font-bold text-on-surface tracking-tight mb-space-sm">El Alma de la Parrilla</h2>
+              <p class="font-body-md text-body-md text-on-surface-variant">Profesionales consagrados a domar la llama y garantizar una experiencia memorable en cada servicio.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+              <div class="bg-surface-container p-space-xl rounded-xl flex flex-col items-center text-center shadow-md">
+                <div class="w-28 h-28 rounded-full overflow-hidden mb-space-md p-1 bg-surface-container-highest">
+                  <img class="w-full h-full object-cover rounded-full" data-alt="Portrait of an authoritative male executive head chef in modern black culinary uniform, confident expression, dark moody restaurant kitchen background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM9sC60eSyfWsOY_LbGe2-JWa80LfRbxeQXbDknq5G4ESRiaXZgPnR-sT0CcIbud_og807CfohlL_pcws7sTsjiW4dCviXSYOMy0wigWEvyV5bIAxY66ghgMVEhHQknCugUeEyzQg-stlQpJzMFgUjgbAdUfeenE7zYKyaMT58vX3_fxcBG2iqB0fZ3Yj4EWl7Pc-N5bgWttvuEfOAwLb1RX-3nOyWkIF84bFaIxBqjpak-0os9u3P7w" />
+                </div>
+                <h3 class="font-headline-md text-headline-md uppercase text-on-surface font-bold">Mateo Silva</h3>
+                <span class="text-primary font-label-sm text-label-sm uppercase tracking-widest mb-space-md">Chef Ejecutivo &amp; Fundador</span>
+                <p class="font-body-md text-body-md text-on-surface-variant italic leading-relaxed">
+                  "La cocina de fuego no admite atajos: o tienes el mejor producto de origen o no tienes nada. Aquí el único protagonista es la carne noble."
+                </p>
+              </div>
+              
+              <div class="bg-surface-container p-space-xl rounded-xl flex flex-col items-center text-center shadow-md">
+                <div class="w-28 h-28 rounded-full overflow-hidden mb-space-md p-1 bg-surface-container-highest">
+                  <img class="w-full h-full object-cover rounded-full" data-alt="Portrait of a seasoned male master grill pitmaster with leather apron holding metal fire tongs, authentic smile, smoky background with ember glows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5E09aL5pEBSJsmKmKp4DZJSuPjIh0fk1txyBVxEyeLDnZ-zUZGzKh5R-Gwnjbupne0smbx2PQhTM0kzl7QtbNd7xQXdq-kXNJfjK3p1qbU9u9aWacAfTv2AGT_ny3mywPTBB3gG_-HmuXHYNklRDQWlY4YVZROBPC2_CTe-Fs8jVTUhLQsw2e03o7JqwX-YWYL5c3pFMFypNxW9hfbRWf0rPO9i26ycotjZzMeKUK_27Z-rM1pnImlw" />
+                </div>
+                <h3 class="font-headline-md text-headline-md uppercase text-on-surface font-bold">Javier Roca</h3>
+                <span class="text-primary font-label-sm text-label-sm uppercase tracking-widest mb-space-md">Maestro Parrillero</span>
+                <p class="font-body-md text-body-md text-on-surface-variant italic leading-relaxed">
+                  "El fuego te habla con sus chasquidos y su humo. Cada raza, grosor y hueso pide un calor y un reposo exacto antes de servirse."
+                </p>
+              </div>
+              
+              <div class="bg-surface-container p-space-xl rounded-xl flex flex-col items-center text-center shadow-md">
+                <div class="w-28 h-28 rounded-full overflow-hidden mb-space-md p-1 bg-surface-container-highest">
+                  <img class="w-full h-full object-cover rounded-full" data-alt="Portrait of an elegant female sommelier holding a glass of red wine, smiling warmly, dark high-end cellar background with wine bottles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAXOZezApL-TTQqbkQ7bgizzhcpEyH3AARMDv5ott_DYnN4UjiCtUeFMmibmrsBbw7h5cDr-jGr1G1ahfLxny3KW8SDz59u5fyhqDW_ajGJB3tA4hAlBOzACcNK9oZjBDS6_jht8PELrBnF0bDWqHUgDY9pvmLCDWOqFe2lxOMD1H7RjaG0UG7BVeMVyHt5TPQisG2vLF7XxlQ6tQqfjWlZV3LcP0yFqQ8aOPJQYFn1jcPDOfMw6adHw" />
+                </div>
+                <h3 class="font-headline-md text-headline-md uppercase text-on-surface font-bold">Elena Marín</h3>
+                <span class="text-primary font-label-sm text-label-sm uppercase tracking-widest mb-space-md">Sumiller &amp; Jefa de Sala</span>
+                <p class="font-body-md text-body-md text-on-surface-variant italic leading-relaxed">
+                  "Un gran corte solo encuentra su plenitud cuando el vino correcto lo acompaña, limpiando la grasa y elevando sus notas ahumadas."
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= 9. RESEÑAS DE CLIENTES ================= -->
+        <section class="w-full py-24 bg-surface">
+          <div class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-md">
+              <div>
+                <span class="text-primary-container font-label-lg text-label-lg uppercase tracking-widest block mb-2">Opiniones Reales</span>
+                <h2 class="font-display-lg text-display-lg uppercase font-bold text-on-surface tracking-tight">Lo Que Dicen Quienes Nos Visitan</h2>
+              </div>
+              <a class="inline-flex items-center gap-space-xs text-primary hover:text-primary-container font-label-md text-label-md uppercase tracking-wider transition-colors" href="https://google.com" rel="noopener noreferrer" target="_blank">
+                <span>Ver más de 1.200 reseñas en Google</span>
+                <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+              </a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+              <div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between shadow-md hover:bg-surface-container transition-colors">
+                <div>
+                  <div class="flex items-center justify-between mb-space-sm">
+                    <div class="flex text-[#FFB300]">
+                      <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                      <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                      <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                      <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                      <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <span class="font-body-sm text-body-sm text-on-surface-variant/60">Hace 3 días</span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface mb-space-lg leading-relaxed">
+                    "El mejor chuletón de la ciudad con diferencia. El punto de la carne fue milimétrico, con ese crujiente exterior que solo se logra con fuego de verdad y un centro que se deshacía. La tarta de queso ahumada es obligatoria."
+                  </p>
+                </div>
+                <div class="flex items-center gap-space-sm pt-space-sm border-t border-surface-container-highest/40">
+                  <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center font-label-md text-label-md text-primary font-bold">
+                    CM
+                  </div>
+                  <div>
+                    <div class="font-label-md text-label-md uppercase font-semibold text-on-surface">Carlos Mendieta</div>
+                    <div class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[14px] text-green-500">verified</span>
+                      <span>Cliente verificado en Google</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between shadow-md hover:bg-surface-container transition-colors">
+                <div>
+                  <div class="flex items-center justify-between mb-space-sm">
+                    <div class="flex text-[#FFB300]">
+                      <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                      <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                      <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                      <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                      <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <span class="font-body-sm text-body-sm text-on-surface-variant/60">Hace 1 semana</span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface mb-space-lg leading-relaxed">
+                    "La provoleta en sartén de hierro y el costillar glaseado a baja temperatura son un espectáculo. Servicio impecable por parte de Elena en la recomendación del vino y ambiente de diez. Volveremos sin dudar."
+                  </p>
+                </div>
+                <div class="flex items-center gap-space-sm pt-space-sm border-t border-surface-container-highest/40">
+                  <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center font-label-md text-label-md text-primary font-bold">
+                    SR
+                  </div>
+                  <div>
+                    <div class="font-label-md text-label-md uppercase font-semibold text-on-surface">Sofía Ramírez</div>
+                    <div class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[14px] text-green-500">verified</span>
+                      <span>Cliente verificado en Google</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between shadow-md hover:bg-surface-container transition-colors">
+                <div>
+                  <div class="flex items-center justify-between mb-space-sm">
+                    <div class="flex text-[#FFB300]">
+                      <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                      <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                      <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                      <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                      <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <span class="font-body-sm text-body-sm text-on-surface-variant/60">Hace 2 semanas</span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface mb-space-lg leading-relaxed">
+                    "Celebramos aquí un cumpleaños con el menú para grupos y superó todas las expectativas: bandejas generosas, barra libre sin esperas y el tomahawk final dejó a todos boquiabiertos. Organización perfecta."
+                  </p>
+                </div>
+                <div class="flex items-center gap-space-sm pt-space-sm border-t border-surface-container-highest/40">
+                  <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center font-label-md text-label-md text-primary font-bold">
+                    DG
+                  </div>
+                  <div>
+                    <div class="font-label-md text-label-md uppercase font-semibold text-on-surface">David Gómez</div>
+                    <div class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[14px] text-green-500">verified</span>
+                      <span>Cliente verificado en Google</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= 10. SECCIÓN DE RESERVA ONLINE (ALTA CONVERSIÓN) ================= -->
+        <section class="w-full py-24 bg-surface-container-lowest relative" id="reservas">
+          <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary-container/10 via-transparent to-transparent pointer-events-none"></div>
+          <div class="max-w-[1100px] mx-auto px-margin-mobile md:px-margin relative z-10">
+            <div class="bg-surface-container-low rounded-2xl p-space-lg md:p-space-xl shadow-2xl">
+              <div class="text-center max-w-2xl mx-auto mb-space-xl">
+                <div class="inline-flex items-center gap-space-xs px-space-md py-1 rounded bg-surface-container text-primary-container mb-space-sm shadow-sm">
+                  <span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
+                  <span class="font-label-sm text-label-sm uppercase tracking-wider font-bold">Disponibilidad en Tiempo Real</span>
+                </div>
+                <h2 class="font-display-lg text-display-lg uppercase font-bold text-on-surface tracking-tight mb-space-xs">
+                  Reserva tu Mesa Online
+                </h2>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Garantiza tu experiencia en nuestro asador en menos de 2 minutos. Confirmación instantánea por SMS y correo electrónico.
+                </p>
+              </div>
+              
+              <form class="flex flex-col gap-space-md" id="reservation-form" onsubmit="event.preventDefault(); document.getElementById('booking-success').classList.remove('hidden');">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+                  <div>
+                    <label class="block font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1">Nombre Completo *</label>
+                    <input class="w-full bg-surface-container text-on-surface px-space-md py-3 rounded font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container" placeholder="Ej: Santiago Abascal" required="" type="text" />
+                  </div>
+                  <div>
+                    <label class="block font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1">Teléfono Móvil (+34) *</label>
+                    <input class="w-full bg-surface-container text-on-surface px-space-md py-3 rounded font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container" placeholder="Ej: 600 000 000" required="" type="tel" />
+                  </div>
+                  <div>
+                    <label class="block font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1">Correo Electrónico *</label>
+                    <input class="w-full bg-surface-container text-on-surface px-space-md py-3 rounded font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container" placeholder="Ej: santiago@correo.com" required="" type="email" />
+                  </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+                  <div>
+                    <label class="block font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1">Fecha de la Reserva *</label>
+                    <input class="w-full bg-surface-container text-on-surface px-space-md py-3 rounded font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container" required="" type="date" value="2025-03-15" />
+                  </div>
+                  <div>
+                    <label class="block font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1">Turno y Hora *</label>
+                    <select class="w-full bg-surface-container text-on-surface px-space-md py-3 rounded font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container" required="">
+                      <option value="">Selecciona hora</option>
+                      <optgroup label="Almuerzo / Comida">
+                        <option value="13:30">13:30 h (Disponible)</option>
+                        <option value="14:00">14:00 h (Disponible)</option>
+                        <option value="14:30">14:30 h (Pocas mesas)</option>
+                        <option value="15:00">15:00 h (Disponible)</option>
+                      </optgroup>
+                      <optgroup label="Cena">
+                        <option value="20:30">20:30 h (Disponible)</option>
+                        <option value="21:00">21:00 h (Pocas mesas)</option>
+                        <option value="21:45">21:45 h (Disponible)</option>
+                        <option value="22:30">22:30 h (Disponible)</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1">Comensales *</label>
+                    <select class="w-full bg-surface-container text-on-surface px-space-md py-3 rounded font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container" required="">
+                      <option value="1">1 Persona</option>
+                      <option selected="" value="2">2 Personas</option>
+                      <option value="3">3 Personas</option>
+                      <option value="4">4 Personas</option>
+                      <option value="5">5 Personas</option>
+                      <option value="6">6 Personas</option>
+                      <option value="7">7 Personas</option>
+                      <option value="8">8 Personas (Grupo)</option>
+                      <option value="plus">Más de 8 personas (Contactar)</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+                  <div>
+                    <label class="block font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1">Zona Preferida</label>
+                    <select class="w-full bg-surface-container text-on-surface px-space-md py-3 rounded font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container">
+                      <option value="principal">Sala Principal (Clásica)</option>
+                      <option value="parrilla">Cerca de la Parrilla (En vivo)</option>
+                      <option value="terraza">Terraza Climatizada</option>
+                      <option value="indiferente">Sin preferencia</option>
+                    </select>
+                  </div>
+                  <div class="md:col-span-2">
+                    <label class="block font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1">Observaciones especiales</label>
+                    <input class="w-full bg-surface-container text-on-surface px-space-md py-3 rounded font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container" placeholder="Alergias, trona para bebé, aniversario, petición de corte..." type="text" />
+                  </div>
+                </div>
+                
+                <div class="flex items-center gap-space-sm pt-space-xs">
+                  <input class="w-4 h-4 rounded bg-surface-container accent-primary-container" id="terms" required="" type="checkbox" />
+                  <label class="font-body-sm text-body-sm text-on-surface-variant" for="terms">
+                    He leído y acepto la política de reservas y protección de datos. Cancelación gratuita hasta 2 horas antes de la cita.
+                  </label>
+                </div>
+                
+                <button class="w-full py-4 mt-space-sm bg-primary-container hover:bg-[#e04006] text-on-primary-container font-label-lg text-label-lg uppercase tracking-wider font-bold rounded shadow-[0_0_30px_rgba(255,87,34,0.45)] hover:shadow-[0_0_40px_rgba(255,87,34,0.65)] transition-all flex items-center justify-center gap-space-sm" type="submit">
+                  <span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                  <span>Confirmar Reserva Inmediata</span>
+                </button>
+              </form>
+              
+              <div class="hidden mt-space-md p-space-md rounded bg-surface-container-high text-on-surface flex items-center gap-space-sm shadow-md animate-fade-in" id="booking-success">
+                <span class="material-symbols-outlined text-green-500 text-[24px]">verified</span>
+                <div>
+                  <div class="font-label-md text-label-md uppercase font-bold text-primary">¡Solicitud recibida con éxito!</div>
+                  <div class="font-body-sm text-body-sm text-on-surface-variant">En breve recibirás un SMS de confirmación con los datos de tu mesa. ¡Te esperamos junto al fuego!</div>
+                </div>
+              </div>
+              
+              <div class="mt-space-xl pt-space-lg border-t border-surface-container-highest/40 grid grid-cols-1 sm:grid-cols-2 gap-space-md items-center text-center sm:text-left">
+                <div class="flex items-center justify-center sm:justify-start gap-space-sm">
+                  <a class="inline-flex items-center gap-space-xs px-space-md py-2.5 rounded bg-[#25D366]/20 hover:bg-[#25D366]/30 text-[#25D366] font-label-md text-label-md uppercase tracking-wider transition-colors" href="https://wa.me/34912345678" rel="noopener noreferrer" target="_blank">
+                    <span class="material-symbols-outlined text-[20px]">chat</span>
+                    <span>Reservar por WhatsApp</span>
+                  </a>
+                  <a class="inline-flex items-center gap-space-xs px-space-md py-2.5 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors" href="tel:+34912345678">
+                    <span class="material-symbols-outlined text-[20px]">call</span>
+                    <span>Llamar al 912 345 678</span>
+                  </a>
+                </div>
+                <div class="font-body-sm text-body-sm text-on-surface-variant/70 text-center sm:text-right">
+                  Para reservas superiores a 8 personas o eventos cerrados, aconsejamos contacto telefónico directo.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= 11. UBICACIÓN, HORARIOS Y ACCESO ================= -->
+        <section class="w-full py-24 bg-surface" id="contacto">
+          <div class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin">
+            <div class="text-center max-w-3xl mx-auto mb-space-xl">
+              <span class="text-primary-container font-label-lg text-label-lg uppercase tracking-widest block mb-2">Visítanos</span>
+              <h2 class="font-display-lg text-display-lg uppercase font-bold text-on-surface tracking-tight mb-space-sm">Ubicación &amp; Horarios</h2>
+              <p class="font-body-md text-body-md text-on-surface-variant">Situado en pleno corazón del distrito gastronómico con facilidades de acceso y parking concertado.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-stretch">
+              <div class="lg:col-span-7 flex flex-col">
+                <div class="w-full flex-1 min-h-[380px] bg-cover bg-center rounded-xl shadow-xl relative overflow-hidden flex items-end p-space-md" data-alt="High contrast dark styled street map view of a metropolitan city restaurant location with amber glowing pin at Fuego and Brasa steakhouse" data-location="Calle Gran Vía de las Brasas 42, Madrid" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBCsGWt0RY0k5_JHzhoJcj3qK068w7vRzIopv5zIWoYFZpxC_TbBdYUXQFgod6agGlmxGsLyMqKnLBTyInL-B3dAFodSjIiSexVK1NntQ-TQiCcqWvdT6IZPhhNd3j5Z00LNsF036u2mtXqN_GlTJQRAT8VqzwvdhLQlzOWzqcxynoCbJsL0NuCbOxKenrxWhrRz5YlkDO90pEx1mTJXRSXS7kQ5Dhw9vjZyUFqiV8b_G1cxap0SzgIRg')">
+                  <div class="bg-surface/90 backdrop-blur-md p-space-md rounded-lg shadow-lg flex items-center gap-space-sm max-w-sm">
+                    <div class="w-10 h-10 rounded bg-primary-container text-on-primary-container flex items-center justify-center flex-shrink-0">
+                      <span class="material-symbols-outlined text-[24px]">local_fire_department</span>
+                    </div>
+                    <div>
+                      <div class="font-label-md text-label-md uppercase font-bold text-on-surface">Fuego &amp; Brasa Asador Urbano</div>
+                      <div class="font-body-sm text-body-sm text-on-surface-variant">Calle del Carbón 24 (Esq. Gran Vía)</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-space-sm flex items-center justify-between text-body-sm text-on-surface-variant">
+                  <span>Acceso 100% adaptado a personas con movilidad reducida (PMR)</span>
+                  <a class="text-primary hover:underline font-label-sm text-label-sm uppercase tracking-wider flex items-center gap-1" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+                    Abrir en Google Maps <span class="material-symbols-outlined text-[16px]">launch</span>
+                  </a>
+                </div>
+              </div>
+              
+              <div class="lg:col-span-5 bg-surface-container p-space-lg rounded-xl flex flex-col justify-between shadow-xl">
+                <div class="flex flex-col gap-space-md">
+                  <div>
+                    <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface font-bold mb-space-xs flex items-center gap-space-xs">
+                      <span class="material-symbols-outlined text-primary-container">schedule</span>
+                      <span>Horarios del Asador</span>
+                    </h3>
+                    <div class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant">
+                      <div class="flex justify-between items-center py-1 border-b border-surface-container-highest/30">
+                        <span class="text-on-surface font-medium">Lunes:</span>
+                        <span class="text-primary">Descanso semanal</span>
+                      </div>
+                      <div class="flex justify-between items-center py-1 border-b border-surface-container-highest/30">
+                        <span class="text-on-surface font-medium">Martes a Jueves:</span>
+                        <span>13:30 - 16:30 | 20:30 - 23:30</span>
+                      </div>
+                      <div class="flex justify-between items-center py-1 border-b border-surface-container-highest/30">
+                        <span class="text-on-surface font-medium">Viernes y Sábado:</span>
+                        <span>13:30 - 00:00 (Cocina non-stop)</span>
+                      </div>
+                      <div class="flex justify-between items-center py-1">
+                        <span class="text-on-surface font-medium">Domingos:</span>
+                        <span>13:30 - 18:00 (Solo comidas)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface font-bold mb-space-xs flex items-center gap-space-xs">
+                      <span class="material-symbols-outlined text-primary-container">directions_car</span>
+                      <span>Cómo Llegar &amp; Parking</span>
+                    </h3>
+                    <ul class="font-body-md text-body-md text-on-surface-variant flex flex-col gap-space-xs">
+                      <li class="flex items-start gap-space-xs">
+                        <span class="material-symbols-outlined text-[18px] text-primary flex-shrink-0 mt-0.5">local_parking</span>
+                        <span><strong>Parking Concertado:</strong> Parking Central a 50m. 2 horas gratuitas para nuestros comensales.</span>
+                      </li>
+                      <li class="flex items-start gap-space-xs">
+                        <span class="material-symbols-outlined text-[18px] text-primary flex-shrink-0 mt-0.5">subway</span>
+                        <span><strong>Metro:</strong> Estación Gran Vía (Líneas 1 y 5) y Callao (Línea 3), a 3 minutos a pie.</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface font-bold mb-space-xs flex items-center gap-space-xs">
+                      <span class="material-symbols-outlined text-primary-container">call</span>
+                      <span>Contacto Directo</span>
+                    </h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">
+                      Teléfono: <a class="text-on-surface hover:text-primary font-bold transition-colors" href="tel:+34912345678">+34 912 345 678</a><br />
+                      Email: <a class="text-on-surface hover:text-primary transition-colors" href="mailto:reservas@fuegoybrasa.com">reservas@fuegoybrasa.com</a>
+                    </p>
+                  </div>
+                </div>
+                <div class="pt-space-md">
+                  <a class="w-full py-3 bg-surface-container-highest hover:bg-primary-container text-on-surface hover:text-on-primary-container font-label-md text-label-md uppercase tracking-wider rounded text-center transition-colors block shadow-sm" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+                    Cómo Llegar con GPS
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= 12. PREGUNTAS FRECUENTES (FAQ ACORDEÓN) ================= -->
+        <section class="w-full py-24 bg-surface-container-lowest">
+          <div class="max-w-[900px] mx-auto px-margin-mobile md:px-margin">
+            <div class="text-center max-w-2xl mx-auto mb-space-xl">
+              <span class="text-primary-container font-label-lg text-label-lg uppercase tracking-widest block mb-2">Respuestas Claras</span>
+              <h2 class="font-display-lg text-display-lg uppercase font-bold text-on-surface tracking-tight mb-space-sm">Preguntas Frecuentes</h2>
+              <p class="font-body-md text-body-md text-on-surface-variant">Todo lo que necesitas saber antes de encender las brasas con nosotros.</p>
+            </div>
+            
+            <div class="flex flex-col gap-space-md" id="faq-accordion">
+              <details class="group bg-surface-container p-space-md rounded-xl transition-all open:bg-surface-container-high cursor-pointer shadow-sm">
+                <summary class="flex items-center justify-between font-headline-sm text-headline-sm uppercase text-on-surface font-semibold list-none select-none">
+                  <span>¿Es imprescindible reservar con antelación?</span>
+                  <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+                </summary>
+                <div class="pt-space-sm font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                  Aunque reservamos un pequeño cupo de mesas altas para clientes sin reserva previa, recomendamos encarecidamente reservar con al menos 48 horas de antelación para fines de semana, ya que los cortes de larga maduración cuentan con disponibilidad limitada diaria.
+                </div>
+              </details>
+              
+              <details class="group bg-surface-container p-space-md rounded-xl transition-all open:bg-surface-container-high cursor-pointer shadow-sm">
+                <summary class="flex items-center justify-between font-headline-sm text-headline-sm uppercase text-on-surface font-semibold list-none select-none">
+                  <span>¿Disponéis de opciones para personas celíacas (sin gluten) o vegetarianas?</span>
+                  <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+                </summary>
+                <div class="pt-space-sm font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                  Sí. El 80% de nuestra carta cárnica y de pescados a la brasa es naturalmente libre de gluten [GF]. Disponemos de pan y postres aptos para celíacos con protocolo estricto anti-contaminación. Además, contamos con opciones de verduras de caserío a la brasa, provoletas y quesos artesanos para comensales vegetarianos.
+                </div>
+              </details>
+              
+              <details class="group bg-surface-container p-space-md rounded-xl transition-all open:bg-surface-container-high cursor-pointer shadow-sm">
+                <summary class="flex items-center justify-between font-headline-sm text-headline-sm uppercase text-on-surface font-semibold list-none select-none">
+                  <span>¿Se admiten mascotas en el restaurante?</span>
+                  <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+                </summary>
+                <div class="pt-space-sm font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                  Las mascotas educadas son bienvenidas en nuestra terraza climatizada exterior durante todo el año. Por normativas sanitarias y proximidad a la brasa vista, el acceso al comedor interior está reservado exclusivamente a perros guía y de asistencia.
+                </div>
+              </details>
+              
+              <details class="group bg-surface-container p-space-md rounded-xl transition-all open:bg-surface-container-high cursor-pointer shadow-sm">
+                <summary class="flex items-center justify-between font-headline-sm text-headline-sm uppercase text-on-surface font-semibold list-none select-none">
+                  <span>¿Contáis con terraza durante todo el año?</span>
+                  <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+                </summary>
+                <div class="pt-space-sm font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                  Disponemos de un espacio semicubierto y climatizado en invierno con estufas de infrarrojos y cortavientos de cristal, y ventilación microclimática en los meses de verano.
+                </div>
+              </details>
+              
+              <details class="group bg-surface-container p-space-md rounded-xl transition-all open:bg-surface-container-high cursor-pointer shadow-sm">
+                <summary class="flex items-center justify-between font-headline-sm text-headline-sm uppercase text-on-surface font-semibold list-none select-none">
+                  <span>¿Preparáis cortes y comida para llevar (take away)?</span>
+                  <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+                </summary>
+                <div class="pt-space-sm font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                  Nuestros cortes están diseñados para disfrutarse al segundo tras salir del fuego vivo. No obstante, ofrecemos empanadas criollas, costillares deshuesados glaseados y cortes al vacío crudos afinados en nuestra carnicería boutique para cocinar en tu casa.
+                </div>
+              </details>
+              
+              <details class="group bg-surface-container p-space-md rounded-xl transition-all open:bg-surface-container-high cursor-pointer shadow-sm">
+                <summary class="flex items-center justify-between font-headline-sm text-headline-sm uppercase text-on-surface font-semibold list-none select-none">
+                  <span>¿Cómo funcionan las reservas para grupos grandes y eventos?</span>
+                  <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+                </summary>
+                <div class="pt-space-sm font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                  Para mesas a partir de 8 personas disponemos de 3 opciones de menús cerrados con bebida incluida que agilizan el servicio. Requerimos una pequeña señal de fianza que se descuenta íntegramente de la cuenta final.
+                </div>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= 13. NEWSLETTER & COMUNIDAD DEL FUEGO ================= -->
+        <section class="w-full py-20 bg-surface relative overflow-hidden">
+          <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-primary-container/10 blur-[120px] rounded-full pointer-events-none"></div>
+          <div class="max-w-[1100px] mx-auto px-margin-mobile md:px-margin relative z-10">
+            <div class="bg-surface-container p-space-lg md:p-space-xl rounded-2xl flex flex-col md:flex-row items-center justify-between gap-space-lg shadow-xl">
+              <div class="max-w-xl text-center md:text-left">
+                <span class="text-primary-container font-label-md text-label-md uppercase tracking-widest block mb-1">Club Privado de Asadores</span>
+                <h3 class="font-headline-lg text-headline-lg uppercase font-bold text-on-surface mb-space-xs">Únete al Club de la Brasa</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Recibe invitaciones a catas privadas de terruño, acceso prioritario a cortes únicos fuera de carta y un <strong>aperitivo de bienvenida</strong> con copa de espumoso en tu primera visita.
+                </p>
+              </div>
+              <form class="w-full md:w-auto flex flex-col sm:flex-row gap-space-xs" onsubmit="event.preventDefault(); alert('¡Bienvenido al Club de la Brasa!');">
+                <input class="bg-surface-container-highest text-on-surface px-space-md py-3 rounded font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container min-w-[260px]" placeholder="Introduce tu correo..." required="" type="email" />
+                <button class="bg-primary-container hover:bg-[#e04006] text-on-primary-container px-space-lg py-3 rounded font-label-md text-label-md uppercase tracking-wider font-bold transition-all shadow-md whitespace-nowrap" type="submit">
+                  Suscribirme
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= 14. ELEMENTOS FLOTANTES & SCRIPTS INTERACTIVOS ================= -->
+        <button aria-label="Volver arriba" class="fixed bottom-24 right-6 z-40 hidden md:flex items-center justify-center w-11 h-11 rounded-full bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-primary shadow-lg transition-all transform hover:-translate-y-1" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+          <span class="material-symbols-outlined text-[20px]">arrow_upward</span>
+        </button>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.filter-tab');
+            const items = document.querySelectorAll('.menu-item');
+
+            tabs.forEach(tab => {
+              tab.addEventListener('click', () => {
+                // Update active styles
+                tabs.forEach(t => {
+                  t.classList.remove('bg-primary-container', 'text-on-primary-container');
+                  t.classList.add('bg-surface-container', 'text-on-surface-variant');
+                });
+                
+                tab.classList.add('bg-primary-container', 'text-on-primary-container');
+                tab.classList.remove('bg-surface-container', 'text-on-surface-variant');
+
+                const category = tab.getAttribute('data-category');
+
+                items.forEach(item => {
+                  if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'flex';
+                  } else {
+                    item.style.display = 'none';
+                  }
+                });
+              });
+            });
+          });
+        </script>
+        
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="w-full bg-surface-container-lowest text-on-surface-variant mt-margin">
+      <div class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin py-margin">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl mb-margin">
+          
+          <div class="flex flex-col gap-space-md">
+            <div class="flex items-center gap-space-sm">
+              <img alt="Fuego &amp; Brasa Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UtccwobbasUGswc0k7XFRn7_iyhqawF0WbrXy17LjEQWa5smoTWZOK07lLJzvOksTPgmiv_-7P4rFNUbGIY8CJvS8axJg3ZhD_0hAxJ6mVOQjpsKOer9FLHDbUlPHSWiRZ_72EAl5vZpJiPfozRC9yJVmY0O0VoCWUJr8uh62PWTRvO7bmdJsgahuml2x04t9Qw1TFFZXWc5MOKdd7Vdz_EroGkGWCxJLaZ6-BizdkCiFUV0WX0cLIw9dn" />
+              <span class="font-headline-sm text-headline-sm uppercase text-on-surface">Fuego &amp; Brasa</span>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant/80">
+              Asador urbano contemporáneo. El ritual del fuego ancestral, cortes de maduración extrema y la alta gastronomía de brasa en el corazón de la metrópoli.
+            </p>
+            <div class="flex items-center gap-space-sm pt-space-xs">
+              <span class="material-symbols-outlined text-primary-container">local_fire_department</span>
+              <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface">Cortes Prime &amp; Dry-Aged</span>
+            </div>
+          </div>
+          
+          <div class="flex flex-col gap-space-md">
+            <h4 class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Navegación</h4>
+            <ul class="flex flex-col gap-space-sm font-label-md text-label-md uppercase">
+              <li><a class="hover:text-primary-container transition-colors" data-path="inicio" href="#">Inicio</a></li>
+              <li><a class="hover:text-primary-container transition-colors" data-path="carta" href="#">Cortes &amp; Carta</a></li>
+              <li><a class="hover:text-primary-container transition-colors" data-path="experiencia" href="#">La Experiencia</a></li>
+              <li><a class="hover:text-primary-container transition-colors" data-path="reseñas" href="#">Críticas &amp; Reseñas</a></li>
+              <li><a class="hover:text-primary-container transition-colors" data-path="reservas" href="#">Reservas Online</a></li>
+            </ul>
+          </div>
+          
+          <div class="flex flex-col gap-space-md">
+            <h4 class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Horarios &amp; Asador</h4>
+            <div class="flex flex-col gap-space-xs font-body-md text-body-md">
+              <div class="flex justify-between items-center">
+                <span class="text-on-surface">Martes a Jueves:</span>
+                <span>13:30 - 16:30 | 20:00 - 23:30</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-on-surface">Viernes y Sábado:</span>
+                <span>13:30 - 00:00 Continuo</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-on-surface">Domingos:</span>
+                <span>13:30 - 18:00</span>
+              </div>
+              <div class="flex justify-between items-center pt-space-xs">
+                <span class="text-primary-container">Lunes:</span>
+                <span class="text-on-surface-variant/60">Descanso del asador</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex flex-col gap-space-md">
+            <h4 class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Ubicación &amp; Contacto</h4>
+            <address class="not-italic flex flex-col gap-space-xs font-body-md text-body-md">
+              <span>Calle Gran Vía de las Brasas 42</span>
+              <span>Distrito Gastronómico Central</span>
+              <a class="text-on-surface hover:text-primary-container transition-colors" href="tel:+34910000000">+34 910 000 000</a>
+              <a class="text-on-surface hover:text-primary-container transition-colors" href="mailto:reservas@fuegoybrasa.com">reservas@fuegoybrasa.com</a>
+            </address>
+          </div>
+          
         </div>
-    </section>
-
-    <!-- NUEVO: Carta Interactiva con Filtros por Categoría -->
-    <section id="menu" class="menu-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Sabores Auténticos</span>
-                <h2 class="section-title reveal">Nuestra Carta a la Brasa</h2>
-                <p class="section-subtitle" style="color: var(--text-muted); margin-top: 10px;">Filtra por categoría para explorar nuestras especialidades.</p>
-            </div>
-
-            <!-- Botones de Filtro -->
-            <div class="menu-filters reveal">
-                <button class="filter-btn active" data-filter="todos">Todos los Platos</button>
-                <button class="filter-btn" data-filter="entrantes">Entrantes</button>
-                <button class="filter-btn" data-filter="carnes">Carnes a la Brasa</button>
-                <button class="filter-btn" data-filter="postres">Postres Caseros</button>
-            </div>
-
-            <!-- Grid de Platos con Clases de Categoría -->
-            <div class="menu-grid">
-                <!-- Plato 1 (Carnes) -->
-                <div class="menu-card reveal delay-1" data-category="carnes">
-                    <div class="menu-card-header">
-                        <h3>Chuletón de Vaca Vieja</h3>
-                        <span class="price">26.50€</span>
-                    </div>
-                    <p>45 días de maduración en seco. 800g de sabor intenso cocinado al punto óptimo sobre brasas de encina.</p>
-                    <span class="badge-tag">Recomendado del Chef</span>
-                </div>
-                <!-- Plato 2 (Carnes) -->
-                <div class="menu-card reveal delay-2" data-category="carnes">
-                    <div class="menu-card-header">
-                        <h3>Costillar a Baja Temperatura</h3>
-                        <span class="price">18.90€</span>
-                    </div>
-                    <p>Cocinado durante 24 horas. Se deshace en la boca con un glaseado especial ahumado y patatas rústicas.</p>
-                </div>
-                <!-- Plato 3 (Entrantes) -->
-                <div class="menu-card reveal delay-3" data-category="entrantes">
-                    <div class="menu-card-header">
-                        <h3>Provoleta Artesana</h3>
-                        <span class="price">9.50€</span>
-                    </div>
-                    <p>Queso provolone fundido al horno con tomates secos, orégano fresco y pan de masa madre tostado a la brasa.</p>
-                </div>
-                <!-- Plato 4 (Entrantes) -->
-                <div class="menu-card reveal delay-1" data-category="entrantes">
-                    <div class="menu-card-header">
-                        <h3>Croquetas de Cecina de León</h3>
-                        <span class="price">8.50€</span>
-                    </div>
-                    <p>Cremosas por dentro, crujientes por fuera, elaboradas con leche fresca de caserío y trocitos de cecina ahumada.</p>
-                </div>
-                <!-- Plato 5 (Carnes) -->
-                <div class="menu-card reveal delay-2" data-category="carnes">
-                    <div class="menu-card-header">
-                        <h3>Burger Black Angus</h3>
-                        <span class="price">15.00€</span>
-                    </div>
-                    <p>200g de carne picada artesanal, queso cheddar curado, bacon crujiente y salsa secreta en pan brioche.</p>
-                </div>
-                <!-- Plato 6 (Postres) -->
-                <div class="menu-card reveal delay-3" data-category="postres">
-                    <div class="menu-card-header">
-                        <h3>Tarta de Queso Cremosa</h3>
-                        <span class="price">6.50€</span>
-                    </div>
-                    <p>Nuestra famosa tarta de queso al horno, ligeramente tostada por fuera y de textura ultra fluida por dentro.</p>
-                </div>
-            </div>
+        
+        <div class="flex flex-col md:flex-row items-center justify-between gap-space-md pt-space-lg text-label-sm font-label-sm uppercase tracking-wider text-on-surface-variant/60">
+          <p>© 2025 Fuego &amp; Brasa Asador Urbano S.L. Todos los derechos reservados.</p>
+          <div class="flex items-center gap-space-lg">
+            <a class="hover:text-on-surface transition-colors" href="#">Aviso Legal</a>
+            <a class="hover:text-on-surface transition-colors" href="#">Privacidad</a>
+            <a class="hover:text-on-surface transition-colors" href="#">Cookies</a>
+            <a class="hover:text-on-surface transition-colors" href="#">Términos de Reserva</a>
+          </div>
         </div>
-    </section>
-
-    <!-- Sección El Asador / Experiencia -->
-    <section id="experiencia" class="experience-section">
-        <div class="container experience-grid">
-            <div class="experience-text reveal">
-                <span class="section-tag">El Ritual del Fuego</span>
-                <h2>El secreto está en el respeto al producto</h2>
-                <p>En Fuego & Brasa no usamos atajos. Controlamos la temperatura de las brasas al milímetro para sellar los jugos naturales de cada corte de carne, logrando ese característico toque ahumado.</p>
-                <div class="features-mini">
-                    <div class="feature-item"><i class="fa-solid fa-check"></i> Cortes nacionales seleccionados con trazabilidad</div>
-                    <div class="feature-item"><i class="fa-solid fa-check"></i> Bodega propia con D.O. seleccionadas</div>
-                    <div class="feature-item"><i class="fa-solid fa-check"></i> Ambiente urbano, cálido e informal</div>
-                </div>
-            </div>
-            <div class="experience-image reveal delay-1">
-                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1000&auto=format&fit=crop" alt="Asador Fuego y Brasa">
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección de Reservas -->
-    <section id="reservas" class="reservation-section">
-        <div class="container reservation-container reveal">
-            <h2>Reserva tu mesa en un clic</h2>
-            <p>Ven a disfrutar de una buena comida o cena con amigos y familia. ¡Te esperamos en la mesa!</p>
-            <a href="https://wa.me/34600000000?text=Hola,%20quiero%20reservar%20una%20mesa%20en%20el%20restaurante" target="_blank" class="btn-whatsapp-culinary"><i class="fa-brands fa-whatsapp"></i> Reservar Mesa por WhatsApp</a>
-        </div>
-    </section>
-
-    <footer class="footer-culinary">
-        <p>&copy; 2026 Fuego & Brasa. Todos los derechos reservados.</p>
+      </div>
     </footer>
 
-    <script src="restaurante.js"></script>
-</body>
+    <!-- BOTONES FLOTANTES DE CONTACTO -->
+    <div class="fixed bottom-6 right-6 z-40 hidden md:block">
+      <a aria-label="Contactar por WhatsApp" class="flex items-center justify-center w-14 h-14 rounded-full bg-surface-container-high text-on-surface hover:text-primary-container hover:bg-surface-container-highest shadow-[0_10px_30px_-10px_rgba(0,0,0,0.7)] transition-all transform hover:scale-105" href="https://wa.me/34910000000" rel="noopener noreferrer" target="_blank">
+        <span class="material-symbols-outlined text-[28px]">chat</span>
+      </a>
+    </div>
+    
+    <aside class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-surface-container-lowest/95 backdrop-blur-lg px-margin-mobile py-space-sm">
+      <div class="grid grid-cols-3 gap-space-sm">
+        <a class="flex flex-col items-center justify-center py-space-xs text-on-surface hover:text-primary-container transition-colors" href="tel:+34910000000">
+          <span class="material-symbols-outlined text-[20px]">call</span>
+          <span class="font-label-sm text-label-sm uppercase tracking-wider mt-0.5">Llamar</span>
+        </a>
+        <a class="flex flex-col items-center justify-center py-space-xs bg-primary-container text-on-primary-container rounded shadow-[0_0_16px_rgba(255,87,34,0.4)]" data-path="reservas" href="#">
+          <span class="material-symbols-outlined text-[20px]">table_restaurant</span>
+          <span class="font-label-sm text-label-sm uppercase font-bold tracking-wider mt-0.5">Reservar</span>
+        </a>
+        <a class="flex flex-col items-center justify-center py-space-xs text-on-surface hover:text-primary-container transition-colors" data-path="contacto" href="#">
+          <span class="material-symbols-outlined text-[20px]">near_me</span>
+          <span class="font-label-sm text-label-sm uppercase tracking-wider mt-0.5">Cómo llegar</span>
+        </a>
+      </div>
+    </aside>
+    
+  </body>
 </html>
